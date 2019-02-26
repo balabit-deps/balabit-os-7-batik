@@ -28,7 +28,7 @@ import org.w3c.dom.Node;
  * This class implements the xbl:definition element.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: XBLOMDefinitionElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XBLOMDefinitionElement.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class XBLOMDefinitionElement extends XBLOMElement {
 
@@ -72,7 +72,7 @@ public class XBLOMDefinitionElement extends XBLOMElement {
             throw createDOMException
                         (DOMException.NAMESPACE_ERR,
                          "prefix",
-                         new Object[] { new Integer(getNodeType()),
+                         new Object[] {(int) getNodeType(),
                                         getNodeName(),
                                         prefix });
         }

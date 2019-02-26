@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.awt.image.spi;
 
@@ -30,7 +30,7 @@ import org.apache.batik.util.ParsedURL;
  * URLStreamHandler using one of the methods listed in
  * @see java.net.URL#URL(java.lang.String, java.lang.String, int, java.lang.String)
  *
- * @version $Id: URLRegistryEntry.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: URLRegistryEntry.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface URLRegistryEntry extends RegistryEntry {
     /**

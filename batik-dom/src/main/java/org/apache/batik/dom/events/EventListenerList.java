@@ -19,16 +19,18 @@
 package org.apache.batik.dom.events;
 
 import org.apache.batik.dom.util.IntTable;
-import org.apache.batik.dom.util.HashTable;
+
 
 import org.w3c.dom.events.EventListener;
+
+import java.util.HashMap;
 
 /**
  * Class to manager event listeners for one event type.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: EventListenerList.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: EventListenerList.java 1810674 2017-10-03 09:12:00Z ssteiner $
  */
 public class EventListenerList {
 
@@ -55,7 +57,7 @@ public class EventListenerList {
     /**
      * Caches of listeners with a given namespace URI.
      */
-    protected HashTable listenersNS = new HashTable();
+    protected HashMap listenersNS = new HashMap();
 
     /**
      * Adds a listener.

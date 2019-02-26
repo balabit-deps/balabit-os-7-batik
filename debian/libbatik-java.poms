@@ -56,6 +56,7 @@ batik-test/pom.xml              --ignore
 batik-test-svg/pom.xml          --ignore
 batik-test-swing/pom.xml        --ignore
 batik-test-util/pom.xml         --ignore
+batik-test-old/pom.xml         --ignore
 batik-transcoder/pom.xml        --has-package-version --java-lib
 batik-ttf2svg/pom.xml           --has-package-version --java-lib
 batik-util/pom.xml              --has-package-version --java-lib

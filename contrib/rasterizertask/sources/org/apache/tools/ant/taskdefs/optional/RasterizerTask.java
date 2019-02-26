@@ -21,7 +21,6 @@ package org.apache.tools.ant.taskdefs.optional;
 // -- Ant classes ------------------------------------------------------------
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.Task;
 import org.apache.tools.ant.DirectoryScanner;
 import org.apache.tools.ant.taskdefs.MatchingTask;
 import org.apache.tools.ant.types.EnumeratedAttribute;
@@ -32,7 +31,6 @@ import org.apache.tools.ant.util.JAXPUtils;
 import org.apache.batik.apps.rasterizer.SVGConverter;
 import org.apache.batik.apps.rasterizer.DestinationType;
 import org.apache.batik.apps.rasterizer.SVGConverterException;
-import org.apache.batik.transcoder.image.JPEGTranscoder;
 import org.apache.batik.util.XMLResourceDescriptor;
 
 // -- SAX classes ------------------------------------------------------------
@@ -44,7 +42,6 @@ import java.awt.Color;
 import java.io.File;
 import java.util.StringTokenizer;
 import java.util.Vector;
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +59,7 @@ import java.util.List;
  * @see org.apache.batik.apps.rasterizer.Main Main
  *
  * @author <a href="mailto:ruini@iki.fi">Henri Ruini</a>
- * @version $Id: RasterizerTask.java 1733420 2016-03-03 07:41:59Z gadams $
+ * @version $Id: RasterizerTask.java 1808975 2017-09-20 08:59:36Z ssteiner $
  */
 public class RasterizerTask extends MatchingTask {
 
@@ -706,7 +703,7 @@ public class RasterizerTask extends MatchingTask {
      * <p>See the Ant documentation for more information.</p>
      *
      * @author <a href="mailto:ruini@iki.fi">Henri Ruini</a>
-     * @version $Id: RasterizerTask.java 1733420 2016-03-03 07:41:59Z gadams $
+     * @version $Id: RasterizerTask.java 1808975 2017-09-20 08:59:36Z ssteiner $
      */
     public static class ValidImageTypes extends EnumeratedAttribute {
 
@@ -730,7 +727,7 @@ public class RasterizerTask extends MatchingTask {
      * <p>See the Ant documentation for more information.</p>
      *
      * @author <a href="mailto:ruini@iki.fi">Henri Ruini</a>
-     * @version $Id: RasterizerTask.java 1733420 2016-03-03 07:41:59Z gadams $
+     * @version $Id: RasterizerTask.java 1808975 2017-09-20 08:59:36Z ssteiner $
      */
     public static class ValidMediaTypes extends EnumeratedAttribute {
 

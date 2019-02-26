@@ -25,7 +25,7 @@ import java.io.File;
  * to the SVG file.
  *
  * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: ParametrizedRenderingAccuracyTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ParametrizedRenderingAccuracyTest.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ParametrizedRenderingAccuracyTest
     extends SamplesRenderingTest {
@@ -66,8 +66,8 @@ public class ParametrizedRenderingAccuracyTest
                   buildRefImgURL(dirNfile[0], dirNfile[1]));
 
         String[] variationURLs = buildVariationURLs(dirNfile[0], dirNfile[1]);
-        for (int i = 0; i < variationURLs.length; i++) {
-            addVariationURL(variationURLs[i]);
+        for (String variationURL : variationURLs) {
+            addVariationURL(variationURL);
         }
         setSaveVariation(new File(buildSaveVariationFile(dirNfile[0], dirNfile[1])));
         setCandidateReference(new File(buildCandidateReferenceFile(dirNfile[0], dirNfile[1])));

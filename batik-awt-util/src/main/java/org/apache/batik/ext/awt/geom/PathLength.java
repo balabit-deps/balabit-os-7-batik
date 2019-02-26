@@ -42,7 +42,7 @@ import java.util.ArrayList;
  * </p>
  *
  * @author <a href="mailto:dean.jackson@cmis.csiro.au">Dean Jackson</a>
- * @version $Id: PathLength.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PathLength.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class PathLength {
 
@@ -133,7 +133,7 @@ public class PathLength {
 
         while (!pi.isDone()) {
             origIndex++;
-            indexes.add(new Integer(index));
+            indexes.add(index);
             segType = pi.currentSegment(seg);
             switch (segType) {
                 case PathIterator.SEG_MOVETO:
@@ -189,7 +189,7 @@ public class PathLength {
         }
         segmentIndexes = new int[indexes.size()];
         for (int i = 0; i < segmentIndexes.length; i++) {
-            segmentIndexes[i] = ((Integer) indexes.get(i)).intValue();
+            segmentIndexes[i] = (Integer) indexes.get(i);
         }
         initialised = true;
     }

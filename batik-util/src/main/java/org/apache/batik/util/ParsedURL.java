@@ -60,7 +60,7 @@ import org.apache.batik.Version;
  * </p>
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: ParsedURL.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ParsedURL.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ParsedURL {
 
@@ -424,8 +424,7 @@ public class ParsedURL {
      */
     public InputStream openStream(String [] mimeTypes) throws IOException {
         List mt = new ArrayList(mimeTypes.length);
-        for (int i=0; i<mimeTypes.length; i++)
-            mt.add(mimeTypes[i]);
+        for (String mimeType : mimeTypes) mt.add(mimeType);
         return data.openStream(userAgent, mt.iterator());
     }
 

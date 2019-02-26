@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.bridge;
 
@@ -26,7 +26,7 @@ package org.apache.batik.bridge;
  * Complete Class Desc
  *
  * @author <a href="mailto:deweese@apache.org">deweese</a>
- * @version $Id: FlowTextNode.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: FlowTextNode.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class FlowTextNode extends TextNode{
 

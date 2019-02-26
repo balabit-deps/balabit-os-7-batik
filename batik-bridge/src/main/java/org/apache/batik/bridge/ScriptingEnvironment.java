@@ -33,7 +33,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -49,7 +48,6 @@ import org.apache.batik.dom.util.XLinkSupport;
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.anim.dom.SVGOMDocument;
 import org.apache.batik.anim.dom.SVGOMScriptElement;
-import org.apache.batik.bridge.Location;
 import org.apache.batik.script.Interpreter;
 import org.apache.batik.script.InterpreterException;
 import org.apache.batik.script.ScriptEventWrapper;
@@ -72,7 +70,7 @@ import org.w3c.dom.svg.SVGDocument;
  * This class contains the informations needed by the SVG scripting.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: ScriptingEnvironment.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ScriptingEnvironment.java 1830543 2018-04-30 10:17:31Z ssteiner $
  */
 public class ScriptingEnvironment extends BaseScriptingEnvironment {
 
@@ -1326,14 +1324,14 @@ public class ScriptingEnvironment extends BaseScriptingEnvironment {
         /**
          * Returns a Window object representing the parent of this Window.
          */
-        public org.w3c.dom.Window getParent() {
+        public org.apache.batik.w3c.dom.Window getParent() {
             return null;
         }
 
         /**
          * Returns a Location object representing this Window.
          */
-        public org.w3c.dom.Location getLocation() {
+        public org.apache.batik.w3c.dom.Location getLocation() {
             if (location == null) {
                 location = new Location(bridgeContext);
             }
@@ -1421,7 +1419,7 @@ public class ScriptingEnvironment extends BaseScriptingEnvironment {
             int line = dl.getLineNumber(elt);
             final String desc = Messages.formatMessage
                 (EVENT_SCRIPT_DESCRIPTION,
-                 new Object [] {d.getURL(), attribute, new Integer(line)});
+                 new Object [] {d.getURL(), attribute, line});
 
             // Find the scripting language
             Element e = elt;

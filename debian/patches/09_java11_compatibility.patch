@@ -1,0 +1,14 @@
+Description: Fixes the compatibility with Java 11
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: no
+--- a/batik-swing/src/main/java/org/apache/batik/swing/gvt/JGVTComponent.java
++++ b/batik-swing/src/main/java/org/apache/batik/swing/gvt/JGVTComponent.java
+@@ -1272,7 +1272,7 @@
+             securityManager = System.getSecurityManager();
+             if (securityManager != null) {
+                 try {
+-                    securityManager.checkSystemClipboardAccess();
++                    securityManager.checkPermission(new java.awt.AWTPermission("accessClipboard"));
+                 } catch (SecurityException e) {
+                     return; // Can't access clipboard.
+                 }

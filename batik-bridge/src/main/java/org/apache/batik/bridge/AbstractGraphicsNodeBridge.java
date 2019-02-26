@@ -65,7 +65,7 @@ import org.w3c.dom.svg.SVGTransformable;
  * </ul>
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: AbstractGraphicsNodeBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractGraphicsNodeBridge.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractGraphicsNodeBridge extends AnimatableSVGBridge
     implements SVGContext,
@@ -356,8 +356,7 @@ public abstract class AbstractGraphicsNodeBridge extends AnimatableSVGBridge
         try {
             SVGCSSEngine eng = (SVGCSSEngine) evt.getSource();
             int[] properties = evt.getProperties();
-            for (int i = 0; i < properties.length; i++) {
-                int idx = properties[i];
+            for (int idx : properties) {
                 handleCSSPropertyChanged(idx);
                 String pn = eng.getPropertyName(idx);
                 fireBaseAttributeListeners(pn);

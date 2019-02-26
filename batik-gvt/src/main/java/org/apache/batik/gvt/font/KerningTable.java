@@ -25,7 +25,7 @@ package org.apache.batik.gvt.font;
  * when laying out glyphs.
  *
  * @author <a href="mailto:dean.jackson@cmis.csiro.au">Dean Jackson</a>
- * @version $Id: KerningTable.java 1733416 2016-03-03 07:07:13Z gadams $ 
+ * @version $Id: KerningTable.java 1804130 2017-08-04 14:41:11Z ssteiner $ 
  */
 public class KerningTable {
 
@@ -57,10 +57,10 @@ public class KerningTable {
                                  int glyphCode2,
                                  String glyphUnicode1, 
                                  String glyphUnicode2) {
-        for (int i = 0; i < entries.length; i++) {
-            if (entries[i].matchesFirstGlyph(glyphCode1, glyphUnicode1) &&
-                entries[i].matchesSecondGlyph(glyphCode2, glyphUnicode2)) {
-                return entries[i].getAdjustValue();
+        for (Kern entry : entries) {
+            if (entry.matchesFirstGlyph(glyphCode1, glyphUnicode1) &&
+                    entry.matchesSecondGlyph(glyphCode2, glyphUnicode2)) {
+                return entry.getAdjustValue();
             }
         }
         return 0f;

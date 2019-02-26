@@ -18,14 +18,14 @@
  */
 package org.apache.batik.dom.events;
 
-import org.w3c.dom.events.TextEvent;
+import org.apache.batik.w3c.dom.events.TextEvent;
 import org.w3c.dom.views.AbstractView;
 
 /**
  * Class to implement DOM 3 Text events.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: DOMTextEvent.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DOMTextEvent.java 1830681 2018-05-01 13:38:53Z ssteiner $
  */
 public class DOMTextEvent extends DOMUIEvent implements TextEvent {
 

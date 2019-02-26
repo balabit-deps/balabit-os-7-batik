@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * rerequesting significant numbers of tiles that are already
  * available.
  *
- * @version $Id: TileBlock.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TileBlock.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class TileBlock {
 
@@ -140,8 +140,7 @@ public class TileBlock {
      */
     static int getWork(TileBlock [] blocks) {
         int ret=0;
-        for (int i=0; i<blocks.length; i++)
-            ret += blocks[i].getWork();
+        for (TileBlock block : blocks) ret += block.getWork();
         return ret;
     }
 

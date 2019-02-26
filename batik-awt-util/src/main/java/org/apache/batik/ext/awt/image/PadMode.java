@@ -23,7 +23,7 @@ package org.apache.batik.ext.awt.image;
  * the CompositeRable operation. (over, in, out, atop, xor, arith)
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: PadMode.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PadMode.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public final class PadMode implements java.io.Serializable {
       /** Pad edges with zeros */
@@ -76,7 +76,7 @@ public final class PadMode implements java.io.Serializable {
         case MODE_WRAP:
             return WRAP;
         default:
-            throw new Error("Unknown Pad Mode type");
+            throw new RuntimeException("Unknown Pad Mode type");
         }
     }
 }

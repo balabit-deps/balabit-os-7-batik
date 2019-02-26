@@ -36,7 +36,7 @@ import org.apache.batik.util.resources.ResourceManager;
  * The history scrollable popup menu model. Used for undo / redo drop down
  * components.
  *
- * @version $Id: DropDownHistoryModel.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DropDownHistoryModel.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class DropDownHistoryModel implements ScrollablePopupMenuModel {
 
@@ -185,9 +185,9 @@ public class DropDownHistoryModel implements ScrollablePopupMenuModel {
      * @return True if item was successfully removed
      */
     protected boolean removeFirstScrollablePopupMenuItem(String details) {
-        for (int i = 0; i < items.size(); i++) {
+        for (Object item1 : items) {
             ScrollablePopupMenuItem item =
-                (ScrollablePopupMenuItem) items.get(i);
+                    (ScrollablePopupMenuItem) item1;
             removeItem(item, details);
             return true;
         }

@@ -50,7 +50,7 @@ import org.w3c.dom.css.CSSValue;
  * concrete objects regarding to CSS properties.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: CSSUtilities.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CSSUtilities.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public abstract class CSSUtilities
     implements CSSConstants, ErrorConstants, XMLConstants {
@@ -823,7 +823,7 @@ public abstract class CSSUtilities
     /////////////////////////////////////////////////////////////////////////
 
     /**
-     * Converts the color defined on the specified &lt;feFlood>
+     * Converts the color defined on the specified &lt;feFlood&gt;
      * element to a <code>Color</code>.
      *
      * @param e the feFlood element
@@ -846,7 +846,7 @@ public abstract class CSSUtilities
     /////////////////////////////////////////////////////////////////////////
 
     /**
-     * Converts the color defined on the specified &lt;stop> element
+     * Converts the color defined on the specified &lt;stop&gt; element
      * to a <code>Color</code>.
      *
      * @param e the stop element

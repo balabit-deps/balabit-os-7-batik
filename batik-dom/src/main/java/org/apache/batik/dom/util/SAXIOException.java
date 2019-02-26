@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.dom.util;
 
@@ -27,7 +27,7 @@ import java.io.IOException;
  * include line and column information with SAX parse errors.
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: SAXIOException.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SAXIOException.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class SAXIOException extends IOException {
 

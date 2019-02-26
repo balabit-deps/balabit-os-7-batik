@@ -22,9 +22,9 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 /**
- * Base class containing convenience methods for writing tests. <br />
+ * Base class containing convenience methods for writing tests. <br>
  * There are at least three approaches to write new tests derived from
- * <code>AbstractTest</code>:<br /><ul>
+ * <code>AbstractTest</code>:<br><ul>
  * <li>You can simply override the <code>runImplBasic</code> method and 
  * return true or false depending on whether or not the test fails.</li>
  * <li>You can choose to report more complex test failure conditions 
@@ -80,7 +80,7 @@ import java.io.PrintWriter;
  * </code>
  *
  * @author <a href="mailto:vhardy@apache.lorg">Vincent Hardy</a>
- * @version $Id: AbstractTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractTest.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public abstract class AbstractTest implements Test {
     /**
@@ -308,7 +308,7 @@ public abstract class AbstractTest implements Test {
     }
 
     public void assertEquals(int ref, int cmp) throws AssertEqualsException {
-        assertEquals(new Integer(ref), new Integer(cmp));
+        assertEquals(Integer.valueOf(ref), Integer.valueOf(cmp));
     }
 
     /**
@@ -316,16 +316,16 @@ public abstract class AbstractTest implements Test {
      * An <code>AbstractTest</code> extension will typically catch 
      * exceptions for specific error conditions it wants to point 
      * out. For example:<code>
-     * public TestReport runImpl() throws Exception { <br />
-     *   try{ <br />
-     *      .... something .... <br />
-     *   catch(MySpecialException e){ <br />
-     *      return reportException(MY_SPECIAL_ERROR_CODE, e); <br />
-     *   } <br />
-     * <br />
-     * public static final String MY_SPECIAL_ERROR_CODE = "myNonQualifiedClassName.my.error.code" <br />
-     * <br />
-     * </code> <br />
+     * public TestReport runImpl() throws Exception { <br>
+     *   try{ <br>
+     *      .... something .... <br>
+     *   catch(MySpecialException e){ <br>
+     *      return reportException(MY_SPECIAL_ERROR_CODE, e); <br>
+     *   } <br>
+     * <br>
+     * public static final String MY_SPECIAL_ERROR_CODE = "myNonQualifiedClassName.my.error.code" <br>
+     * <br>
+     * </code> <br>
      * Note that the implementor will also need to add an entry
      * in its Messages.properties file. That file is expected to be 
      * in a resource file called <code>Messages</code> having the same package 

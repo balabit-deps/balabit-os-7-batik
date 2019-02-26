@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine.value.svg;
 
@@ -30,7 +30,7 @@ import org.apache.batik.util.SVGTypes;
  * This class provides a manager for the 'writing-mode' property values.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: WritingModeManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WritingModeManager.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class WritingModeManager extends IdentifierManager {
 

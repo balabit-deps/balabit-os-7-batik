@@ -42,7 +42,7 @@ import org.w3c.dom.NodeList;
  * Utility class for SVG fonts.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: SVGFontUtilities.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFontUtilities.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class SVGFontUtilities implements SVGConstants {
 
@@ -72,9 +72,8 @@ public abstract class SVGFontUtilities implements SVGConstants {
 
         CSSEngine engine = ((SVGOMDocument)doc).getCSSEngine();
         List sms = engine.getFontFaces();
-        Iterator iter = sms.iterator();
-        while (iter.hasNext()) {
-            FontFaceRule ffr = (FontFaceRule)iter.next();
+        for (Object sm : sms) {
+            FontFaceRule ffr = (FontFaceRule) sm;
             ret.add(CSSFontFace.createCSSFontFace(engine, ffr));
         }
         return ret;
@@ -159,10 +158,9 @@ public abstract class SVGFontUtilities implements SVGConstants {
 
             // create lists of font weight numbers for each font family
             List fontFamilyWeights = new ArrayList(svgFontFamilies.size());
-            Iterator ffiter = svgFontFamilies.iterator();
-            while(ffiter.hasNext()) {
+            for (Object svgFontFamily : svgFontFamilies) {
                 GVTFontFace fontFace;
-                fontFace = ((GVTFontFamily)ffiter.next()).getFontFace();
+                fontFace = ((GVTFontFamily) svgFontFamily).getFontFace();
                 String fontFaceWeight = fontFace.getFontWeight();
                 fontFaceWeight = getFontWeightNumberString(fontFaceWeight);
                 fontFamilyWeights.add(fontFaceWeight);

@@ -34,14 +34,14 @@ import org.w3c.dom.Node;
  * Bridge class for the "color switch" extension element.
  *
  * @author <a href="mailto:thomas.deweese@kodak.com">Thomas Deweese</a>
- * @version $Id: ColorSwitchBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ColorSwitchBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class ColorSwitchBridge 
     extends AbstractSVGBridge
     implements PaintBridge, BatikExtConstants {
 
     /**
-     * Constructs a new bridge for the &lt;batik:colorSwitch> element.
+     * Constructs a new bridge for the &lt;batik:colorSwitch&gt; element.
      */
     public ColorSwitchBridge() { /* nothing */ }
 

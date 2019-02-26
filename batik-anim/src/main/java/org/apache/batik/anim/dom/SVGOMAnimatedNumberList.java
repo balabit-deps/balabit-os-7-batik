@@ -23,7 +23,6 @@ import java.util.Iterator;
 
 import org.apache.batik.anim.values.AnimatableNumberListValue;
 import org.apache.batik.anim.values.AnimatableValue;
-import org.apache.batik.dom.svg.AbstractSVGList;
 import org.apache.batik.dom.svg.AbstractSVGNumberList;
 import org.apache.batik.dom.svg.ListBuilder;
 import org.apache.batik.dom.svg.LiveAttributeException;
@@ -45,7 +44,7 @@ import org.w3c.dom.svg.SVGNumberList;
  * interface.
  *
  * @author <a href="mailto:tonny@kiyut.com">Tonny Kohar</a>
- * @version $Id: SVGOMAnimatedNumberList.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGOMAnimatedNumberList.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGOMAnimatedNumberList
     extends AbstractSVGAnimatedValue

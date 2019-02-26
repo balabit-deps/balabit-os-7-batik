@@ -71,7 +71,7 @@ import org.w3c.dom.views.DocumentView;
  * This class implements {@link org.w3c.dom.svg.SVGSVGElement}.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVGOMSVGElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGOMSVGElement.java 1806580 2017-08-29 12:06:44Z ssteiner $
  */
 public class SVGOMSVGElement
     extends    SVGStylableElement
@@ -453,7 +453,7 @@ public class SVGOMSVGElement
         if (!ctx.unsuspendRedraw(suspend_handle_id)) {
             throw createDOMException
                 (DOMException.NOT_FOUND_ERR, "invalid.suspend.handle",
-                 new Object[] { new Integer(suspend_handle_id) });
+                 new Object[] {suspend_handle_id});
         }
     }
 
@@ -723,8 +723,8 @@ public class SVGOMSVGElement
     }
 
     /**
-     * <b>DOM</b>: Implements {@link
-     * org.w3c.dom.events.DocumentEvent#canDispatch(String,String)}.
+     * <b>DOM</b>: Implements
+     * org.w3c.dom.events.DocumentEvent#canDispatch(String,String).
      */
     public boolean canDispatch(String namespaceURI, String type)
             throws DOMException {

@@ -22,7 +22,7 @@ package org.apache.batik.ext.awt.image.spi;
  * Parameters for the encoder which is accessed through the
  * ImageWriter interface.
  *
- * @version $Id: ImageWriterParams.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ImageWriterParams.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class ImageWriterParams {
 
@@ -71,7 +71,7 @@ public class ImageWriterParams {
      * @param dpi the resolution in dpi
      */
     public void setResolution(int dpi) {
-        this.resolution = new Integer(dpi);
+        this.resolution = dpi;
     }
 
     /**
@@ -80,7 +80,7 @@ public class ImageWriterParams {
      * @param forceBaseline force baseline quantization table
      */
     public void setJPEGQuality(float quality, boolean forceBaseline) {
-        this.jpegQuality = new Float(quality);
+        this.jpegQuality = quality;
         this.jpegForceBaseline = forceBaseline ? Boolean.TRUE : Boolean.FALSE;
     }
 

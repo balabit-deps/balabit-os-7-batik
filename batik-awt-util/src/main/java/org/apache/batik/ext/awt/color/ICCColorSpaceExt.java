@@ -29,7 +29,7 @@ import java.awt.color.ICC_Profile;
  * relative colorimetric.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ICCColorSpaceExt.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ICCColorSpaceExt.java 1808888 2017-09-19 14:22:11Z ssteiner $
  * @deprecated use the version from XML Graphics Commons instead
  */
 public class ICCColorSpaceExt extends ICC_ColorSpace {
@@ -83,7 +83,7 @@ public class ICCColorSpaceExt extends ICC_ColorSpace {
             case SATURATION:
             return saturationToRGB(values);
             default:
-            throw new Error("invalid intent:" + intent );
+            throw new RuntimeException("invalid intent:" + intent );
         }
     }
 

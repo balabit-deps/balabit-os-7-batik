@@ -38,7 +38,7 @@ import org.apache.batik.svggen.font.table.TableFactory;
 
 /**
  * The TrueType font.
- * @version $Id: Font.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Font.java 1804130 2017-08-04 14:41:11Z ssteiner $
  * @author <a href="mailto:david@steadystate.co.uk">David Schweinsberg</a>
  */
 public class Font {
@@ -66,9 +66,9 @@ public class Font {
     }
 
     public Table getTable(int tableType) {
-        for (int i = 0; i < tables.length; i++) {
-            if ((tables[i] != null) && (tables[i].getType() == tableType)) {
-                return tables[i];
+        for (Table table : tables) {
+            if ((table != null) && (table.getType() == tableType)) {
+                return table;
             }
         }
         return null;

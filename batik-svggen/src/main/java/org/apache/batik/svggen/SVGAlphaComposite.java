@@ -42,7 +42,7 @@ import org.w3c.dom.Element;
  * opacity property on the nodes to be composited.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGAlphaComposite.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAlphaComposite.java 1808888 2017-09-19 14:22:11Z ssteiner $
  * @see                org.apache.batik.svggen.SVGAlphaComposite
  */
 public class SVGAlphaComposite extends AbstractSVGConverter {
@@ -225,7 +225,7 @@ public class SVGAlphaComposite extends AbstractSVGConverter {
             id = ID_PREFIX_ALPHA_COMPOSITE_DST_OVER;
             break;
         default:
-            throw new Error("invalid rule:" + composite.getRule() );
+            throw new RuntimeException("invalid rule:" + composite.getRule() );
         }
 
         Element compositeFilter =

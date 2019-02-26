@@ -26,7 +26,7 @@ package org.apache.batik.test;
  * <code>SimpleTestReportProcessor</code>
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: SimpleTestRunner.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SimpleTestRunner.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public class SimpleTestRunner {
     /**
@@ -73,7 +73,7 @@ public class SimpleTestRunner {
         Test t = null;
 
         try{
-            t = (Test)cl.newInstance();
+            t = (Test)cl.getDeclaredConstructor().newInstance();
         }catch(ClassCastException e){
             System.err.println(Messages.formatMessage(ERROR_CLASS_CAST,
                                                       new Object[]{ className,

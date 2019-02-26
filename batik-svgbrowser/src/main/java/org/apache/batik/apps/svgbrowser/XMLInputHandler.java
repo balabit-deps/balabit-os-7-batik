@@ -21,6 +21,7 @@ package org.apache.batik.apps.svgbrowser;
 import java.io.File;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,7 +36,7 @@ import javax.xml.transform.stream.StreamSource;
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
 import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.dom.util.DOMUtilities;
-import org.apache.batik.dom.util.HashTable;
+
 import org.apache.batik.util.ParsedURL;
 import org.apache.batik.util.SVGConstants;
 import org.apache.batik.util.XMLResourceDescriptor;
@@ -57,8 +58,8 @@ import org.w3c.dom.svg.SVGDocument;
  * input XML file and the handler checks that the result is an 
  * SVG document with an SVG root.
  *
- * @author <a mailto="vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: XMLInputHandler.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
+ * @version $Id: XMLInputHandler.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public class XMLInputHandler implements SquiggleInputHandler {
     public static final String[] XVG_MIME_TYPES = 
@@ -144,8 +145,8 @@ public class XMLInputHandler implements SquiggleInputHandler {
             return false;
         }
 
-        for (int i=0; i<XVG_FILE_EXTENSIONS.length; i++) {
-            if (path.endsWith(XVG_FILE_EXTENSIONS[i])) {
+        for (String XVG_FILE_EXTENSION : XVG_FILE_EXTENSIONS) {
+            if (path.endsWith(XVG_FILE_EXTENSION)) {
                 return true;
             }
         }
@@ -292,7 +293,7 @@ public class XMLInputHandler implements SquiggleInputHandler {
                 ProcessingInstruction pi 
                     = (ProcessingInstruction)child;
                 
-                HashTable table = new HashTable();
+                HashMap<String, String> table = new HashMap<String, String>();
                 DOMUtilities.parseStyleSheetPIData(pi.getData(),
                                                    table);
 

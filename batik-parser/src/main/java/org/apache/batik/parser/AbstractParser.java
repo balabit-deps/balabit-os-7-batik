@@ -34,7 +34,7 @@ import org.apache.batik.util.io.StringNormalizingReader;
  * and error handling methods.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractParser.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractParser.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractParser implements Parser {
 
@@ -183,8 +183,8 @@ public abstract class AbstractParser implements Parser {
      */
     protected void reportCharacterExpectedError( char expectedChar, int currentChar ){
         reportError("character.expected",
-                    new Object[] { new Character( expectedChar ),
-                                   new Integer( currentChar ) });
+                    new Object[] {expectedChar,
+                            currentChar});
 
     }
 
@@ -196,7 +196,7 @@ public abstract class AbstractParser implements Parser {
      */
     protected void reportUnexpectedCharacterError( int currentChar ){
         reportError("character.unexpected",
-                    new Object[] { new Integer( currentChar ) });
+                    new Object[] {currentChar});
 
     }
 

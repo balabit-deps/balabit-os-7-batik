@@ -29,7 +29,7 @@ import org.apache.batik.transcoder.image.TIFFTranscoder;
  *
  * @author Henri Ruini
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: DestinationType.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DestinationType.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public final class DestinationType {
     public static final String PNG_STR  = "image/png";
@@ -94,7 +94,7 @@ public final class DestinationType {
             case PDF_CODE:
                 try {
                     Class pdfClass = Class.forName("org.apache.fop.svg.PDFTranscoder");
-                    return (Transcoder)pdfClass.newInstance();
+                    return (Transcoder)pdfClass.getDeclaredConstructor().newInstance();
                 } catch(Exception e) {
                     return null;
                 }
@@ -124,7 +124,7 @@ public final class DestinationType {
         case PDF_CODE:
             return PDF;
         default:
-            throw new Error("unknown code:" + code );
+            throw new RuntimeException("unknown code:" + code );
         }
     }
 }

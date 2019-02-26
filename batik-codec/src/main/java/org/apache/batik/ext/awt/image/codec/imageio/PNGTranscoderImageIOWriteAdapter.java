@@ -35,14 +35,16 @@ import org.apache.batik.transcoder.image.PNGTranscoder;
  * This class is a helper to <code>PNGTranscoder</code> that writes PNG images 
  * through the Image I/O API.
  *
- * @version $Id: PNGTranscoderImageIOWriteAdapter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PNGTranscoderImageIOWriteAdapter.java 1808978 2017-09-20 09:23:26Z ssteiner $
  */
 public class PNGTranscoderImageIOWriteAdapter implements
         PNGTranscoder.WriteAdapter {
 
     /**
      * @throws TranscoderException 
-     * @see org.apache.batik.transcoder.image.PNGTranscoder.WriteAdapter#writeImage(org.apache.batik.transcoder.image.PNGTranscoder, java.awt.image.BufferedImage, org.apache.batik.transcoder.TranscoderOutput)
+     * @see org.apache.batik.transcoder.image.PNGTranscoder.WriteAdapter#writeImage(
+     * org.apache.batik.transcoder.image.PNGTranscoder, java.awt.image.BufferedImage,
+     * org.apache.batik.transcoder.TranscoderOutput)
      */
     public void writeImage(PNGTranscoder transcoder, BufferedImage img,
             TranscoderOutput output) throws TranscoderException {
@@ -51,7 +53,7 @@ public class PNGTranscoderImageIOWriteAdapter implements
 
         int n = -1;
         if (hints.containsKey(PNGTranscoder.KEY_INDEXED)) {
-            n=((Integer)hints.get(PNGTranscoder.KEY_INDEXED)).intValue();
+            n= (Integer) hints.get(PNGTranscoder.KEY_INDEXED);
             if (n==1||n==2||n==4||n==8) 
                 //PNGEncodeParam.Palette can handle these numbers only.
                 img = IndexImage.getIndexedImage(img, 1<<n);

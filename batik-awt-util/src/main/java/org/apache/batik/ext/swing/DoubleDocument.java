@@ -26,7 +26,7 @@ import javax.swing.text.PlainDocument;
  * Helper class. Only allows an Double value in the document.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: DoubleDocument.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DoubleDocument.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class DoubleDocument extends PlainDocument {
 
@@ -53,10 +53,10 @@ public class DoubleDocument extends PlainDocument {
         if(offs==0 && buffer!=null && buffer.length>0 && buffer[0]=='-')
             digit[j++] = buffer[0];
 
-        for (int i = 0; i < buffer.length; i++) {
-            if(Character.isDigit(buffer[i]))
-                digit[j++] = buffer[i];
-            if(!hasDot && buffer[i]=='.'){
+        for (char aBuffer : buffer) {
+            if (Character.isDigit(aBuffer))
+                digit[j++] = aBuffer;
+            if (!hasDot && aBuffer == '.') {
                 digit[j++] = '.';
                 hasDot = true;
             }
@@ -101,7 +101,7 @@ public class DoubleDocument extends PlainDocument {
         }catch(BadLocationException e){
             // Will not happen because we are sure
             // we use the proper range
-            throw new Error( e.getMessage() );
+            throw new RuntimeException( e.getMessage() );
         }
     }
 }

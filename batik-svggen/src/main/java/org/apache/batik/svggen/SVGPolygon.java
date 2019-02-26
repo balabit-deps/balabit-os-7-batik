@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
  * an SVG element.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGPolygon.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGPolygon.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGPolygon extends SVGGraphicObjectConverter {
     /**
@@ -62,7 +62,7 @@ public class SVGPolygon extends SVGGraphicObjectConverter {
             case PathIterator.SEG_QUADTO:
             case PathIterator.SEG_CUBICTO:
             default:
-                throw new Error("invalid segmentType:" + segType );
+                throw new RuntimeException("invalid segmentType:" + segType );
             }
             pi.next();
         } // while !isDone

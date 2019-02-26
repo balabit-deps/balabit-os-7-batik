@@ -54,7 +54,7 @@ import org.apache.batik.ext.awt.image.rendered.PadRed;
  *   Does not support edgeMode="wrap" - pending Tile code.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: ConvolveMatrixRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ConvolveMatrixRable8Bit.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ConvolveMatrixRable8Bit
     extends    AbstractColorInterpolationRable
@@ -98,8 +98,8 @@ public class ConvolveMatrixRable8Bit
         this.kernel = k;
         kernelHasNegValues = false;
         float [] kv = k.getKernelData(null);
-        for (int i=0; i<kv.length; i++)
-            if (kv[i] < 0) {
+        for (float aKv : kv)
+            if (aKv < 0) {
                 kernelHasNegValues = true;
                 break;
             }

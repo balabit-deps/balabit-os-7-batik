@@ -29,7 +29,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -47,6 +46,7 @@ import org.apache.batik.util.ParsedURL;
 import org.apache.batik.util.SVGConstants;
 import org.apache.batik.util.XMLConstants;
 
+import org.apache.batik.w3c.dom.Location;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -63,7 +63,7 @@ import org.w3c.dom.svg.EventListenerInitializer;
  * This class is the base class for SVG scripting.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: BaseScriptingEnvironment.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: BaseScriptingEnvironment.java 1830543 2018-04-30 10:17:31Z ssteiner $
  */
 public class BaseScriptingEnvironment {
     /**
@@ -134,9 +134,8 @@ public class BaseScriptingEnvironment {
      */
     public static boolean isDynamicElement
         (Element elt, BridgeContext ctx, List bridgeExtensions) {
-        Iterator i = bridgeExtensions.iterator();
-        while (i.hasNext()) {
-            BridgeExtension bridgeExtension = (BridgeExtension) i.next();
+        for (Object bridgeExtension1 : bridgeExtensions) {
+            BridgeExtension bridgeExtension = (BridgeExtension) bridgeExtension1;
             if (bridgeExtension.isDynamicElement(elt)) {
                 return true;
             }
@@ -256,7 +255,7 @@ public class BaseScriptingEnvironment {
     protected Map windowObjects = new HashMap();
 
     /**
-     * Set of &lt;script> elements that have already been executed.
+     * Set of &lt;script&gt; elements that have already been executed.
      */
     protected WeakHashMap executedScripts = new WeakHashMap();
 
@@ -343,7 +342,7 @@ public class BaseScriptingEnvironment {
     }
 
     /**
-     * Loads the scripts contained in the &lt;script> elements.
+     * Loads the scripts contained in the &lt;script&gt; elements.
      */
     public void loadScripts() {
         NodeList scripts = document.getElementsByTagNameNS
@@ -357,7 +356,7 @@ public class BaseScriptingEnvironment {
     }
 
     /**
-     * Executes the specified &lt;script> element, if it hasn't been
+     * Executes the specified &lt;script&gt; element, if it hasn't been
      * executed already.
      */
     protected void loadScript(AbstractElement script) {
@@ -420,7 +419,7 @@ public class BaseScriptingEnvironment {
                 if (sh != null) {
                     // Run the script handler.
                     ScriptHandler h;
-                    h = (ScriptHandler)cll.loadClass(sh).newInstance();
+                    h = (ScriptHandler)cll.loadClass(sh).getDeclaredConstructor().newInstance();
 
                     h.run(document, getWindow());
                 }
@@ -430,7 +429,7 @@ public class BaseScriptingEnvironment {
                     // Run the initializer
                     EventListenerInitializer initializer;
                     initializer =
-                        (EventListenerInitializer)cll.loadClass(sh).newInstance();
+                        (EventListenerInitializer)cll.loadClass(sh).getDeclaredConstructor().newInstance();
 
                     getWindow();
 
@@ -541,7 +540,7 @@ public class BaseScriptingEnvironment {
                     (INLINE_SCRIPT_DESCRIPTION,
                      new Object [] {d.getURL(),
                                     "<"+script.getNodeName()+">",
-                                    new Integer(line)});
+                             line});
                 // Inline script.
                 Node n = script.getFirstChild();
                 if (n != null) {
@@ -656,7 +655,7 @@ public class BaseScriptingEnvironment {
             (EVENT_SCRIPT_DESCRIPTION,
              new Object [] {d.getURL(),
                             SVGConstants.SVG_ONLOAD_ATTRIBUTE,
-                            new Integer(line)});
+                     line});
 
         EventListener l = new EventListener() {
                 public void handleEvent(Event evt) {
@@ -922,14 +921,14 @@ public class BaseScriptingEnvironment {
         /**
          * Returns the Location.
          */
-        public org.w3c.dom.Location getLocation() {
+        public Location getLocation() {
             return null;
         }
 
         /**
          * Returns the parent Window object.
          */
-        public org.w3c.dom.Window getParent() {
+        public org.apache.batik.w3c.dom.Window getParent() {
             return null;
         }
 

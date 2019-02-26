@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.awt.font;
 
@@ -41,7 +41,7 @@ import org.apache.batik.ext.awt.geom.PathLength;
  * <li> The layout code works, but it's definitely not perfect.
  * </ul>
  * @author <a href="mailto:dean.jackson@cmis.csiro.au">Dean Jackson</a>
- * @version $Id: TextPathLayout.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TextPathLayout.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 
 public class TextPathLayout {

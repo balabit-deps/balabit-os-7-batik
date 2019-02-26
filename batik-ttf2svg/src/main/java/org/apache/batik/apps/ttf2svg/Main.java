@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.apps.ttf2svg;
 
@@ -27,7 +27,7 @@ import org.apache.batik.svggen.font.SVGFont;
  * to the SVG Font format.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: Main.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Main.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class Main {
     public static void main(String[] args){

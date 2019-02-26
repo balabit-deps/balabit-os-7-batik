@@ -29,7 +29,7 @@ import org.w3c.dom.Node;
  * Base class for all XBL elements to inherit from.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: XBLOMElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XBLOMElement.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class XBLOMElement extends SVGOMElement
                                    implements XBLConstants {
@@ -80,7 +80,7 @@ public abstract class XBLOMElement extends SVGOMElement
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         if (prefix != null &&
@@ -88,7 +88,7 @@ public abstract class XBLOMElement extends SVGOMElement
             !DOMUtilities.isValidName(prefix)) {
             throw createDOMException(DOMException.INVALID_CHARACTER_ERR,
                                      "prefix",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName(),
                                                     prefix });
         }

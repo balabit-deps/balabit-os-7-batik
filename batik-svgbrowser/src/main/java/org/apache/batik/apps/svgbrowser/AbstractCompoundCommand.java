@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * Abstract compound command. Supports the execute / undo / redo of more than
  * one command
  *
- * @version $Id: AbstractCompoundCommand.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractCompoundCommand.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractCompoundCommand extends AbstractUndoableCommand {
 
@@ -54,8 +54,8 @@ public abstract class AbstractCompoundCommand extends AbstractUndoableCommand {
 
     public void execute() {
         int n = atomCommands.size();
-        for (int i = 0; i < n; i++) {
-            UndoableCommand cmd = (UndoableCommand) atomCommands.get(i);
+        for (Object atomCommand : atomCommands) {
+            UndoableCommand cmd = (UndoableCommand) atomCommand;
             cmd.execute();
         }
     }
@@ -70,8 +70,8 @@ public abstract class AbstractCompoundCommand extends AbstractUndoableCommand {
 
     public void redo() {
         int n = atomCommands.size();
-        for (int i = 0; i < n; i++) {
-            UndoableCommand cmd = (UndoableCommand) atomCommands.get(i);
+        for (Object atomCommand : atomCommands) {
+            UndoableCommand cmd = (UndoableCommand) atomCommand;
             cmd.redo();
         }
     }

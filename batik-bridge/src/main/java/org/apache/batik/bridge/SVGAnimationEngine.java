@@ -94,7 +94,7 @@ import org.w3c.dom.svg.SVGPreserveAspectRatio;
  * An AnimationEngine for SVG documents.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVGAnimationEngine.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAnimationEngine.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGAnimationEngine extends AnimationEngine {
 
@@ -258,15 +258,15 @@ public class SVGAnimationEngine extends AnimationEngine {
         String[] eventNamesSVG12 = {
             "load", "resize", "scroll", "zoom"
         };
-        for (int i = 0; i < eventNamesCommon.length; i++) {
-            animationEventNames11.add(eventNamesCommon[i]);
-            animationEventNames12.add(eventNamesCommon[i]);
+        for (String anEventNamesCommon : eventNamesCommon) {
+            animationEventNames11.add(anEventNamesCommon);
+            animationEventNames12.add(anEventNamesCommon);
         }
-        for (int i = 0; i < eventNamesSVG11.length; i++) {
-            animationEventNames11.add(eventNamesSVG11[i]);
+        for (String anEventNamesSVG11 : eventNamesSVG11) {
+            animationEventNames11.add(anEventNamesSVG11);
         }
-        for (int i = 0; i < eventNamesSVG12.length; i++) {
-            animationEventNames12.add(eventNamesSVG12[i]);
+        for (String anEventNamesSVG12 : eventNamesSVG12) {
+            animationEventNames12.add(anEventNamesSVG12);
         }
     }
 
@@ -439,14 +439,14 @@ public class SVGAnimationEngine extends AnimationEngine {
                 timedDocumentRoot.resetDocument(cal);
                 Object[] bridges = initialBridges.toArray();
                 initialBridges = null;
-                for (int i = 0; i < bridges.length; i++) {
+                for (Object bridge2 : bridges) {
                     SVGAnimationElementBridge bridge =
-                        (SVGAnimationElementBridge) bridges[i];
+                            (SVGAnimationElementBridge) bridge2;
                     bridge.initializeAnimation();
                 }
-                for (int i = 0; i < bridges.length; i++) {
+                for (Object bridge1 : bridges) {
                     SVGAnimationElementBridge bridge =
-                        (SVGAnimationElementBridge) bridges[i];
+                            (SVGAnimationElementBridge) bridge1;
                     bridge.initializeTimedElement();
                 }
 

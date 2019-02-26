@@ -15,12 +15,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.image;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.SinglePixelPackedSampleModel;
+import java.lang.reflect.InvocationTargetException;
 
 import org.apache.batik.bridge.UserAgent;
 import org.apache.batik.transcoder.TranscoderException;
@@ -33,7 +34,7 @@ import org.apache.batik.transcoder.keys.StringKey;
  * This class is an <code>ImageTranscoder</code> that produces a TIFF image.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: TIFFTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TIFFTranscoder.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public class TIFFTranscoder extends ImageTranscoder {
 
@@ -62,13 +63,17 @@ public class TIFFTranscoder extends ImageTranscoder {
         WriteAdapter adapter;
         try {
             Class clazz = Class.forName(className);
-            adapter = (WriteAdapter)clazz.newInstance();
+            adapter = (WriteAdapter)clazz.getDeclaredConstructor().newInstance();
             return adapter;
         } catch (ClassNotFoundException e) {
             return null;
         } catch (InstantiationException e) {
             return null;
         } catch (IllegalAccessException e) {
+            return null;
+        } catch (NoSuchMethodException e) {
+            return null;
+        } catch (InvocationTargetException e) {
             return null;
         }
     }
@@ -90,8 +95,8 @@ public class TIFFTranscoder extends ImageTranscoder {
 
         if (hints.containsKey(PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE)) {
             forceTransparentWhite =
-                ((Boolean)hints.get
-                 (PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE)).booleanValue();
+                    (Boolean) hints.get
+                            (PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE);
         }
 
         if (forceTransparentWhite) {
@@ -104,7 +109,7 @@ public class TIFFTranscoder extends ImageTranscoder {
                 "org.apache.batik.ext.awt.image.codec.tiff.TIFFTranscoderInternalCodecWriteAdapter");
         if (adapter == null) {
             adapter = getWriteAdapter(
-                "org.apache.batik.transcoder.image.TIFFTranscoderImageIOWriteAdapter");
+                "org.apache.batik.ext.awt.image.codec.imageio.TIFFTranscoderImageIOWriteAdapter");
         }
         if (adapter == null) {
             throw new TranscoderException(
@@ -121,7 +126,7 @@ public class TIFFTranscoder extends ImageTranscoder {
      * This interface is used by <code>TIFFTranscoder</code> to write TIFF images 
      * through different codecs.
      *
-     * @version $Id: TIFFTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+     * @version $Id: TIFFTranscoder.java 1810083 2017-09-29 10:39:45Z ssteiner $
      */
     public interface WriteAdapter {
         
@@ -145,7 +150,7 @@ public class TIFFTranscoder extends ImageTranscoder {
     /**
      * The forceTransparentWhite key.
      *
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_FORCE_TRANSPARENT_WHITE</td>
@@ -170,7 +175,7 @@ public class TIFFTranscoder extends ImageTranscoder {
      *       encoded TIFF is displayed in a viewer which does not support TIFF
      *       transparency and lets the image display with a white background instead
      *       of a black background.
-     *       <br />
+     *       <br>
      *       However, note that the modified image will display differently
      *       over a white background in a viewer that supports
      *       transparency.</td>
@@ -182,7 +187,7 @@ public class TIFFTranscoder extends ImageTranscoder {
 
     /**
      * The compression method for the image.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_COMPRESSION_METHOD</td>

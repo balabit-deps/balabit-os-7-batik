@@ -19,7 +19,6 @@
 package org.apache.batik.util.gui.xmleditor;
 
 import java.awt.Color;
-import java.awt.Font;
 
 import javax.swing.JEditorPane;
 import javax.swing.event.UndoableEditEvent;
@@ -40,7 +39,7 @@ import javax.swing.undo.UndoManager;
  * </pre>
  *
  * @author <a href="mailto:tonny@kiyut.com">Tonny Kohar</a>
- * @version $Id: XMLTextEditor.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLTextEditor.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class XMLTextEditor extends JEditorPane {
 

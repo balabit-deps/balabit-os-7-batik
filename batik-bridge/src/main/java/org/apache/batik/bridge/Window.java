@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.bridge;
 
@@ -29,9 +29,10 @@ import org.w3c.dom.Node;
  * environment of a SVG document.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: Window.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Window.java 1830543 2018-04-30 10:17:31Z ssteiner $
  */
-public interface Window extends org.w3c.dom.Window {
+public interface Window extends org.apache.batik.w3c.dom.Window
+{
     /**
      * Evaluates the given string repeatedly after the given amount of
      * time.  This method does not stall the script: the evaluation is

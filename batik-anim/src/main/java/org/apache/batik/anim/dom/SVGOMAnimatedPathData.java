@@ -23,7 +23,6 @@ import java.util.Iterator;
 
 import org.apache.batik.anim.values.AnimatablePathDataValue;
 import org.apache.batik.anim.values.AnimatableValue;
-import org.apache.batik.dom.svg.AbstractSVGList;
 import org.apache.batik.dom.svg.AbstractSVGNormPathSegList;
 import org.apache.batik.dom.svg.AbstractSVGPathSegList;
 import org.apache.batik.dom.svg.ListBuilder;
@@ -56,7 +55,7 @@ import org.w3c.dom.svg.SVGPathSegList;
  *
  * @author <a href="mailto:nicolas.socheleau@bitflash.com">Nicolas Socheleau</a>
  * @author <a href="mailto:andrest@world-affair.com">Andres Toussaint</a>
- * @version $Id: SVGOMAnimatedPathData.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGOMAnimatedPathData.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGOMAnimatedPathData
     extends AbstractSVGAnimatedValue

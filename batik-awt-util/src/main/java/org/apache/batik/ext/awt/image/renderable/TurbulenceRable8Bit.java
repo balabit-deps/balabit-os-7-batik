@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.awt.image.renderable;
 
@@ -34,7 +34,7 @@ import org.apache.batik.ext.awt.image.rendered.TurbulencePatternRed;
  * Creates a sourceless image from a turbulence function.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: TurbulenceRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TurbulenceRable8Bit.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class TurbulenceRable8Bit
     extends    AbstractColorInterpolationRable

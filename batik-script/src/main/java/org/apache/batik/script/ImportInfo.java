@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.script;
 
@@ -49,8 +49,8 @@ import java.util.Set;
  * The remainder of a line is whitespace delimited, fully qualified,
  * Java class/package name (i.e.  java.lang.System).
  *
- * @author <a href="mailto:deweese@apache.org>deweese</a>
- * @version $Id: ImportInfo.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @author <a href="mailto:deweese@apache.org">deweese</a>
+ * @version $Id: ImportInfo.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public class ImportInfo {
     /** Default file to read imports from, can be overridden
@@ -77,7 +77,7 @@ public class ImportInfo {
      * This instance is initialized by reading the file
      * identified by 'importFile'.
      */
-    static public ImportInfo getImports() {
+    public static ImportInfo getImports() {
         if (defaultImports == null) 
             defaultImports = readImports();
         return defaultImports;    
@@ -240,4 +240,4 @@ public class ImportInfo {
             }
         }
     }
-};
+}

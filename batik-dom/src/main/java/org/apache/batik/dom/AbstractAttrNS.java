@@ -28,7 +28,7 @@ import org.w3c.dom.Node;
  * support for namespaces.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractAttrNS.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractAttrNS.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractAttrNS extends AbstractAttr {
 
@@ -85,7 +85,7 @@ public abstract class AbstractAttrNS extends AbstractAttr {
                 throw createDOMException
                     (DOMException.NAMESPACE_ERR,
                      "namespace.uri",
-                     new Object[] { new Integer(getNodeType()),
+                     new Object[] {(int) getNodeType(),
                                     getNodeName(),
                                     nsURI });
             }
@@ -93,7 +93,7 @@ public abstract class AbstractAttrNS extends AbstractAttr {
                    !XMLSupport.XMLNS_NAMESPACE_URI.equals(nsURI)) {
             throw createDOMException(DOMException.NAMESPACE_ERR,
                                      "namespace.uri",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName(),
                                                     nsURI });
         }

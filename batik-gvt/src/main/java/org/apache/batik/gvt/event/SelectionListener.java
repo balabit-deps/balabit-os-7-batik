@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.gvt.event;
 
@@ -25,7 +25,7 @@ import java.util.EventListener;
  * The listener interface for receiving selection events.
  *
  * @author <a href="mailto:bill.haneman@ireland.sun.com">Bill Haneman</a>
- * @version $Id: SelectionListener.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SelectionListener.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface SelectionListener extends EventListener {
 

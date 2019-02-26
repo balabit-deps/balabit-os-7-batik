@@ -1,12 +1,22 @@
 From: Vincent Fourmond <fourmond@debian.org>
 Date: Mon, 14 Oct 2013 14:59:02 +0200
 Subject: 06_fix_paths_in_policy_files
-Forwarded: not-needed
-Last-Update: 4-Sep-2017
 
+---
+ .../apache/batik/apps/svgbrowser/resources/svgbrowser.policy | 10 +++++-----
+ .../apache/batik/apps/rasterizer/resources/rasterizer.policy | 12 ++++++------
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/batik-svgbrowser/src/main/resources/org/apache/batik/apps/svgbrowser/resources/svgbrowser.policy b/batik-svgbrowser/src/main/resources/org/apache/batik/apps/svgbrowser/resources/svgbrowser.policy
+index 0d1b634..1f632a7 100644
 --- a/batik-svgbrowser/src/main/resources/org/apache/batik/apps/svgbrowser/resources/svgbrowser.policy
 +++ b/batik-svgbrowser/src/main/resources/org/apache/batik/apps/svgbrowser/resources/svgbrowser.policy
-@@ -22,19 +22,19 @@
+@@ -18,23 +18,23 @@
+ // $Id: svgbrowser.policy 1733416 2016-03-03 07:07:13Z gadams $
+ // -----------------------------------------------------------------------------
+ 
+-grant codeBase "${app.dev.base}/classes/" {
++grant codeBase "file:/usr/share/java/batik-all.jar" {
    permission java.security.AllPermission;
  };
  
@@ -30,9 +40,16 @@ Last-Update: 4-Sep-2017
    permission java.lang.RuntimePermission "createClassLoader";
    permission java.net.SocketPermission "*", "listen, connect, resolve, accept";
    permission java.lang.RuntimePermission "accessDeclaredMembers";
+diff --git a/batik-svgrasterizer/src/main/resources/org/apache/batik/apps/rasterizer/resources/rasterizer.policy b/batik-svgrasterizer/src/main/resources/org/apache/batik/apps/rasterizer/resources/rasterizer.policy
+index 2e626cd..aec36b4 100644
 --- a/batik-svgrasterizer/src/main/resources/org/apache/batik/apps/rasterizer/resources/rasterizer.policy
 +++ b/batik-svgrasterizer/src/main/resources/org/apache/batik/apps/rasterizer/resources/rasterizer.policy
-@@ -22,23 +22,23 @@
+@@ -18,27 +18,27 @@
+ // $Id: rasterizer.policy 1733416 2016-03-03 07:07:13Z gadams $
+ // -----------------------------------------------------------------------------
+ 
+-grant codeBase "${app.dev.base}/classes/" {
++grant codeBase "file:/usr/share/java/batik-all.jar" {
    permission java.security.AllPermission;
  };
  

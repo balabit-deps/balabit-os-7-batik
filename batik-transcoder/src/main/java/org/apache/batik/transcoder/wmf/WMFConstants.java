@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.wmf;
 
@@ -23,7 +23,7 @@ package org.apache.batik.transcoder.wmf;
  * Contains the definitions of WMF constants.
  *
  * @author <a href="mailto:luano@asd.ie">Luan O'Carroll</a>
- * @version $Id: WMFConstants.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WMFConstants.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface WMFConstants
 {

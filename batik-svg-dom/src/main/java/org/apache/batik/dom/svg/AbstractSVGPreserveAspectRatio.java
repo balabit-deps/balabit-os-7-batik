@@ -32,7 +32,7 @@ import org.w3c.dom.svg.SVGPreserveAspectRatio;
  * This is the base implementation for SVGPreservAspectRatio
  *
  * @author  Tonny Kohar
- * @version $Id: AbstractSVGPreserveAspectRatio.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractSVGPreserveAspectRatio.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractSVGPreserveAspectRatio
         implements SVGPreserveAspectRatio,
@@ -157,7 +157,7 @@ public abstract class AbstractSVGPreserveAspectRatio
             throw createDOMException
                 (DOMException.INVALID_MODIFICATION_ERR,
                  "preserve.aspect.ratio.align",
-                 new Object[] { new Integer(align) });
+                 new Object[] {(int) align});
         }
         String value = ALIGN_VALUES[align];
         if (align == SVG_PRESERVEASPECTRATIO_NONE) {
@@ -168,7 +168,7 @@ public abstract class AbstractSVGPreserveAspectRatio
             throw createDOMException
                 (DOMException.INVALID_MODIFICATION_ERR,
                  "preserve.aspect.ratio.meet.or.slice",
-                 new Object[] { new Integer(meetOrSlice) });
+                 new Object[] {(int) meetOrSlice});
         }
         return value + ' ' + MEET_OR_SLICE_VALUES[meetOrSlice];
     }

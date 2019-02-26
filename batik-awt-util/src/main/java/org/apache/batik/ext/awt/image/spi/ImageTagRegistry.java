@@ -41,7 +41,7 @@ import org.apache.xmlgraphics.java2d.color.ICCColorSpaceWithIntent;
  * instances of RegistryEntry in this package.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: ImageTagRegistry.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ImageTagRegistry.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ImageTagRegistry implements ErrorConstants {
 
@@ -239,13 +239,12 @@ public class ImageTagRegistry implements ErrorConstants {
 
         Filter ret = null;
 
-        Iterator i = entries.iterator();
-        while (i.hasNext()) {
-            RegistryEntry re = (RegistryEntry)i.next();
+        for (Object entry : entries) {
+            RegistryEntry re = (RegistryEntry) entry;
 
-            if (! (re instanceof StreamRegistryEntry))
+            if (!(re instanceof StreamRegistryEntry))
                 continue;
-            StreamRegistryEntry sre = (StreamRegistryEntry)re;
+            StreamRegistryEntry sre = (StreamRegistryEntry) re;
 
             try {
                 if (sre.isCompatibleStream(is)) {
@@ -296,9 +295,8 @@ public class ImageTagRegistry implements ErrorConstants {
             return extensions;
 
         extensions = new LinkedList();
-        Iterator iter = entries.iterator();
-        while(iter.hasNext()) {
-            RegistryEntry re = (RegistryEntry)iter.next();
+        for (Object entry : entries) {
+            RegistryEntry re = (RegistryEntry) entry;
             extensions.addAll(re.getStandardExtensions());
         }
         extensions = Collections.unmodifiableList(extensions);
@@ -315,9 +313,8 @@ public class ImageTagRegistry implements ErrorConstants {
             return mimeTypes;
 
         mimeTypes = new LinkedList();
-        Iterator iter = entries.iterator();
-        while(iter.hasNext()) {
-            RegistryEntry re = (RegistryEntry)iter.next();
+        for (Object entry : entries) {
+            RegistryEntry re = (RegistryEntry) entry;
             mimeTypes.addAll(re.getMimeTypes());
         }
         mimeTypes = Collections.unmodifiableList(mimeTypes);

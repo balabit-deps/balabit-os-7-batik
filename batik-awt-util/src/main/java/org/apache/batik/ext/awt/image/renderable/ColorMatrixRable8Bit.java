@@ -28,9 +28,9 @@ import org.apache.batik.ext.awt.image.rendered.ColorMatrixRed;
  * operation
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ColorMatrixRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ColorMatrixRable8Bit.java 1808977 2017-09-20 09:06:07Z ssteiner $
  */
-public class ColorMatrixRable8Bit
+public final class ColorMatrixRable8Bit
     extends    AbstractColorInterpolationRable
     implements ColorMatrixRable {
     /**

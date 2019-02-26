@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.bridge;
 
@@ -33,7 +33,7 @@ import org.mozilla.javascript.ScriptableObject;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.w3c.dom.Location;
+import org.apache.batik.w3c.dom.Location;
 
 /**
  * This class wraps a Window object to expose it to the interpreter.
@@ -41,7 +41,7 @@ import org.w3c.dom.Location;
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: WindowWrapper.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WindowWrapper.java 1830543 2018-04-30 10:17:31Z ssteiner $
  */
 public class WindowWrapper extends ImporterTopLevel {
 
@@ -93,7 +93,7 @@ public class WindowWrapper extends ImporterTopLevel {
         if (len < 2) {
             throw Context.reportRuntimeError("invalid argument count");
         }
-        long to = ((Long)Context.jsToJava(args[1], Long.TYPE)).longValue();
+        long to = (Long) Context.jsToJava(args[1], Long.TYPE);
         if (args[0] instanceof Function) {
             RhinoInterpreter interp =
                 (RhinoInterpreter)window.getInterpreter();
@@ -120,7 +120,7 @@ public class WindowWrapper extends ImporterTopLevel {
         if (len < 2) {
             throw Context.reportRuntimeError("invalid argument count");
         }
-        long to = ((Long)Context.jsToJava(args[1], Long.TYPE)).longValue();
+        long to = (Long) Context.jsToJava(args[1], Long.TYPE);
         if (args[0] instanceof Function) {
             RhinoInterpreter interp =
                 (RhinoInterpreter)window.getInterpreter();

@@ -29,16 +29,16 @@ import org.apache.batik.dom.util.XLinkSupport;
 import org.apache.batik.util.ParsedURL;
 
 /**
- * Bridge class for the &lt;font-face> element.
+ * Bridge class for the &lt;font-face&gt; element.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: SVGFontFaceElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFontFaceElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFontFaceElementBridge extends AbstractSVGBridge
                                       implements ErrorConstants {
 
     /**
-     * Constructs a new bridge for the &lt;font-face> element.
+     * Constructs a new bridge for the &lt;font-face&gt; element.
      */
     public SVGFontFaceElementBridge() {
     }
@@ -52,10 +52,10 @@ public class SVGFontFaceElementBridge extends AbstractSVGBridge
 
     /**
      * Creates an SVGFontFace that repesents the specified
-     * &lt;font-face> element.
+     * &lt;font-face&gt; element.
      *
      * @param ctx The current bridge context.
-     * @param fontFaceElement The &lt;font-face> element.
+     * @param fontFaceElement The &lt;font-face&gt; element.
      *
      * @return A new SVGFontFace.
      */

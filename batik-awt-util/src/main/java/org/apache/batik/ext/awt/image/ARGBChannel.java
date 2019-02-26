@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Enumerated type for an ARGB Channel selector.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ARGBChannel.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ARGBChannel.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public final class ARGBChannel implements Serializable{
     /**
@@ -102,7 +102,7 @@ public final class ARGBChannel implements Serializable{
         case CHANNEL_A:
             return A;
         default:
-            throw new Error("Unknown ARGBChannel value");
+            throw new RuntimeException("Unknown ARGBChannel value");
         }
     }
 }

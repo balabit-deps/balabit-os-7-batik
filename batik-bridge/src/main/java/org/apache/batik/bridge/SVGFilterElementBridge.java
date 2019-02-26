@@ -39,10 +39,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- * Bridge class for the &lt;filter> element.
+ * Bridge class for the &lt;filter&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFilterElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFilterElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFilterElementBridge extends AnimatableGenericSVGBridge
         implements FilterBridge, ErrorConstants {
@@ -53,7 +53,7 @@ public class SVGFilterElementBridge extends AnimatableGenericSVGBridge
     protected static final Color TRANSPARENT_BLACK = new Color(0, true);
 
     /**
-     * Constructs a new bridge for the &lt;filter> element.
+     * Constructs a new bridge for the &lt;filter&gt; element.
      */
     public SVGFilterElementBridge() {}
 

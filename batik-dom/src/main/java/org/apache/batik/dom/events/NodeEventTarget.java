@@ -30,7 +30,7 @@ import org.w3c.dom.events.EventTarget;
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: NodeEventTarget.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: NodeEventTarget.java 1808978 2017-09-20 09:23:26Z ssteiner $
  */
 public interface NodeEventTarget extends EventTarget {
 
@@ -69,7 +69,8 @@ public interface NodeEventTarget extends EventTarget {
      *    NOT_SUPPORTED_ERR: Raised if the <code>Event</code> object has not
      *   been created using <code>DocumentEvent.createEvent()</code>.
      *   <br> INVALID_CHARACTER_ERR: Raised if <code>Event.type</code> is not
-     *   an <a href='http://www.w3.org/TR/2004/REC-xml-names11-20040204/#NT-NCName'>NCName</a> as defined in [<a href='http://www.w3.org/TR/2004/REC-xml-names11-20040204/'>XML Namespaces 1.1</a>]
+     *   an <a href='http://www.w3.org/TR/2004/REC-xml-names11-20040204/#NT-NCName'>NCName</a> as defined in
+     *   [<a href='http://www.w3.org/TR/2004/REC-xml-names11-20040204/'>XML Namespaces 1.1</a>]
      *   .
      * @version DOM Level 3
      */

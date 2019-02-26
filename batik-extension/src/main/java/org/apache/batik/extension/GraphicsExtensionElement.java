@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 package org.apache.batik.extension;
 
 import org.apache.batik.anim.dom.SVGLocatableSupport;
@@ -49,7 +49,7 @@ import org.w3c.dom.svg.SVGTransformable;
  * {@link SVGLangSpace} and {@link SVGTests}.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: GraphicsExtensionElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: GraphicsExtensionElement.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public abstract class GraphicsExtensionElement
         extends    StylableExtensionElement

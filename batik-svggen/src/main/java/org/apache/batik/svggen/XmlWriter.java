@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.svggen;
 
@@ -42,7 +42,7 @@ import org.w3c.dom.Text;
  * for Sun's Project X by David Brownell.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: XmlWriter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XmlWriter.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 class XmlWriter implements SVGConstants {
 

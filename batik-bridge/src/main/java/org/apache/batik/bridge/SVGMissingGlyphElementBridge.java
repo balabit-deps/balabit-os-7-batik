@@ -19,10 +19,10 @@
 package org.apache.batik.bridge;
 
 /**
- * Bridge class for the &lt;missing-glyph> element.
+ * Bridge class for the &lt;missing-glyph&gt; element.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: SVGMissingGlyphElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGMissingGlyphElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGMissingGlyphElementBridge extends SVGGlyphElementBridge {
 

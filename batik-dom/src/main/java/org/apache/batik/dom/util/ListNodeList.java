@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.dom.util;
 
@@ -29,7 +29,7 @@ import org.w3c.dom.Node;
  * wrapping an Java List instace.
  *
  * @author <a href="mailto:deweese@apache.org">deweese</a>
- * @version $Id: ListNodeList.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ListNodeList.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class ListNodeList implements NodeList {
     protected List list;

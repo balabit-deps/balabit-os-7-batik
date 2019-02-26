@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.awt.color;
 
@@ -28,7 +28,7 @@ import org.apache.xmlgraphics.java2d.color.ICCColorSpaceWithIntent;
  * we have already loaded.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: NamedProfileCache.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: NamedProfileCache.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class NamedProfileCache extends SoftReferenceCache {
 
@@ -69,7 +69,7 @@ public class NamedProfileCache extends SoftReferenceCache {
      * If this returns null then you are now 'on the hook'.
      * to put the ICCColorSpaceExt associated with String into the
      * cache.
-     * @param the profile name
+     * @param profileName the profile name
      */
     public synchronized ICCColorSpaceWithIntent request(String profileName) {
         return (ICCColorSpaceWithIntent)super.requestImpl(profileName);

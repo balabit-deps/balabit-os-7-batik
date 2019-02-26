@@ -25,7 +25,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 import java.util.Collection;
 
 import org.apache.batik.gvt.renderer.ImageRenderer;
@@ -36,7 +35,7 @@ import org.apache.batik.ext.awt.geom.RectListManager;
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
  * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: RepaintManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: RepaintManager.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class RepaintManager {
     static final int COPY_OVERHEAD      = 10000;
@@ -65,18 +64,17 @@ public class RepaintManager {
         List rects = new ArrayList(areas.size());
         AffineTransform at = renderer.getTransform();
 
-        Iterator i = areas.iterator();
-        while (i.hasNext()) {
-            Shape s = (Shape)i.next();
+        for (Object area : areas) {
+            Shape s = (Shape) area;
             s = at.createTransformedShape(s);
             Rectangle2D r2d = s.getBounds2D();
-            int x0 = (int)Math.floor(r2d.getX());
-            int y0 = (int)Math.floor(r2d.getY());
-            int x1 = (int)Math.ceil(r2d.getX()+r2d.getWidth());
-            int y1 = (int)Math.ceil(r2d.getY()+r2d.getHeight());
+            int x0 = (int) Math.floor(r2d.getX());
+            int y0 = (int) Math.floor(r2d.getY());
+            int x1 = (int) Math.ceil(r2d.getX() + r2d.getWidth());
+            int y1 = (int) Math.ceil(r2d.getY() + r2d.getHeight());
             // This rectangle must be outset one pixel to ensure
             // it includes the effects of anti-aliasing on objects.
-            Rectangle r = new Rectangle(x0-1, y0-1, x1-x0+3, y1-y0+3);
+            Rectangle r = new Rectangle(x0 - 1, y0 - 1, x1 - x0 + 3, y1 - y0 + 3);
 
             rects.add(r);
         }

@@ -44,7 +44,7 @@ import org.apache.batik.ext.awt.image.GraphicsUtil;
  * to do the work.  Eventually this may move to be more tiled in nature.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: AffineRed.java 1733416 2016-03-03 07:07:13Z gadams $ */
+ * @version $Id: AffineRed.java 1808843 2017-09-19 08:37:38Z ssteiner $ */
 public class AffineRed extends AbstractRed {
 
     RenderingHints  hints;
@@ -190,7 +190,7 @@ public class AffineRed extends AbstractRed {
         myBI = new BufferedImage(myCM,wr.createWritableTranslatedChild(0,0),
                                  myCM.isAlphaPremultiplied(), null);
 
-        op.filter(srcBI, myBI);
+        op.filter(srcBI.getRaster(), myBI.getRaster());
 
         // if ((count % 40) == 0) {
         //     org.apache.batik.ImageDisplay.showImage("Src: " , srcBI);

@@ -30,7 +30,7 @@ import org.apache.batik.transcoder.wmf.WMFConstants;
  * Reads a WMF file, including an Aldus Placable Metafile Header.
  *
  * @author <a href="mailto:luano@asd.ie">Luan O'Carroll</a>
- * @version $Id: WMFRecordStore.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WMFRecordStore.java 1808021 2017-09-11 12:17:28Z ssteiner $
  */
 public class WMFRecordStore extends AbstractWMFReader {
 
@@ -641,7 +641,7 @@ public class WMFRecordStore extends AbstractWMFReader {
                     int dx = (int)(readShort( is ) * xSign * scaleXY);  
                     
                     int len = 2*recSize - 22;
-                    byte bitmap[] = new byte[len];                    
+                    byte[] bitmap = new byte[len];
                     for (int i = 0; i < len; i++) bitmap[i] = is.readByte();
                     
                     mr = new MetaRecord.ByteRecord(bitmap);

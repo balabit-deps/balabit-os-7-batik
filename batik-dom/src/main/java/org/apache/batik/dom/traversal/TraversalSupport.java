@@ -15,11 +15,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.dom.traversal;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,7 +33,7 @@ import org.w3c.dom.traversal.TreeWalker;
  * This class provides support for traversal.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: TraversalSupport.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TraversalSupport.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class TraversalSupport {
     
@@ -94,9 +93,8 @@ public class TraversalSupport {
      */
     public void nodeToBeRemoved(Node removedNode) {
         if (iterators != null) {
-            Iterator it = iterators.iterator();
-            while (it.hasNext()) {
-                ((DOMNodeIterator)it.next()).nodeToBeRemoved(removedNode);
+            for (Object iterator : iterators) {
+                ((DOMNodeIterator) iterator).nodeToBeRemoved(removedNode);
             }
         }
     }

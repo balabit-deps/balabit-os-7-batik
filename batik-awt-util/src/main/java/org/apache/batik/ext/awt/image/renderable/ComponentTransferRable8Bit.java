@@ -35,7 +35,7 @@ import org.apache.batik.ext.awt.image.rendered.ComponentTransferRed;
  * transfer operation.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ComponentTransferRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ComponentTransferRable8Bit.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class ComponentTransferRable8Bit
     extends    AbstractColorInterpolationRable
@@ -226,7 +226,7 @@ public class ComponentTransferRable8Bit
                 break;
             default:
                 // Should never happen
-                throw new Error();
+                throw new RuntimeException();
             }
         }
 

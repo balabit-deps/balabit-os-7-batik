@@ -26,9 +26,9 @@ import org.apache.batik.util.Service;
 
 /**
  *
- * @version $Id: ImageWriterRegistry.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ImageWriterRegistry.java 1808977 2017-09-20 09:06:07Z ssteiner $
  */
-public class ImageWriterRegistry {
+public final class ImageWriterRegistry {
 
     private static ImageWriterRegistry instance;
 

@@ -19,15 +19,15 @@
 package org.apache.batik.bridge;
 
 /**
- * Bridge class for the &lt;hkern> element.
+ * Bridge class for the &lt;hkern&gt; element.
  *
  * @author <a href="mailto:dean.jackson@cmis.csiro.au">Dean Jackson</a>
- * @version $Id: SVGHKernElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGHKernElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGHKernElementBridge extends SVGKernElementBridge {
 
     /**
-     * Constructs a new bridge for the &lt;hkern> element.
+     * Constructs a new bridge for the &lt;hkern&gt; element.
      */
     public SVGHKernElementBridge() {}
 

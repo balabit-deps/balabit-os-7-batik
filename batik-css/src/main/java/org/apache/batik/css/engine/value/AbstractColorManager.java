@@ -31,7 +31,7 @@ import org.w3c.dom.css.CSSPrimitiveValue;
  * CSS color values.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractColorManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractColorManager.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractColorManager extends IdentifierManager {
 
@@ -251,7 +251,7 @@ public abstract class AbstractColorManager extends IdentifierManager {
     private DOMException createInvalidRGBComponentUnitDOMException
         (short type) {
         Object[] p = new Object[] { getPropertyName(),
-                                    new Integer(type) };
+                (int) type};
         String s = Messages.formatMessage("invalid.rgb.component.unit", p);
         return new DOMException(DOMException.NOT_SUPPORTED_ERR, s);
     }

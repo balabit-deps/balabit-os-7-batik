@@ -41,14 +41,15 @@ import org.apache.batik.transcoder.image.TIFFTranscoder;
  * This class is a helper to <code>TIFFTranscoder</code> that writes TIFF images 
  * through the Image I/O API.
  *
- * @version $Id: TIFFTranscoderImageIOWriteAdapter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TIFFTranscoderImageIOWriteAdapter.java 1808978 2017-09-20 09:23:26Z ssteiner $
  */
 public class TIFFTranscoderImageIOWriteAdapter 
     implements TIFFTranscoder.WriteAdapter {
 
     /**
      * @throws TranscoderException 
-     * @see org.apache.batik.transcoder.image.TIFFTranscoder.WriteAdapter#writeImage(TIFFTranscoder, java.awt.image.BufferedImage, org.apache.batik.transcoder.TranscoderOutput)
+     * @see org.apache.batik.transcoder.image.TIFFTranscoder.WriteAdapter#writeImage(TIFFTranscoder,
+     * java.awt.image.BufferedImage, org.apache.batik.transcoder.TranscoderOutput)
      */
     public void writeImage(TIFFTranscoder transcoder, BufferedImage img,
             TranscoderOutput output) throws TranscoderException {

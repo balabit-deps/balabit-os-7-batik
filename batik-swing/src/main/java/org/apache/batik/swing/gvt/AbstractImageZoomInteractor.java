@@ -18,17 +18,16 @@
  */
 package org.apache.batik.swing.gvt;
 
-import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
 
 /**
  * This class represents a zoom interactor.
  * To use it, just redefine the {@link
- * InteractorAdapter#startInteraction(InputEvent)} method.
+ * InteractorAdapter#startInteraction(java.awt.event.InputEvent)} method.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractImageZoomInteractor.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractImageZoomInteractor.java 1808975 2017-09-20 08:59:36Z ssteiner $
  */
 public class AbstractImageZoomInteractor extends InteractorAdapter {
 

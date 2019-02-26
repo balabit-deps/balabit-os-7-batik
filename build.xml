@@ -65,7 +65,7 @@ To display the available targets type:
   [win32] .\build.bat help
 
  
- $Id: build.xml 1789135 2017-03-28 13:32:27Z ssteiner $
+ $Id: build.xml 1831404 2018-05-11 12:00:19Z ssteiner $
 
 -->
 
@@ -82,8 +82,8 @@ To display the available targets type:
     </tstamp>
     <property name="Project"            value="Apache Batik" />
     <property name="project"            value="batik" />
-    <property name="year"               value="2017" />
-    <property name="version"            value="1.9" />
+    <property name="year"               value="2018" />
+    <property name="version"            value="1.10" />
     <property name="revisionType"       value="" />
     <property name="revisionNumber"     value="" />
     <property name="completeVersion"    value="${version}${revisionType}${revisionNumber}" />
@@ -101,7 +101,7 @@ To display the available targets type:
     <property name="src"                value="sources"/>
     <property name="src-internal-codec" value="sources-internal-codec"/>
     <property name="resources"          value="resources"/>
-    <property name="testsrc"            value="test-sources"/>
+    <property name="testsrc"            value="batik-test-old/src/test/java"/>
     <property name="testresources"      value="test-resources"/>
     <property name="dest"               value="classes"/>
     <property name="dest-internal-codec" value="classes-internal-codec"/>
@@ -639,7 +639,7 @@ JAVA=/usr/bin/java
       <src path="batik-test/src/main/java"/>
       <src path="batik-test-svg/src/main/java"/>
       <src path="batik-test-swing/src/main/java"/>
-      <src path="batik-test-util/src/main/java"/>
+      <!-- <src path="batik-test-util/src/main/java"/> -->
       <src path="batik-util/src/test/java"/>
       <exclude name="org/apache/batik/util/*TestCases.java"/>
       <exclude name="org/apache/batik/util/*TestSuite.java"/>
@@ -2559,4 +2559,49 @@ JAVA=/usr/bin/java
     <delete file="${project}-docs-${completeVersion}.tar.gz"/>
     <delete file="${project}-src-${completeVersion}.tar.gz"/>
   </target>
+
+  <target name="junit" depends="init, compiletest, testdirs">
+    <property name="junit.reports.dir" value="${build}/test-reports"/>   
+    <path id="standard-junit-classpath">
+        <pathelement location="${dest}"/>
+        <path refid="libs-classpath"/>
+        <path refid="libs-build-classpath"/>
+        <pathelement location="resources"/>
+        <pathelement location="test-resources"/>
+    </path>               
+    <mkdir dir="${junit.reports.dir}"/>
+    <junit dir="${basedir}" haltonfailure="yes" fork="true" forkmode="once" printsummary="yes" showoutput="true">
+      <sysproperty key="jawa.awt.headless" value="true"/>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="plain" usefile="true"/>
+      <formatter type="xml" usefile="true"/>
+      <classpath>
+        <path refid="standard-junit-classpath"/>
+      </classpath>
+      <assertions>
+        <enable/>
+      </assertions>
+      <batchtest todir="${junit.reports.dir}">
+        <fileset dir="classes" includes="**/*TestCase.class"/>
+      </batchtest>
+    </junit>
+  </target>
+
+  <target name="checkstyle" depends="init" description="Runs Checkstyle for a code quality report">
+    <property name="checkstyle.location" value="lib/checkstyle-5.6-all.jar" />
+    <property name="checkstyle.config" value="checkstyle.xml" />
+    <path id="checkstyle-classpath">
+      <pathelement location="${checkstyle.location}"/>
+    </path>
+    <taskdef name="checkstyle" classname="com.puppycrawl.tools.checkstyle.CheckStyleTask" classpathref="checkstyle-classpath"/>
+    <mkdir dir="${build}"/>
+    <checkstyle config="${checkstyle.config}" failonviolation="true" maxWarnings="0">
+      <classpath>
+        <path refid="checkstyle-classpath"/>
+      </classpath>
+      <fileset dir="." includes="**/*.java"/>
+      <formatter type="xml" toFile="${build}/report_checkstyle.xml"/>
+      <formatter type="plain"/>
+    </checkstyle>
+  </target>  
 </project>

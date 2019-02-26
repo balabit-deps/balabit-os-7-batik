@@ -31,17 +31,17 @@ import org.apache.batik.gvt.GraphicsNode;
 import org.w3c.dom.Element;
 
 /**
- * Bridge class for the &lt;feGaussianBlur> element.
+ * Bridge class for the &lt;feGaussianBlur&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFeGaussianBlurElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFeGaussianBlurElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFeGaussianBlurElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge {
 
 
     /**
-     * Constructs a new bridge for the &lt;feGaussianBlur> element.
+     * Constructs a new bridge for the &lt;feGaussianBlur&gt; element.
      */
     public SVGFeGaussianBlurElementBridge() {}
 

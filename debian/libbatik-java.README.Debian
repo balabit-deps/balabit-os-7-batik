@@ -9,7 +9,7 @@ batik-all.jar  (full batik library)
 batik-ext.jar  (batik dom and sax bindings)
 batik-libs.jar (batik without dom and sax bindings)
 
-fop-transcoder.jar (the ps/pdf transcoder for batik 
+fop-transcoder.jar (the ps/pdf transcoder for batik
                     from the fop project)
 
 The class SVGDOMImplementation has been moved in the package.

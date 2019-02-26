@@ -27,7 +27,7 @@ import org.w3c.dom.Node;
  * This class implements the {@link org.w3c.dom.Element} interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractElementNS.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractElementNS.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractElementNS extends AbstractElement {
 
@@ -73,7 +73,7 @@ public abstract class AbstractElementNS extends AbstractElement {
                 throw createDOMException
                     (DOMException.NAMESPACE_ERR,
                      "namespace.uri",
-                     new Object[] { new Integer(getNodeType()),
+                     new Object[] {(int) getNodeType(),
                                     getNodeName(),
                                     nsURI });
             }

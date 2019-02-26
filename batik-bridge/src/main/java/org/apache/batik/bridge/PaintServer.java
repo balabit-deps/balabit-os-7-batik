@@ -63,7 +63,7 @@ import org.w3c.dom.css.CSSValue;
  * Paint using the ShapePainter interface.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: PaintServer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PaintServer.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public abstract class PaintServer
     implements SVGConstants, CSSConstants, ErrorConstants {
@@ -630,8 +630,8 @@ public abstract class PaintServer
             // negative values
             if ( dashoffset < 0 ) {
                 float dashpatternlength = 0;
-                for ( int i=0; i<dasharray.length; i++ ) {
-                    dashpatternlength += dasharray[i];
+                for (float aDasharray : dasharray) {
+                    dashpatternlength += aDasharray;
                 }
                 // if the dash pattern consists of an odd number of elements,
                 // the pattern length must be doubled
@@ -737,7 +737,7 @@ public abstract class PaintServer
     /////////////////////////////////////////////////////////////////////////
 
     /**
-     * Returns the value of one color component (0 <= result <= 255).
+     * Returns the value of one color component (0 &lt;= result &lt;= 255).
      * @param v the value that defines the color component
      */
     public static int resolveColorComponent(Value v) {

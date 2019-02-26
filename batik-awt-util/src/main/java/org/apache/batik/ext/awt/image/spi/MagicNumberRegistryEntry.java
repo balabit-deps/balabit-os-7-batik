@@ -31,7 +31,7 @@ import java.io.StreamCorruptedException;
  * of Magic Numbers that correspond to your format (Some formats have
  * multiple magic numbers associated with them).
  *
- * @version $Id: MagicNumberRegistryEntry.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: MagicNumberRegistryEntry.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class MagicNumberRegistryEntry
     extends AbstractRegistryEntry
@@ -278,8 +278,8 @@ public abstract class MagicNumberRegistryEntry
      */
     public int getReadlimit() {
         int maxbuf = 0;
-        for (int i=0; i<magicNumbers.length; i++) {
-            int req = magicNumbers[i].getReadlimit();
+        for (MagicNumber magicNumber : magicNumbers) {
+            int req = magicNumber.getReadlimit();
             if (req > maxbuf) {
                 maxbuf = req;
             }
@@ -293,8 +293,8 @@ public abstract class MagicNumberRegistryEntry
      */
     public boolean isCompatibleStream(InputStream is)
         throws StreamCorruptedException {
-        for (int i=0; i<magicNumbers.length; i++) {
-            if (magicNumbers[i].isMatch(is)) {
+        for (MagicNumber magicNumber : magicNumbers) {
+            if (magicNumber.isMatch(is)) {
                 return true;
             }
         }

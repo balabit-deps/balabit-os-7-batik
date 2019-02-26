@@ -1,3 +1,38 @@
+batik (1.10-2~18.04) bionic; urgency=medium
+
+  * Backport for OpenJDK 11. LP: #1814133.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 26 Feb 2019 13:09:09 +0100
+
+batik (1.10-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the build failure with Java 11 (Closes: #913050)
+  * Tightened the version of maven-debian-helper required to build batik
+    (Closes: #902532)
+  * Standards-Version updated to 4.2.1
+  * Use salsa.debian.org Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 20 Dec 2018 00:28:22 +0100
+
+batik (1.10-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.10.
+    - squiggle works as expected again after updating the policy patch.
+      (Closes: #884481)
+    - Fix CVE-2018-8013: information disclosure vulnerability.
+      (Closes: #899374)
+  * Drop 07_optional_rhino_and_jython_dependencies.patch. Applied upstream.
+  * Remove repack scripts and use Files-Excluded mechanism instead.
+  * Update the watch file. Use Files-Excluded.
+  * Ignore jython artifact and add no-Jython-support.patch. Jython as a
+    scripting language for Batik is no longer supported because the dependency
+    complicates transitions. (Closes: #884536)
+  * Ignore batik-test-old module.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 25 May 2018 13:53:34 +0200
+
 batik (1.9-3) unstable; urgency=medium
 
   * Team upload.
@@ -15,7 +50,7 @@ batik (1.9-2) unstable; urgency=medium
 
   * Fix "batik-1.9 causes FTBFS for freeplane due to changed
     artifacts/poms" Upstream poms assume maven build. Ant build bundles contents
-    of batik-i18n.jar and batik-constants.jar into batik-util.jar. Use 
+    of batik-i18n.jar and batik-constants.jar into batik-util.jar. Use
     debian/maven.rules to adjust for this. (Closes: #875322)
 
  -- Christopher Hoskin <mans0954@debian.org>  Wed, 13 Sep 2017 07:57:01 +0100
@@ -25,14 +60,14 @@ batik (1.9-1) unstable; urgency=medium
   * Team upload.
   * Moved the package to Git
   * Updated signing keys from https://www.apache.org/dist/xmlgraphics/batik/KEYS
-  * Exclude jar files from documentation-sources 
+  * Exclude jar files from documentation-sources
   * Add repack script to remove non-free ICC profiles
-  * New upstream (1.9) 
+  * New upstream (1.9)
       + Fix "CVE-2017-5662: information disclosure vulnerability" Upstream claim
         BATIK-1139 is fixed in 1.9 (Closes: #860566)
-  * Disable old patches, pending further investigation 
+  * Disable old patches, pending further investigation
   * Get package building again
-      +  maven-artifacts is no longer a target, explicitly add jars to 
+      +  maven-artifacts is no longer a target, explicitly add jars to
          DEB_ANT_BUILD_TARGET
       +  Add debian/debian/libbatik-java.poms, call mh_install to install jars
          and poms, for closer alignment to other pkg-java packages
@@ -41,10 +76,10 @@ batik (1.9-1) unstable; urgency=medium
   * Fix "batik is crashing (libbatik-java)" by patching build.xml to specify
     classpaths as appropriate for Debian (Closes: #605063)
   * Update Standards-Version from 3.9.8 to 4.0.0 (no change required)
-  * Update 06_fix_paths_in_policy_files.patch 
-  * Remove bug805469.patch (fixed upstream 
+  * Update 06_fix_paths_in_policy_files.patch
+  * Remove bug805469.patch (fixed upstream
     http://svn.apache.org/viewvc?view=revision&revision=1687506)
-  * Update debian/copyright 
+  * Update debian/copyright
   * Remove unnecessary greater-than versioned dependencies from debian/control
 
  -- Christopher Hoskin <mans0954@debian.org>  Mon, 04 Sep 2017 06:57:58 +0100
@@ -149,8 +184,8 @@ batik (1.7+dfsg-2) unstable; urgency=low
 batik (1.7+dfsg-1) unstable; urgency=low
 
   * Provide a repackaged tarball stripping all binary jars (closes: #657244)
-    - updated debian/new-upstream as a consequence 
-  * Disable the installation of batik-js.jar, that wasn't built from sources 
+    - updated debian/new-upstream as a consequence
+  * Disable the installation of batik-js.jar, that wasn't built from sources
     (it was a subset of rhino's js.jar)
   * Conforms to standards 3.9.3
   * Modernize a bit debian/copyright
@@ -237,7 +272,7 @@ batik (1.7-2) unstable; urgency=low
   * Build class version 49 (instead of 50)
 
   [ Vincent Fourmond ]
-  * Minor updates to the debian/copyright file 
+  * Minor updates to the debian/copyright file
   * It seems time has come for an upload to unstable...
   * Adding ${misc:Depends} for potential debhelper-induced dependencies
   * Tweaking rasterizer.1 to avoid unbreakable lines
@@ -247,7 +282,7 @@ batik (1.7-2) unstable; urgency=low
 batik (1.7-1) experimental; urgency=low
 
   * New upstream release (Closes: #417888, #490556)
-  * Switched to using java-wrappers for executables; dropping the 
+  * Switched to using java-wrappers for executables; dropping the
     /usr/lib/java/wrappers.sh script
   * Switched debian/copyright to a machine-readable format
   * Added ANT_OPTS to fix the compiler out of memory problem
@@ -264,7 +299,7 @@ batik (1.7-1) experimental; urgency=low
   * Conforms to standards 3.8.0
   * Updated rasterizer.sh to work with libxml-commons-external-java
     and openjdk (closes: #490621)
-  * Move wrapper scripts to debian/wrappers, updating debian/rules 
+  * Move wrapper scripts to debian/wrappers, updating debian/rules
     accordingly
   * Recommend fop for PDF output of rasterizer
   * Removed README.Debian-source: we don't add the fop sources anymore
@@ -308,7 +343,7 @@ batik (1.6-3) unstable; urgency=low
 
 batik (1.6-2) unstable; urgency=low
 
-  * Re-Introduce lost link batik.jar and add 02_fix_jar_target.patch 
+  * Re-Introduce lost link batik.jar and add 02_fix_jar_target.patch
     to fix library content (closes: #334878)
   * Thighten depends on avalon-framework (closes: #335883)
   * Corrected README.Debian
@@ -323,12 +358,12 @@ batik (1.6-1) unstable; urgency=low
   * Use JAVA_HOME dirs as generated by java-package (closes: #306639)
   * Include, build and ship the pdf-transcoder from fop CVS (closes: #327354)
     + See README.Debian-source for details about the transcoder source
-    + Added build-deps and depends on libavalon-framework-java, 
+    + Added build-deps and depends on libavalon-framework-java,
       libcommons-io-java and libcommons-logging-java for the pdf-transcoder
     + Patched build.xml to call the pdf-transcoder build target
   * Removed Ola and Stephan from uploaders
   * Extended description a little bit
-  * Standards-Version 3.6.2 (no changes)  
+  * Standards-Version 3.6.2 (no changes)
 
  -- Wolfgang Baer <WBaer@gmx.de>  Mon,  3 Oct 2005 19:29:22 +0200
 
@@ -341,7 +376,7 @@ batik (1.5.1-1) unstable; urgency=low
   * Updated README.Debian explaining why built with non-free jdk
   * Updated standards version to 3.6.1 - no changes
   * avdyk: I added Wolfgang to the uploaders
-  
+
  -- Wolfgang Baer <WBaer@gmx.de>  Sun,  6 Mar 2005 20:30:08 +0100
 
 batik (1.5final-3) unstable; urgency=low

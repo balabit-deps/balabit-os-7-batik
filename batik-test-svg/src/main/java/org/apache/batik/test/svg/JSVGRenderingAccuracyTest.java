@@ -27,7 +27,6 @@ import java.io.PrintWriter;
 import java.net.URL;
 
 import java.util.List;
-import java.util.Iterator;
 
 import org.apache.batik.test.DefaultTestReport;
 import org.apache.batik.test.TestReport;
@@ -45,7 +44,7 @@ import java.awt.image.BufferedImage;
  * Complete Class Desc
  *
  * @author <a href="mailto:deweese@apache.org">l449433</a>
- * @version $Id: JSVGRenderingAccuracyTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: JSVGRenderingAccuracyTest.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class JSVGRenderingAccuracyTest extends SamplesRenderingTest 
        implements JSVGCanvasHandler.Delegate {
@@ -134,9 +133,8 @@ public class JSVGRenderingAccuracyTest extends SamplesRenderingTest
 
                 // Paint the overlays
                 Graphics2D g = theImage.createGraphics();
-                Iterator it = overlays.iterator();
-                while (it.hasNext()) {
-                    ((Overlay)it.next()).paint(g);
+                for (Object overlay : overlays) {
+                    ((Overlay) overlay).paint(g);
                 }
 
                 saveImage(theImage, fos);

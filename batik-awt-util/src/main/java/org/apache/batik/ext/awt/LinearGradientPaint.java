@@ -44,7 +44,6 @@ import java.awt.image.ColorModel;
  * For example:
  * <br>
  * <code>
- * <p>
  * Point2D start = new Point2D.Float(0, 0);<br>
  * Point2D end = new Point2D.Float(100,100);<br>
  * float[] dist = {0.0, 0.2, 1.0};<br>
@@ -73,7 +72,7 @@ import java.awt.image.ColorModel;
  * <p> The following image demonstrates the options NO_CYCLE and REFLECT.
  *
  * <p>
- * <img src = "cyclic.jpg">
+ * <img alt="" src = "cyclic.jpg">
  *
  * <p> The colorSpace parameter allows the user to specify in which colorspace
  *  the interpolation should be performed, default sRGB or linearized RGB.
@@ -81,7 +80,7 @@ import java.awt.image.ColorModel;
  *
  * @author Nicholas Talian, Vincent Hardy, Jim Graham, Jerry Evans
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: LinearGradientPaint.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: LinearGradientPaint.java 1805419 2017-08-18 13:04:30Z ssteiner $
  * @see java.awt.Paint
  * @see java.awt.Graphics2D#setPaint
  *

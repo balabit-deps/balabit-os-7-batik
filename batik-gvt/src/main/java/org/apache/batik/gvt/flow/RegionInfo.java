@@ -23,12 +23,12 @@ import java.awt.Shape;
 
 /**
  * This class holds the neccessary information to render a
- * &lt;batik:flowRegion> that is defined within the &lt;batik:flowRoot>
+ * &lt;batik:flowRegion&gt; that is defined within the &lt;batik:flowRoot&gt;
  * element.  Namely it holds the bounds of the region and the desired
  * vertical alignment.
  *
  * @author <a href="mailto:thomas.deweese@kodak.com">Thomas DeWeese</a>
- * @version $Id: RegionInfo.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: RegionInfo.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class RegionInfo {
 

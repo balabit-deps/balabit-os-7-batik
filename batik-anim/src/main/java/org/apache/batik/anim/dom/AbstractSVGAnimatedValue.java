@@ -18,7 +18,6 @@
  */
 package org.apache.batik.anim.dom;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import org.apache.batik.anim.values.AnimatableValue;
@@ -28,7 +27,7 @@ import org.apache.batik.anim.values.AnimatableValue;
  * implements an {@link AnimatedAttributeListener} list.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: AbstractSVGAnimatedValue.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractSVGAnimatedValue.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractSVGAnimatedValue
     implements AnimatedLiveAttributeValue {
@@ -125,10 +124,9 @@ public abstract class AbstractSVGAnimatedValue
      * Fires the listeners for the animated value.
      */
     protected void fireAnimatedAttributeListeners() {
-        Iterator i = listeners.iterator();
-        while (i.hasNext()) {
+        for (Object listener1 : listeners) {
             AnimatedAttributeListener listener =
-                (AnimatedAttributeListener) i.next();
+                    (AnimatedAttributeListener) listener1;
             listener.animatedAttributeChanged(element, this);
         }
     }

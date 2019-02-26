@@ -22,7 +22,7 @@ package org.apache.batik.transcoder;
  * Thrown when a transcoder is not able to transcode its input.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: TranscoderException.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TranscoderException.java 1805619 2017-08-21 10:57:35Z ssteiner $
  */
 public class TranscoderException extends Exception {
 
@@ -51,7 +51,7 @@ public class TranscoderException extends Exception {
      * @param ex the original exception
      */
     public TranscoderException(String s, Exception ex) {
-        super(s);
+        super(s, ex);
         this.ex = ex;
     }
 

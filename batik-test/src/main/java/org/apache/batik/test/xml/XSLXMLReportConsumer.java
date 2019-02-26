@@ -39,7 +39,7 @@ import org.apache.batik.test.TestException;
  * XML file and stores the result in a configurable directory.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: XSLXMLReportConsumer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XSLXMLReportConsumer.java 1803263 2017-07-28 10:51:01Z ssteiner $
  */
 public class XSLXMLReportConsumer 
     implements XMLTestReportProcessor.XMLReportConsumer {
@@ -91,7 +91,7 @@ public class XSLXMLReportConsumer
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer transformer = tFactory.newTransformer(new StreamSource(stylesheet));
         
-        transformer.transform(new StreamSource(xmlReport.toURL().toString()), 
+        transformer.transform(new StreamSource(xmlReport.toURI().toURL().toString()),
                               new StreamResult(new FileOutputStream(createNewReportOutput(reportDirectory).getAbsolutePath())));
     }
     

@@ -18,15 +18,17 @@
  */
 package org.apache.batik.dom;
 
-import org.apache.batik.dom.util.HashTable;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.stylesheets.StyleSheet;
+
+import java.util.HashMap;
 
 /**
  * This interface represents a StyleSheet factory.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: StyleSheetFactory.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: StyleSheetFactory.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public interface StyleSheetFactory {
     /**
@@ -34,5 +36,5 @@ public interface StyleSheetFactory {
      * processing instruction or return null when it is not possible
      * to create the given stylesheet.
      */
-    StyleSheet createStyleSheet(Node node, HashTable pseudoAttrs);
+    StyleSheet createStyleSheet(Node node, HashMap<String, String> pseudoAttrs);
 }

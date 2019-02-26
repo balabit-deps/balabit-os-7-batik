@@ -34,10 +34,10 @@ import org.w3c.dom.css.CSSValue;
 import org.w3c.dom.css.CSSPrimitiveValue;
 
 /**
- * This class represents a &lt;font-face> element or @font-face rule
+ * This class represents a &lt;font-face&gt; element or @font-face rule
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: CSSFontFace.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CSSFontFace.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class CSSFontFace extends FontFace implements SVGConstants {
 

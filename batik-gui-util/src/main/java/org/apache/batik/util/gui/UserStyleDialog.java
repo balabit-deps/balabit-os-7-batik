@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.util.gui;
 
@@ -52,7 +52,7 @@ import org.apache.batik.util.resources.ResourceManager;
  * This class represents a dialog to select the user style sheet.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: UserStyleDialog.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: UserStyleDialog.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class UserStyleDialog extends JDialog implements ActionMap {
 

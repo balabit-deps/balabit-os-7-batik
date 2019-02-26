@@ -23,7 +23,6 @@ import java.awt.font.TextLayout;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -35,7 +34,7 @@ import java.util.Set;
  * in a text run will all have the same bidi level.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: BidiAttributedCharacterIterator.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: BidiAttributedCharacterIterator.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class BidiAttributedCharacterIterator implements AttributedCharacterIterator {
 
@@ -43,7 +42,7 @@ public class BidiAttributedCharacterIterator implements AttributedCharacterItera
     private FontRenderContext frc;
     private int chunkStart;
     private int [] newCharOrder;
-    private static final Float FLOAT_NAN = new Float(Float.NaN);
+    private static final Float FLOAT_NAN = Float.NaN;
 
 
     protected BidiAttributedCharacterIterator
@@ -99,11 +98,10 @@ public class BidiAttributedCharacterIterator implements AttributedCharacterItera
                 Map attrMap = aci.getAttributes();
                 int extent  = aci.getRunLimit();
                 Map destMap = new HashMap(attrMap.size());
-                Iterator it  = attrMap.entrySet().iterator();
-                while (it.hasNext()) {
+                for (Object o : attrMap.entrySet()) {
                     // Font doesn't like getting attribute sets with
                     // null keys or values so we strip them here.
-                    Map.Entry e = (Map.Entry)it.next();
+                    Map.Entry e = (Map.Entry) o;
                     Object key = e.getKey();
                     if (key == null) continue;
                     Object value = e.getValue();
@@ -138,7 +136,7 @@ public class BidiAttributedCharacterIterator implements AttributedCharacterItera
             if (newBiDi != currBiDi) {
                 as.addAttribute
                     (GVTAttributedCharacterIterator.TextAttribute.BIDI_LEVEL,
-                     new Integer(currBiDi), runStart, i);
+                            currBiDi, runStart, i);
                 runStart = i;
                 currBiDi  = newBiDi;
                 if (newBiDi > maxBiDi) maxBiDi = newBiDi;
@@ -146,7 +144,7 @@ public class BidiAttributedCharacterIterator implements AttributedCharacterItera
         }
         as.addAttribute
             (GVTAttributedCharacterIterator.TextAttribute.BIDI_LEVEL,
-             new Integer(currBiDi), runStart, numChars);
+                    currBiDi, runStart, numChars);
 
         aci = as.getIterator();
 

@@ -25,7 +25,7 @@ import java.io.File;
  * rules for the various configuration parameters.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: PreconfiguredRenderingTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PreconfiguredRenderingTest.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class PreconfiguredRenderingTest extends SVGRenderingAccuracyTest {
     /**
@@ -62,8 +62,8 @@ public abstract class PreconfiguredRenderingTest extends SVGRenderingAccuracyTes
                   buildRefImgURL(dirNfile[0], dirNfile[1]));
 
         String[] variationURLs = buildVariationURLs(dirNfile[0], dirNfile[1]);
-        for (int i = 0; i < variationURLs.length; i++) {
-            addVariationURL(variationURLs[i]);
+        for (String variationURL : variationURLs) {
+            addVariationURL(variationURL);
         }
         setSaveVariation(new File(buildSaveVariationFile(dirNfile[0], dirNfile[1])));
         setCandidateReference(new File(buildCandidateReferenceFile(dirNfile[0],dirNfile[1])));

@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.svg2svg;
 
@@ -41,7 +41,7 @@ import org.w3c.dom.Document;
  * This class is a trancoder from SVG to SVG.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVGTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGTranscoder.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGTranscoder extends AbstractTranscoder {
 
@@ -170,18 +170,18 @@ public class SVGTranscoder extends AbstractTranscoder {
         if (r == null) {
             Document d = input.getDocument();
             if (d == null) {
-                throw new Error("Reader or Document expected");
+                throw new RuntimeException("Reader or Document expected");
             }
             StringWriter sw = new StringWriter( 1024 );
             try {
                 DOMUtilities.writeDocument(d, sw);
             } catch ( IOException ioEx ) {
-                throw new Error("IO:" + ioEx.getMessage() );
+                throw new RuntimeException("IO:" + ioEx.getMessage() );
             }
             r = new StringReader(sw.toString());
         }
         if (w == null) {
-            throw new Error("Writer expected");
+            throw new RuntimeException("Writer expected");
         }
         prettyPrint(r, w);
     }
@@ -199,15 +199,15 @@ public class SVGTranscoder extends AbstractTranscoder {
             }
             Boolean b = (Boolean)hints.get(KEY_FORMAT);
             if (b != null) {
-                pp.setFormat(b.booleanValue());
+                pp.setFormat(b);
             }
             Integer i = (Integer)hints.get(KEY_TABULATION_WIDTH);
             if (i != null) {
-                pp.setTabulationWidth(i.intValue());
+                pp.setTabulationWidth(i);
             }
             i = (Integer)hints.get(KEY_DOCUMENT_WIDTH);
             if (i != null) {
-                pp.setDocumentWidth(i.intValue());
+                pp.setDocumentWidth(i);
             }
             DoctypeValue dtv = (DoctypeValue)hints.get(KEY_DOCTYPE);
             if (dtv != null) {

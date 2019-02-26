@@ -26,7 +26,7 @@ import org.w3c.dom.DOMException;
  * This class implements a simple method for handling the node 'prefix'.
  *
  * @author <a href="mailto:thomas.deweese@kodak.com">Thomas Deweese</a>
- * @version $Id: PrefixableStylableExtensionElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PrefixableStylableExtensionElement.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class PrefixableStylableExtensionElement
     extends StylableExtensionElement {
@@ -68,7 +68,7 @@ public abstract class PrefixableStylableExtensionElement
         if (isReadonly()) {
             throw createDOMException
                 (DOMException.NO_MODIFICATION_ALLOWED_ERR, "readonly.node",
-                 new Object[] { new Integer(getNodeType()), getNodeName() });
+                 new Object[] {(int) getNodeType(), getNodeName() });
         }
 
         if (prefix != null &&
@@ -76,7 +76,7 @@ public abstract class PrefixableStylableExtensionElement
             !DOMUtilities.isValidName(prefix)) {
             throw createDOMException
                 (DOMException.INVALID_CHARACTER_ERR, "prefix",
-                 new Object[] { new Integer(getNodeType()),
+                 new Object[] {(int) getNodeType(),
                                 getNodeName(),
                                 prefix });
         }

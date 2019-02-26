@@ -24,17 +24,17 @@ import java.security.Policy;
 /**
  * This is a helper class which helps applications enforce secure
  * script execution.
- * <br />
+ * <br>
  * It is used by the Squiggle browser as well as the rasterizer.
- * <br />
+ * <br>
  * This class can install a <code>SecurityManager</code> for an application
  * and resolves whether the application runs in a development
  * environment or from a jar file (in other words, it resolves code-base
  * issues for the application).
- * <br />
+ * <br>
  *
- * @author <a mailto="vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: ApplicationSecurityEnforcer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
+ * @version $Id: ApplicationSecurityEnforcer.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class ApplicationSecurityEnforcer {
     /**
@@ -236,7 +236,7 @@ public class ApplicationSecurityEnforcer {
         if (mainClassURL == null){
             // Something is really wrong: we would be running a class
             // which can't be found....
-            throw new Error(appMainClassRelativeURL);
+            throw new RuntimeException(appMainClassRelativeURL);
         }
         
         String expandedMainClassName = mainClassURL.toString();
@@ -274,7 +274,7 @@ public class ApplicationSecurityEnforcer {
                 // Something is seriously wrong. This should *never* happen
                 // as the APP_SECURITY_POLICY_URL is such that it will be
                 // a substring of its corresponding URL value
-                throw new Error();
+                throw new RuntimeException();
             }
             
             String appCodeBase = expandedMainClassName.substring(0, codeBaseEnd);
@@ -312,7 +312,7 @@ public class ApplicationSecurityEnforcer {
                 // Something is seriously wrong. This should *never* happen
                 // as the APP_SECURITY_POLICY_URL is such that it will be
                 // a substring of its corresponding URL value
-                throw new Error();
+                throw new RuntimeException();
             }
             
             String appCodeBase = expandedMainClassName.substring(0, codeBaseEnd);

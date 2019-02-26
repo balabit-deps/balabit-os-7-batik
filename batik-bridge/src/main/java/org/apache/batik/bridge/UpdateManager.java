@@ -50,7 +50,7 @@ import org.w3c.dom.events.EventTarget;
  * This class provides features to manage the update of an SVG document.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: UpdateManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: UpdateManager.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class UpdateManager  {
 
@@ -729,9 +729,8 @@ public class UpdateManager  {
 
     long findNewAllResumeTime() {
         long ret = -1;
-        Iterator i = suspensionList.iterator();
-        while (i.hasNext()) {
-            SuspensionInfo si = (SuspensionInfo)i.next();
+        for (Object aSuspensionList : suspensionList) {
+            SuspensionInfo si = (SuspensionInfo) aSuspensionList;
             long t = si.getResumeMilli();
             if (t > ret) ret = t;
         }

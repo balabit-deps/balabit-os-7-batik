@@ -45,7 +45,7 @@ import org.apache.batik.Version;
  * The dialog can be dismissed by click or by escaping.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: AboutDialog.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AboutDialog.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class AboutDialog extends JWindow {
 
@@ -125,7 +125,7 @@ public class AboutDialog extends JWindow {
 
         JLabel l = new JLabel(icon);
         l.setBounds(0, 0, w, h);
-        p.add(l, new Integer(0));
+        p.add(l, Integer.valueOf(0));
 
         JLabel l2 = new JLabel("Batik " + Version.getVersion());
         l2.setForeground(new Color(232, 232, 232, 255));
@@ -134,7 +134,7 @@ public class AboutDialog extends JWindow {
         l2.setHorizontalAlignment(JLabel.RIGHT);
         l2.setVerticalAlignment(JLabel.BOTTOM);
         l2.setBounds(w - 320, h - 117, 300, 100);
-        p.add(l2, new Integer(2));
+        p.add(l2, Integer.valueOf(2));
 
         ((JComponent)getContentPane()).setBorder
             (BorderFactory.createCompoundBorder

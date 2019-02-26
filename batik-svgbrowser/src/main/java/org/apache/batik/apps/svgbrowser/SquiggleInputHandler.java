@@ -29,8 +29,8 @@ import org.apache.batik.util.ParsedURL;
  * will handle other types of documents and convert them into SVG before
  * displaying them in an SVG canvas.
  *
- * @author <a mailto="vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: SquiggleInputHandler.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
+ * @version $Id: SquiggleInputHandler.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public interface SquiggleInputHandler {
     /**

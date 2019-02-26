@@ -42,7 +42,7 @@ import org.apache.xmlgraphics.java2d.color.ICCColorSpaceWithIntent;
  * on its source
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ProfileRed.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ProfileRed.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class ProfileRed extends AbstractRed {
     private static final ColorSpace sRGBCS
@@ -274,7 +274,7 @@ public class ProfileRed extends AbstractRed {
             return argbWR;
         }catch(Exception e){
             e.printStackTrace();
-            throw new Error( e.getMessage() );
+            throw new RuntimeException( e.getMessage() );
         }
     }
 

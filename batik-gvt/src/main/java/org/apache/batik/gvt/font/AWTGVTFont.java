@@ -40,7 +40,7 @@ import org.apache.batik.gvt.text.ArabicTextHandler;
  * This is a wrapper class for a java.awt.Font instance.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: AWTGVTFont.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AWTGVTFont.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class AWTGVTFont implements GVTFont {
 
@@ -81,8 +81,8 @@ public class AWTGVTFont implements GVTFont {
     public AWTGVTFont(Map attributes) {
         Float sz = (Float)attributes.get(TextAttribute.SIZE);
         if (sz != null) {
-            this.size = sz.floatValue();
-            attributes.put(TextAttribute.SIZE, new Float(FONT_SIZE));
+            this.size = sz;
+            attributes.put(TextAttribute.SIZE, FONT_SIZE);
             this.awtFont = new Font(attributes);
         } else {
             this.awtFont = new Font(attributes);

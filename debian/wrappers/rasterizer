@@ -4,11 +4,11 @@
 . /usr/lib/java-wrappers/java-wrappers.sh
 
 # We need sun runtime.
-find_java_runtime openjdk sun 
+find_java_runtime openjdk sun
 
-find_jars xercesImpl batik-all 
+find_jars xercesImpl batik-all
 find_jars xml-apis-ext batik-transcoder
-# fop-transcoder.jar 
+# fop-transcoder.jar
 
 # We need FOP for PDF output
 if locate_jar fop; then

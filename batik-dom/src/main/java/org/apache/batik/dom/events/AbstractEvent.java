@@ -31,7 +31,7 @@ import java.util.List;
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractEvent.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractEvent.java 1806580 2017-08-29 12:06:44Z ssteiner $
  */
 public abstract class AbstractEvent
         implements Event, OriginalEvent, Cloneable {
@@ -279,7 +279,7 @@ public abstract class AbstractEvent
 
     /**
      * <b>DOM</b>: Implements
-     * {@link org.w3c.dom.events.Event#initEventNS(String,String,boolean,boolean)}.
+     * org.w3c.dom.events.Event#initEventNS(String,String,boolean,boolean).
      */
     public void initEventNS(String namespaceURIArg,
                             String eventTypeArg,

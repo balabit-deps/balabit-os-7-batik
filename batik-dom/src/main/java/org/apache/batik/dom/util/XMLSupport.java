@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.dom.util;
 
@@ -28,7 +28,7 @@ import org.w3c.dom.Node;
  * This class provides support for XML features.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: XMLSupport.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLSupport.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public final class XMLSupport implements XMLConstants {
 

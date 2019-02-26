@@ -44,7 +44,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
 
 import org.apache.batik.util.gui.resource.ActionMap;
 import org.apache.batik.util.gui.resource.ButtonFactory;
@@ -55,7 +54,7 @@ import org.apache.batik.util.resources.ResourceManager;
  * This class represents a dialog to display an error (message + Exception).
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: JErrorPane.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: JErrorPane.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class JErrorPane extends JPanel implements ActionMap {
 

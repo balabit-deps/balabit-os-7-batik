@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 package org.apache.batik.dom.svg;
 
 import org.w3c.dom.smil.ElementTimeControl;
@@ -25,7 +25,7 @@ import org.w3c.dom.svg.SVGElement;
  * Context class for SVG animation elements to support extra methods.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVGAnimationContext.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAnimationContext.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface SVGAnimationContext extends SVGContext, ElementTimeControl {
 
@@ -51,7 +51,7 @@ public interface SVGAnimationContext extends SVGContext, ElementTimeControl {
      * <b>DOM</b>: Implements {@link
      * org.w3c.dom.svg.SVGAnimationElement#getSimpleDuration()}.  With the
      * difference that an indefinite simple duration is returned as
-     * {@link org.apache.batik.anim.timing.TimedElement#INDEFINITE}, rather than
+     * org.apache.batik.anim.timing.TimedElement#INDEFINITE, rather than
      * throwing an exception.
      */
     float getSimpleDuration();

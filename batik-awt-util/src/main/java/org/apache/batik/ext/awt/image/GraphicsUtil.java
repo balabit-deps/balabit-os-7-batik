@@ -66,7 +66,7 @@ import org.apache.batik.ext.awt.image.rendered.TranslateRed;
  * implementations.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: GraphicsUtil.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: GraphicsUtil.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class GraphicsUtil {
 
@@ -495,7 +495,7 @@ public class GraphicsUtil {
         try {
             String s = System.getProperty
                 ("org.apache.batik.warn_destination", "true");
-            warn = Boolean.valueOf(s).booleanValue();
+            warn = Boolean.valueOf(s);
         } catch (SecurityException se) {
         } catch (NumberFormatException nfe) {
         } finally {

@@ -29,7 +29,7 @@ import java.awt.geom.AffineTransform;
  *
  * @author Nicholas Talian, Vincent Hardy, Jim Graham, Jerry Evans
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: MultipleGradientPaint.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: MultipleGradientPaint.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class MultipleGradientPaint implements Paint {
 
@@ -167,8 +167,8 @@ public abstract class MultipleGradientPaint implements Paint {
 
         // Process transparency
         boolean opaque = true;
-        for(int i=0; i<colors.length; i++){
-            opaque = opaque && (colors[i].getAlpha()==0xff);
+        for (Color color : colors) {
+            opaque = opaque && (color.getAlpha() == 0xff);
         }
 
         if(opaque) {

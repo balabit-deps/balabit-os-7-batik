@@ -36,7 +36,7 @@ import org.w3c.dom.Element;
 /**
  * Manages element overlay on the canvas.
  *
- * @version $Id: ElementOverlayManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ElementOverlayManager.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ElementOverlayManager {
 
@@ -137,8 +137,8 @@ public class ElementOverlayManager {
     protected Rectangle getAllElementsBounds() {
         Rectangle resultBound = null;
         int n = elements.size();
-        for (int i = 0; i < n; i++) {
-            Element currentElement = (Element) elements.get(i);
+        for (Object element : elements) {
+            Element currentElement = (Element) element;
             Rectangle currentBound = getElementBounds(currentElement);
             if (resultBound == null) {
                 resultBound = currentBound;
@@ -213,13 +213,13 @@ public class ElementOverlayManager {
         public void paint(Graphics g) {
             if (controller.isOverlayEnabled() && isOverlayEnabled()) {
                 int n = elements.size();
-                for (int i = 0; i < n; i++) {
-                    Element currentElement = (Element) elements.get(i);
+                for (Object element : elements) {
+                    Element currentElement = (Element) element;
                     GraphicsNode nodeToPaint = canvas.getUpdateManager()
                             .getBridgeContext().getGraphicsNode(currentElement);
                     if (nodeToPaint != null) {
                         AffineTransform elementsAt =
-                            nodeToPaint.getGlobalTransform();
+                                nodeToPaint.getGlobalTransform();
                         Shape selectionHighlight = nodeToPaint.getOutline();
                         AffineTransform at = canvas.getRenderingTransform();
                         at.concatenate(elementsAt);

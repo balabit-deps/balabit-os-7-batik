@@ -28,7 +28,7 @@ import java.net.MalformedURLException;
  * Describes a file source for the <code>SVGConverter</code>
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: SVGConverterFileSource.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGConverterFileSource.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGConverterFileSource implements SVGConverterSource {
     File file;
@@ -67,7 +67,7 @@ public class SVGConverterFileSource implements SVGConverterSource {
             }
             return uri;
         } catch(MalformedURLException e){
-            throw new Error( e.getMessage() );
+            throw new RuntimeException( e.getMessage() );
         }
     }
 

@@ -29,7 +29,7 @@ import java.util.Iterator;
 /**
  * A class representing a list of path segments.
  *
- * @version $Id: SegmentList.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SegmentList.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SegmentList {
     List segments = new LinkedList();
@@ -126,13 +126,13 @@ public class SegmentList {
             }
 
             Segment [] resAbove = results.getAbove();
-            for(int i=0; i<resAbove.length; i++) {
-                above.add(resAbove[i]);
+            for (Segment aResAbove : resAbove) {
+                above.add(aResAbove);
             }
 
             Segment [] resBelow = results.getBelow();
-            for(int i=0; i<resBelow.length; i++) {
-                below.add(resBelow[i]);
+            for (Segment aResBelow : resBelow) {
+                below.add(aResBelow);
             }
         }
         return new SegmentList.SplitResults(above, below);
