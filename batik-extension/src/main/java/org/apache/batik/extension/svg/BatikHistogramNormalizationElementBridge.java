@@ -36,14 +36,14 @@ import org.w3c.dom.Element;
  * Bridge class for a histogram normalization element.
  *
  * @author <a href="mailto:thomas.deweese@kodak.com">Thomas Deweese</a>
- * @version $Id: BatikHistogramNormalizationElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: BatikHistogramNormalizationElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class BatikHistogramNormalizationElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge
     implements BatikExtConstants {
 
     /**
-     * Constructs a new bridge for the &lt;histogramNormalization> element.
+     * Constructs a new bridge for the &lt;histogramNormalization&gt; element.
      */
     public BatikHistogramNormalizationElementBridge() { /* nothing */ }
 

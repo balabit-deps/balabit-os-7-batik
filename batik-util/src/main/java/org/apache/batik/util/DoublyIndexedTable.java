@@ -25,7 +25,7 @@ import java.util.NoSuchElementException;
  * This class represents a doubly indexed hash table.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: DoublyIndexedTable.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DoublyIndexedTable.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class DoublyIndexedTable {
 
@@ -168,8 +168,8 @@ public class DoublyIndexedTable {
         Object[] values = new Object[count];
         int i = 0;
 
-        for (int index = 0; index < table.length; index++) {
-            for (Entry e = table[index]; e != null; e = e.next) {
+        for (Entry aTable : table) {
+            for (Entry e = aTable; e != null; e = e.next) {
                 values[i++] = e.value;
             }
         }

@@ -58,7 +58,7 @@ import org.w3c.dom.events.EventTarget;
  * A simple implementation of <code>Interpreter</code> interface to use
  * Rhino ECMAScript interpreter.
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
- * @version $Id: RhinoInterpreter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: RhinoInterpreter.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class RhinoInterpreter implements Interpreter {
 
@@ -362,7 +362,7 @@ public class RhinoInterpreter implements Interpreter {
                                      SOURCE_NAME_SVG, 1, rhinoClassLoader);
                             } catch (IOException ioEx ) {
                                 // Should never happen: using a string
-                                throw new Error( ioEx.getMessage() );
+                                throw new RuntimeException( ioEx.getMessage() );
                             }
                         }
                     };

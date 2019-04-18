@@ -26,7 +26,7 @@ import org.apache.batik.anim.dom.AnimationTarget;
  * An SVG path value in the animation system.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: AnimatablePathDataValue.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AnimatablePathDataValue.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class AnimatablePathDataValue extends AnimatableValue {
 
@@ -186,9 +186,9 @@ public class AnimatablePathDataValue extends AnimatableValue {
     public String toStringRep() {
         StringBuffer sb = new StringBuffer();
         int k = 0;
-        for (int i = 0; i < commands.length; i++) {
-            sb.append(PATH_COMMANDS[commands[i]]);
-            for (int j = 0; j < PATH_PARAMS[commands[i]]; j++) {
+        for (short command : commands) {
+            sb.append(PATH_COMMANDS[command]);
+            for (int j = 0; j < PATH_PARAMS[command]; j++) {
                 sb.append(' ');
                 sb.append(parameters[k++]);
             }

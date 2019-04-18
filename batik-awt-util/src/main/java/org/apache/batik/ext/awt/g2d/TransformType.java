@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.awt.g2d;
 
@@ -23,9 +23,9 @@ package org.apache.batik.ext.awt.g2d;
  * Enumeration for transformation types.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: TransformType.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TransformType.java 1808977 2017-09-20 09:06:07Z ssteiner $
  */
-public class TransformType{
+public final class TransformType{
     /*
      * Transform type constants
      */
@@ -105,7 +105,7 @@ public class TransformType{
         case TRANSFORM_GENERAL:
             return TransformType.GENERAL;
         default:
-            throw new Error("Unknown TransformType value:" + val );
+            throw new RuntimeException("Unknown TransformType value:" + val );
         }
     }
 }

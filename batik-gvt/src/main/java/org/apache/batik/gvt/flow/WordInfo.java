@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.gvt.flow;
 
@@ -28,7 +28,7 @@ import org.apache.batik.gvt.font.GVTLineMetrics;
  * Complete Class Desc
  *
  * @author <a href="mailto:deweese@apache.org">deweese</a>
- * @version $Id: WordInfo.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WordInfo.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class WordInfo {
     int      index = -1;

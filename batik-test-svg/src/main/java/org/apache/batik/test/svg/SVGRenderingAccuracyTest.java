@@ -45,7 +45,7 @@ import org.w3c.dom.Document;
  * all pixel values are the same).
  *
  * @author <a href="mailto:vhardy@apache.lorg">Vincent Hardy</a>
- * @version $Id: SVGRenderingAccuracyTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGRenderingAccuracyTest.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGRenderingAccuracyTest extends AbstractRenderingAccuracyTest {
     /**
@@ -98,7 +98,7 @@ public class SVGRenderingAccuracyTest extends AbstractRenderingAccuracyTest {
         if (validate == null){
             throw new IllegalArgumentException();
         }
-        this.validate = validate.booleanValue();
+        this.validate = validate;
     }
 
     public boolean getValidating(){

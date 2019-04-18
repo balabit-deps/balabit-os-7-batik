@@ -23,7 +23,7 @@ package org.apache.batik.ext.awt.image;
  * the CompositeRable operation. (over, in, out, atop, xor, arith)
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: CompositeRule.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CompositeRule.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public final class CompositeRule implements java.io.Serializable {
 
@@ -65,7 +65,7 @@ public final class CompositeRule implements java.io.Serializable {
        *  Fs = 1 and Fd = (1-As), thus:
        *
        *        Cd = Cs + Cd*(1-As)
-       *        Ad = As + Ad*(1-As)</pre>
+       *        Ad = As + Ad*(1-As)
        * </pre>
        */
     public static final CompositeRule OVER = new CompositeRule(RULE_OVER);
@@ -236,7 +236,7 @@ public final class CompositeRule implements java.io.Serializable {
         case RULE_LIGHTEN:
             return LIGHTEN;
         default:
-            throw new Error("Unknown Composite Rule type");
+            throw new RuntimeException("Unknown Composite Rule type");
         }
     }
 
@@ -271,7 +271,7 @@ public final class CompositeRule implements java.io.Serializable {
         case RULE_LIGHTEN:
             return "[CompositeRule: LIGHTEN]";
         default:
-            throw new Error("Unknown Composite Rule type");
+            throw new RuntimeException("Unknown Composite Rule type");
         }
     }
 

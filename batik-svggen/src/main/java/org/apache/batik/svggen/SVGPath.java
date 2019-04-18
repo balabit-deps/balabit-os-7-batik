@@ -42,7 +42,7 @@ import org.w3c.dom.Element;
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGPath.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGPath.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGPath extends SVGGraphicObjectConverter {
     /**
@@ -113,7 +113,7 @@ public class SVGPath extends SVGGraphicObjectConverter {
                 appendPoint(d, seg[4], seg[5], gc);
                 break;
             default:
-                throw new Error("invalid segmentType:" + segType );
+                throw new RuntimeException("invalid segmentType:" + segType );
             }
             pi.next();
         } // while !isDone

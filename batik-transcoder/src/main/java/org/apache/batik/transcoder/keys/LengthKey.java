@@ -25,11 +25,11 @@ import org.apache.batik.transcoder.TranscodingHints;
  * A transcoding Key represented as a length.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: LengthKey.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: LengthKey.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class LengthKey extends TranscodingHints.Key {
 
     public boolean isCompatibleValue(Object v) {
-        return (v instanceof Float && ((Float)v).floatValue() > 0);
+        return (v instanceof Float && (Float) v > 0);
     }
 }

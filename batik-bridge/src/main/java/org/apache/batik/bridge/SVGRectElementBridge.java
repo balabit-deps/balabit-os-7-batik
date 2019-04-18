@@ -32,15 +32,15 @@ import org.apache.batik.gvt.ShapePainter;
 import org.w3c.dom.Element;
 
 /**
- * Bridge class for the &lt;rect> element.
+ * Bridge class for the &lt;rect&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGRectElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGRectElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGRectElementBridge extends SVGShapeElementBridge {
 
     /**
-     * Constructs a new bridge for the &lt;rect> element.
+     * Constructs a new bridge for the &lt;rect&gt; element.
      */
     public SVGRectElementBridge() {}
 

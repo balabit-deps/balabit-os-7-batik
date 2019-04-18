@@ -52,7 +52,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 /**
- * Bridge class for the &lt;multiImage> element.
+ * Bridge class for the &lt;multiImage&gt; element.
  *
  * The 'multiImage' element is similar to the 'image' element (supports
  * all the same attributes and properties) except.
@@ -71,7 +71,7 @@ import org.w3c.dom.Node;
  *
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: SVGMultiImageElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGMultiImageElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGMultiImageElementBridge extends SVGImageElementBridge {
 
@@ -392,17 +392,17 @@ public class SVGMultiImageElementBridge extends SVGImageElementBridge {
 
         if (vals[0] == null) return null;
 
-        float xPixSz = vals[0].floatValue();
+        float xPixSz = vals[0];
         float yPixSz = xPixSz;
         if (vals[1] != null)
-            yPixSz = vals[1].floatValue();
+            yPixSz = vals[1];
         
         return new Dimension((int)(bounds.getWidth()/xPixSz+0.5), 
                              (int)(bounds.getHeight()/yPixSz+0.5)); 
     }
 
     /**
-     * A viewport defined an &lt;svg> element.
+     * A viewport defined an &lt;svg&gt; element.
      */
     public static class MultiImageElementViewport implements Viewport {
         private float width;

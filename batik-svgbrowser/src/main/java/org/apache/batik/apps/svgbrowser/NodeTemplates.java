@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
  * Provides basic xml representation and description for most commonly used
  * nodes.
  *
- * @version $Id: NodeTemplates.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: NodeTemplates.java 1808978 2017-09-20 09:23:26Z ssteiner $
  */
 public class NodeTemplates {
 
@@ -1150,7 +1150,8 @@ public class NodeTemplates {
 
     public static String animateElementName = SVGConstants.SVG_ANIMATE_TAG;
 
-    public static String animateElementValue = "<animate attributeName=\"fill\" from=\"white\" to=\"black\" dur=\"1s\"/>";
+    public static String animateElementValue =
+            "<animate attributeName=\"fill\" from=\"white\" to=\"black\" dur=\"1s\"/>";
 
     public static short animateElementType = Node.ELEMENT_NODE;
 
@@ -1163,7 +1164,8 @@ public class NodeTemplates {
 
     public static String animateColorElementName = SVGConstants.SVG_ANIMATE_COLOR_TAG;
 
-    public static String animateColorElementValue = "<animateColor attributeName=\"fill\" from=\"white\" to=\"black\" dur=\"1s\"/>";
+    public static String animateColorElementValue =
+            "<animateColor attributeName=\"fill\" from=\"white\" to=\"black\" dur=\"1s\"/>";
 
     public static short animateColorElementType = Node.ELEMENT_NODE;
 
@@ -1189,7 +1191,8 @@ public class NodeTemplates {
 
     public static String animateTransformElementName = SVGConstants.SVG_ANIMATE_TRANSFORM_TAG;
 
-    public static String animateTransformElementValue = "<animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0\" to=\"0\" dur=\"1s\"/>";
+    public static String animateTransformElementValue =
+            "<animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0\" to=\"0\" dur=\"1s\"/>";
 
     public static short animateTransformElementType = Node.ELEMENT_NODE;
 
@@ -1229,8 +1232,7 @@ public class NodeTemplates {
      */
     private void initializeTemplates() {
         Field[] fields = getClass().getDeclaredFields();
-        for (int i = 0; i < fields.length; i++) {
-            Field currentField = fields[i];
+        for (Field currentField : fields) {
             try {
                 if (currentField.getType() == String.class
                         && currentField.getName().endsWith("MemberName")) {
@@ -1241,8 +1243,8 @@ public class NodeTemplates {
                             baseFieldName + VALUE).get(this).toString();
                     String nodeName = getClass().getField(baseFieldName + NAME)
                             .get(this).toString();
-                    short nodeType = ((Short) getClass().getField(
-                            baseFieldName + TYPE).get(this)).shortValue();
+                    short nodeType = (Short) getClass().getField(
+                            baseFieldName + TYPE).get(this);
                     String nodeDescription = getClass().getField(
                             baseFieldName + DESCRIPTION).get(this).toString();
                     String nodeCategory = getClass().getField(

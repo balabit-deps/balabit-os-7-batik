@@ -37,10 +37,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.svg.SVGPathSegList;
 
 /**
- * Bridge class for the &lt;path> element.
+ * Bridge class for the &lt;path&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGPathElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGPathElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGPathElementBridge extends SVGDecoratedShapeElementBridge 
        implements SVGPathContext {
@@ -52,7 +52,7 @@ public class SVGPathElementBridge extends SVGDecoratedShapeElementBridge
     protected static final Shape DEFAULT_SHAPE = new GeneralPath();
 
     /**
-     * Constructs a new bridge for the &lt;path> element.
+     * Constructs a new bridge for the &lt;path&gt; element.
      */
     public SVGPathElementBridge() {}
 

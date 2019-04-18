@@ -22,7 +22,7 @@ package org.apache.batik;
  * This class defines the Batik version number.
  *
  * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: Version.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Version.java 1808978 2017-09-20 09:23:26Z ssteiner $
  */
 public final class Version {
 
@@ -37,7 +37,7 @@ public final class Version {
      *   branch.  The format of the returned string will be one of the
      *   following:
      * </p>
-     * <table>
+     * <table summary="">
      *   <tr>
      *     <th>Source</th>
      *     <th>Version string</th>
@@ -72,7 +72,8 @@ public final class Version {
         if (pkg != null) {
             version = pkg.getImplementationVersion();
         }
-        String headURL = "$HeadURL: https://svn.apache.org/repos/asf/xmlgraphics/batik/branches/maven/batik-util/src/main/java/org/apache/batik/Version.java $";
+        String headURL = "$HeadURL: https://svn.apache.org/repos/asf/xmlgraphics/batik/branches/maven/batik-util" +
+                "/src/main/java/org/apache/batik/Version.java $";
         String prefix = "$HeadURL: ";
         String suffix = "/sources/org/apache/batik/Version.java $";
         if (headURL.startsWith(prefix) && headURL.endsWith(suffix)) {

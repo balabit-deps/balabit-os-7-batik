@@ -18,7 +18,6 @@
  */
 package org.apache.batik.parser;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -26,7 +25,7 @@ import java.util.LinkedList;
  * number list or a point list.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: FloatArrayProducer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: FloatArrayProducer.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class FloatArrayProducer
         extends DefaultNumberListHandler
@@ -96,9 +95,8 @@ public class FloatArrayProducer
     public void endNumberList() throws ParseException {
         float[] all = new float[count];
         int pos = 0;
-        Iterator it = as.iterator();
-        while (it.hasNext()) {
-            float[] b = (float[]) it.next();
+        for (Object a1 : as) {
+            float[] b = (float[]) a1;
             System.arraycopy(b, 0, all, pos, b.length);
             pos += b.length;
         }

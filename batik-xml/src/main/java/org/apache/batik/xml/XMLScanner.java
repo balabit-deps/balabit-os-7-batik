@@ -34,7 +34,7 @@ import org.apache.batik.util.io.StringNormalizingReader;
  * This class represents a scanner for XML documents.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: XMLScanner.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLScanner.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class XMLScanner implements Localizable {
 
@@ -2073,8 +2073,8 @@ public class XMLScanner implements Localizable {
         try {
             m = formatMessage(message,
                               new Object[] {
-                                  new Integer(reader.getLine()),
-                                  new Integer(reader.getColumn())
+                                      reader.getLine(),
+                                      reader.getColumn()
                               });
         } catch (MissingResourceException e) {
             m = message;

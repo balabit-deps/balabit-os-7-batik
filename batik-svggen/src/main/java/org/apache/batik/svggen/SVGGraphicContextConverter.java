@@ -33,7 +33,7 @@ import org.apache.batik.ext.awt.g2d.TransformStackElement;
  * SVG attributes.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGGraphicContextConverter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGGraphicContextConverter.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGGraphicContextConverter {
     private static final int GRAPHIC_CONTEXT_CONVERTER_COUNT = 6;
@@ -97,8 +97,8 @@ public class SVGGraphicContextConverter {
         // no need for synchronized map => use HashMap
         Map groupAttrMap = new HashMap();
 
-        for (int i=0; i<converters.length; i++) {
-            SVGDescriptor desc = converters[i].toSVG(gc);
+        for (SVGConverter converter : converters) {
+            SVGDescriptor desc = converter.toSVG(gc);
             if (desc != null)
                 desc.getAttributeMap(groupAttrMap);
         }
@@ -114,8 +114,7 @@ public class SVGGraphicContextConverter {
      */
     public List getDefinitionSet() {
         List defSet = new LinkedList();
-        for(int i=0; i<converters.length; i++)
-            defSet.addAll(converters[i].getDefinitionSet());
+        for (SVGConverter converter : converters) defSet.addAll(converter.getDefinitionSet());
 
         return defSet;
     }

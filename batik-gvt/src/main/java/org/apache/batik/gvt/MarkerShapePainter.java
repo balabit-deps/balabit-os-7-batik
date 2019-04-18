@@ -27,7 +27,6 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.apache.batik.ext.awt.geom.ExtendedGeneralPath;
 import org.apache.batik.ext.awt.geom.ExtendedPathIterator;
@@ -38,7 +37,7 @@ import org.apache.batik.ext.awt.geom.ShapeExtender;
  * A shape painter that can be used to paint markers on a shape.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: MarkerShapePainter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: MarkerShapePainter.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class MarkerShapePainter implements ShapePainter {
 
@@ -301,8 +300,8 @@ public class MarkerShapePainter implements ShapePainter {
         }
 
         if (middleMarkerProxies != null) {
-            for(int i=0; i<middleMarkerProxies.length; i++){
-                children.add(middleMarkerProxies[i]);
+            for (ProxyGraphicsNode middleMarkerProxy : middleMarkerProxies) {
+                children.add(middleMarkerProxy);
             }
         }
 
@@ -687,7 +686,7 @@ public class MarkerShapePainter implements ShapePainter {
             break;
         case PathIterator.SEG_CLOSE:
             // Should not have any close at this point
-            throw new Error("should not have SEG_CLOSE here");
+            throw new RuntimeException("should not have SEG_CLOSE here");
         case PathIterator.SEG_MOVETO:
             // Cannot compute the slope
         default:
@@ -826,7 +825,7 @@ public class MarkerShapePainter implements ShapePainter {
             return new Point2D.Double(coords[5], coords[6]);
         case PathIterator.SEG_CLOSE:
         default:
-            throw new Error( "invalid segmentType:" + segType );
+            throw new RuntimeException( "invalid segmentType:" + segType );
             // Should never happen: close segments are replaced with lineTo
         }
     }

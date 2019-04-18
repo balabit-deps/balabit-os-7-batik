@@ -19,6 +19,7 @@
 package org.apache.batik.anim.dom;
 
 import java.net.URL;
+import java.util.HashMap;
 
 import org.apache.batik.css.engine.CSSContext;
 import org.apache.batik.css.engine.CSSEngine;
@@ -34,7 +35,7 @@ import org.apache.batik.dom.events.DocumentEventSupport;
 import org.apache.batik.dom.events.EventSupport;
 import org.apache.batik.dom.svg12.SVGOMWheelEvent;
 import org.apache.batik.dom.svg12.XBLOMShadowTreeEvent;
-import org.apache.batik.dom.util.HashTable;
+
 import org.apache.batik.dom.util.DOMUtilities;
 import org.apache.batik.util.ParsedURL;
 import org.apache.batik.util.SVG12Constants;
@@ -53,7 +54,7 @@ import org.w3c.dom.events.Event;
  * It provides support the SVG 1.2 documents.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVG12DOMImplementation.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVG12DOMImplementation.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public class SVG12DOMImplementation
     extends    SVGDOMImplementation {
@@ -173,7 +174,7 @@ public class SVG12DOMImplementation
     /**
      * The SVG element factories.
      */
-    protected static HashTable svg12Factories = new HashTable(svg11Factories);
+    protected static HashMap<String, ElementFactory> svg12Factories = new HashMap<String, ElementFactory>(svg11Factories);
 
     static {
         svg12Factories.put(SVG12Constants.SVG_FLOW_DIV_TAG,
@@ -413,7 +414,7 @@ public class SVG12DOMImplementation
     /**
      * The XBL element factories.
      */
-    protected static HashTable xblFactories = new HashTable();
+    protected static HashMap<String, ElementFactory> xblFactories = new HashMap<String, ElementFactory>();
 
     static {
         xblFactories.put(XBLConstants.XBL_XBL_TAG,

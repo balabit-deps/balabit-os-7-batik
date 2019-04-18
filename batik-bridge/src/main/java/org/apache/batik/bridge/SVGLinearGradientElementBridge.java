@@ -32,10 +32,10 @@ import org.apache.batik.gvt.GraphicsNode;
 import org.w3c.dom.Element;
 
 /**
- * Bridge class for the &lt;linearGradient> element.
+ * Bridge class for the &lt;linearGradient&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGLinearGradientElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGLinearGradientElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGLinearGradientElementBridge
     extends AbstractSVGGradientElementBridge {

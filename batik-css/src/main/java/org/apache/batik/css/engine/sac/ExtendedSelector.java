@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine.sac;
 
@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
  * This interface extends the {@link org.w3c.css.sac.Selector}.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: ExtendedSelector.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ExtendedSelector.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface ExtendedSelector extends Selector {
 

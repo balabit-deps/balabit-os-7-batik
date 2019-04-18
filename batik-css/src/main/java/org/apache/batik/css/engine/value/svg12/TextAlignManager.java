@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine.value.svg12;
 
@@ -31,7 +31,7 @@ import org.apache.batik.util.SVGTypes;
  * This class provides a manager for the 'text-align' property values.
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: TextAlignManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TextAlignManager.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class TextAlignManager extends IdentifierManager {
 

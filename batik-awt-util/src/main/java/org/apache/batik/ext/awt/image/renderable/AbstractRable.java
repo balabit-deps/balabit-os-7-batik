@@ -45,7 +45,7 @@ import org.apache.batik.ext.awt.image.rendered.RenderedImageCachableRed;
  * implementation.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: AbstractRable.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractRable.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractRable implements Filter {
 
@@ -234,9 +234,8 @@ public abstract class AbstractRable implements Filter {
     public Object getProperty(String name) {
         Object ret = props.get(name);
         if (ret != null) return ret;
-        Iterator i = srcs.iterator();
-        while (i.hasNext()) {
-            RenderableImage ri = (RenderableImage)i.next();
+        for (Object src : srcs) {
+            RenderableImage ri = (RenderableImage) src;
             ret = ri.getProperty(name);
             if (ret != null) return ret;
         }

@@ -46,7 +46,7 @@ import org.w3c.dom.events.EventTarget;
  * a parameter instead of a function provided the fact that this object
  * has a <code>handleEvent</code> method.
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
- * @version $Id: EventTargetWrapper.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: EventTargetWrapper.java 1803263 2017-07-28 10:51:01Z ssteiner $
  */
 class EventTargetWrapper extends NativeJavaObject {
 
@@ -215,7 +215,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     args[i] = Context.jsToJava(args[i], paramTypes[i]);
                 ((EventTarget)njo.unwrap()).addEventListener
                     ((String)args[0], evtListener,
-                     ((Boolean)args[2]).booleanValue());
+                            (Boolean) args[2]);
                 return Undefined.instance;
             }
             if (args[1] instanceof NativeObject) {
@@ -236,7 +236,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     args[i] = Context.jsToJava(args[i], paramTypes[i]);
                 ((EventTarget)njo.unwrap()).addEventListener
                     ((String)args[0], evtListener,
-                     ((Boolean)args[2]).booleanValue());
+                            (Boolean) args[2]);
                 return Undefined.instance;
             }
             return delegate.call(ctx, scope, thisObj, args);
@@ -268,7 +268,7 @@ class EventTargetWrapper extends NativeJavaObject {
                 for (int i = 0; i < args.length; i++)
                     args[i] = Context.jsToJava(args[i], paramTypes[i]);
                 ((EventTarget)njo.unwrap()).removeEventListener
-                    ((String)args[0], el, ((Boolean)args[2]).booleanValue());
+                    ((String)args[0], el, (Boolean) args[2]);
                 return Undefined.instance;
             }
             if (args[1] instanceof NativeObject) {
@@ -284,7 +284,7 @@ class EventTargetWrapper extends NativeJavaObject {
                 for (int i = 0; i < args.length; i++)
                     args[i] = Context.jsToJava(args[i], paramTypes[i]);
                 ((EventTarget)njo.unwrap()).removeEventListener
-                    ((String)args[0], el, ((Boolean)args[2]).booleanValue());
+                    ((String)args[0], el, (Boolean) args[2]);
                 return Undefined.instance;
             }
             return delegate.call(ctx, scope, thisObj, args);
@@ -320,7 +320,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     ((String)args[0],
                      (String)args[1],
                      evtListener,
-                     ((Boolean)args[3]).booleanValue(),
+                            (Boolean) args[3],
                      args[4]);
                 return Undefined.instance;
             }
@@ -339,7 +339,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     ((String)args[0],
                      (String)args[1],
                      evtListener,
-                     ((Boolean)args[3]).booleanValue(),
+                            (Boolean) args[3],
                      args[4]);
                 return Undefined.instance;
             }
@@ -375,7 +375,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     ((String)args[0],
                      (String)args[1],
                      el,
-                     ((Boolean)args[3]).booleanValue());
+                            (Boolean) args[3]);
                 return Undefined.instance;
             }
             if (args[2] instanceof NativeObject) {
@@ -396,7 +396,7 @@ class EventTargetWrapper extends NativeJavaObject {
                     ((String)args[0],
                      (String)args[1],
                      el,
-                     ((Boolean)args[3]).booleanValue());
+                            (Boolean) args[3]);
                 return Undefined.instance;
             }
             return delegate.call(ctx, scope, thisObj, args);

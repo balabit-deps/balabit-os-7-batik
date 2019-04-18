@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine;
 
@@ -33,7 +33,7 @@ import org.w3c.dom.css.CSSPrimitiveValue;
  * This class provides support for AWT system colors.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SystemColorSupport.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SystemColorSupport.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class SystemColorSupport implements CSSConstants {
 

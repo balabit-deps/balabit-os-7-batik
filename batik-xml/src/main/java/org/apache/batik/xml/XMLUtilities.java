@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.xml;
 
@@ -32,7 +32,7 @@ import org.apache.batik.util.EncodingUtilities;
  * A collection of utility functions for XML.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: XMLUtilities.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLUtilities.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public class XMLUtilities extends XMLCharacters {
 
@@ -91,7 +91,7 @@ public class XMLUtilities extends XMLCharacters {
      * Tests whether the given 32 bits character is valid in XML documents.
      * Because the majority of code-points is covered by the table-lookup-test,
      * we do it first.
-     * This method gives meaningful results only for c >= 0.
+     * This method gives meaningful results only for c &gt;= 0.
      */
     public static boolean isXMLCharacter(int c) {
 
@@ -275,7 +275,9 @@ public class XMLUtilities extends XMLCharacters {
             return e;
         }
 
-        while (isXMLSpace((char)(c = r.read())));
+        while (isXMLSpace((char)(c = r.read()))) {
+            //skip
+        }
 
         if (c != 'v') {
             return e;
@@ -308,7 +310,9 @@ public class XMLUtilities extends XMLCharacters {
             return e;
         }
 
-        while (isXMLSpace((char)(c = r.read())));
+        while (isXMLSpace((char)(c = r.read()))) {
+            //skip
+        }
 
         if (c != '"' && c != '\'') {
             return e;
@@ -328,7 +332,9 @@ public class XMLUtilities extends XMLCharacters {
         if (!isXMLSpace((char)(c = r.read()))) {
             return e;
         }
-        while (isXMLSpace((char)(c = r.read())));
+        while (isXMLSpace((char)(c = r.read()))) {
+            //skip
+        }
 
         if (c != 'e') {
             return e;
@@ -364,7 +370,9 @@ public class XMLUtilities extends XMLCharacters {
             return e;
         }
 
-        while (isXMLSpace((char)(c = r.read())));
+        while (isXMLSpace((char)(c = r.read()))) {
+            //skip
+        }
 
         if (c != '"' && c != '\'') {
             return e;

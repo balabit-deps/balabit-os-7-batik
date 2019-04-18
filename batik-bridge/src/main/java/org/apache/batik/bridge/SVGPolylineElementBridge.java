@@ -34,10 +34,10 @@ import org.w3c.dom.svg.SVGPoint;
 import org.w3c.dom.svg.SVGPointList;
 
 /**
- * Bridge class for the &lt;polyline> element.
+ * Bridge class for the &lt;polyline&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGPolylineElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGPolylineElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGPolylineElementBridge extends SVGDecoratedShapeElementBridge {
 
@@ -48,7 +48,7 @@ public class SVGPolylineElementBridge extends SVGDecoratedShapeElementBridge {
     protected static final Shape DEFAULT_SHAPE = new GeneralPath();
 
     /**
-     * Constructs a new bridge for the &lt;polyline> element.
+     * Constructs a new bridge for the &lt;polyline&gt; element.
      */
     public SVGPolylineElementBridge() {}
 

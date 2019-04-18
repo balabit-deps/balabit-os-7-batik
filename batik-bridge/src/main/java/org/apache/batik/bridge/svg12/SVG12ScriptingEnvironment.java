@@ -44,7 +44,7 @@ import org.w3c.dom.events.EventListener;
  * Manages scripting handlers for SVG 1.2 'handler' elements.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVG12ScriptingEnvironment.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVG12ScriptingEnvironment.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SVG12ScriptingEnvironment extends ScriptingEnvironment {
 
@@ -263,7 +263,7 @@ public class SVG12ScriptingEnvironment extends ScriptingEnvironment {
                  new Object [] {d.getDocumentURI(),
                                 eventNamespaceURI,
                                 eventType,
-                                new Integer(line)});
+                         line});
 
             // Find the scripting language
             String lang = handlerElement.getAttributeNS

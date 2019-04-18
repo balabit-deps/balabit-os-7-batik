@@ -36,8 +36,8 @@ import java.util.Enumeration;
  * allows linked jar files to come from a different origin than
  * the document referencing them.
  *
- * @author <a mailto="vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: DocumentJarClassLoader.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
+ * @version $Id: DocumentJarClassLoader.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public class DocumentJarClassLoader extends URLClassLoader {
     /**

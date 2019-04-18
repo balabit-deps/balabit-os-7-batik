@@ -25,13 +25,13 @@ import org.apache.batik.util.XMLConstants;
 import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
-import org.w3c.dom.events.KeyboardEvent;
+import org.apache.batik.w3c.dom.events.KeyboardEvent;
 
 /**
  * A class to handle SMIL access key timing specifiers.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: AccesskeyTimingSpecifier.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AccesskeyTimingSpecifier.java 1830681 2018-05-01 13:38:53Z ssteiner $
  */
 public class AccesskeyTimingSpecifier
         extends EventLikeTimingSpecifier

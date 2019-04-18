@@ -24,7 +24,7 @@ import org.apache.batik.xml.XMLUtilities;
  * XML scanner for parsing xml text
  *
  * @author <a href="mailto:tonny@kiyut.com">Tonny Kohar</a>
- * @version $Id: XMLScanner.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLScanner.java 1808021 2017-09-11 12:17:28Z ssteiner $
  */
 public class XMLScanner {
 
@@ -198,7 +198,7 @@ public class XMLScanner {
                 end = false;
             } else if (current == ']') {
                 end = true;
-            } else if (current == '>' && end == true) {
+            } else if (current == '>' && end) {
                 return CHARACTER_DATA_CONTEXT;
             }
             nextChar();

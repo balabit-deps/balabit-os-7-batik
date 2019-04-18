@@ -15,11 +15,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.util.gui.resource;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -44,7 +43,7 @@ import org.apache.batik.util.resources.ResourceManager;
  * All entries are optional.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: ToolBarFactory.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ToolBarFactory.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class ToolBarFactory extends ResourceManager {
     // Constants
@@ -83,10 +82,9 @@ public class ToolBarFactory extends ResourceManager {
                MissingListenerException {
         JToolBar result  = new JToolBar();
         List     buttons = getStringList(name);
-        Iterator it      = buttons.iterator();
 
-        while (it.hasNext()) {
-            String s = (String)it.next();
+        for (Object button : buttons) {
+            String s = (String) button;
             if (s.equals(SEPARATOR)) {
                 result.add(new JToolbarSeparator());
             } else {

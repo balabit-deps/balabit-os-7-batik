@@ -19,7 +19,6 @@
 package org.apache.batik.bridge;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import org.apache.batik.anim.dom.AnimationTarget;
@@ -32,7 +31,7 @@ import org.w3c.dom.Element;
  * Abstract bridge class for those elements that can be animated.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: AnimatableSVGBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AnimatableSVGBridge.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AnimatableSVGBridge
         extends AbstractSVGBridge
@@ -87,10 +86,9 @@ public abstract class AnimatableSVGBridge
         if (targetListeners != null) {
             LinkedList ll = (LinkedList) targetListeners.get(pn);
             if (ll != null) {
-                Iterator it = ll.iterator();
-                while (it.hasNext()) {
+                for (Object aLl : ll) {
                     AnimationTargetListener l =
-                        (AnimationTargetListener) it.next();
+                            (AnimationTargetListener) aLl;
                     l.baseValueChanged((AnimationTarget) e, null, pn, true);
                 }
             }

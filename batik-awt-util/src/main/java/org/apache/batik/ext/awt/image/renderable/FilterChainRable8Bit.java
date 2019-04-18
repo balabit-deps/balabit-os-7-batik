@@ -32,7 +32,7 @@ import org.apache.batik.ext.awt.image.SVGComposite;
  * Implements a filter chain. A filter chain is defined by its
  * filter region (i.e., the bounding box of its input/output), its
  * filter resolution and its source. Its source cannot be null,
- * but its resolution can. <br />
+ * but its resolution can. <br>
  * The filter chain decomposes as follows: 
  * <ul>
  *  <li>A pad operation that makes the input image a big as the
@@ -42,7 +42,7 @@ import org.apache.batik.ext.awt.image.SVGComposite;
  * </ul>
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: FilterChainRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: FilterChainRable8Bit.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class FilterChainRable8Bit extends AbstractRable
     implements FilterChainRable, PaintRable {

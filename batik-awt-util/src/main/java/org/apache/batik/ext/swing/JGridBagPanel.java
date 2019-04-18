@@ -30,13 +30,13 @@ import javax.swing.JPanel;
  * An implementation of JPanel that uses the GridBagLayout.
  *
  * @author  <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: JGridBagPanel.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: JGridBagPanel.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public class JGridBagPanel extends JPanel implements GridBagConstants{
     /**
      * Provides insets desired for a given grid cell
      */
-    public static interface InsetsManager{
+    public interface InsetsManager{
         /**
          * Returns the insets for cell (gridx, gridy);
          */

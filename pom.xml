@@ -5,7 +5,7 @@
 
   <groupId>org.apache.xmlgraphics</groupId>
   <artifactId>batik</artifactId>
-  <version>1.9</version>
+  <version>1.10</version>
   <name>${project.groupId}:${project.artifactId}</name>
   <description>XML Graphics Batik</description>
   <packaging>pom</packaging>
@@ -98,9 +98,11 @@
     <module>batik-util</module>
     <module>batik-ttf2svg</module>
     <module>batik-xml</module>
-<!--
+    
+    <module>batik-test-old</module>
     <module>batik-test-svg</module>
     <module>batik-test-swing</module>
+<!--
     <module>batik-test-util</module>
 -->
   </modules>
@@ -140,6 +142,16 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
           <version>${findbugs.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${checkstyle.version}</version>
+          <configuration>
+            <configLocation>checkstyle.xml</configLocation>
+            <violationSeverity>warning</violationSeverity>
+            <includeResources>false</includeResources>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

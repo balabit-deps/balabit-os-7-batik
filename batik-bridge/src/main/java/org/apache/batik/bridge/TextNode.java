@@ -38,7 +38,7 @@ import org.apache.batik.gvt.text.TextPaintInfo;
  * A graphics node that represents text.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: TextNode.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TextNode.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class TextNode extends AbstractGraphicsNode implements Selectable {
 
@@ -297,7 +297,7 @@ public class TextNode extends AbstractGraphicsNode implements Selectable {
     public void setSelection(Mark begin, Mark end) {
         if ((begin.getTextNode() != this) ||
             (end.getTextNode() != this))
-            throw new Error("Markers not from this TextNode");
+            throw new RuntimeException("Markers not from this TextNode");
 
         beginMark = begin;
         endMark   = end;
@@ -421,12 +421,12 @@ public class TextNode extends AbstractGraphicsNode implements Selectable {
         }
         List list = getTextRuns();
         // place coords in text node coordinate system
-        for (int i = 0 ; i < list.size(); i++) {
+        for (Object aList : list) {
             StrokingTextPainter.TextRun run =
-                (StrokingTextPainter.TextRun)list.get(i);
+                    (StrokingTextPainter.TextRun) aList;
             TextSpanLayout layout = run.getLayout();
-            float x = (float)p.getX();
-            float y = (float)p.getY();
+            float x = (float) p.getX();
+            float y = (float) p.getY();
             TextHit textHit = layout.hitTestChar(x, y);
             if (textHit != null && contains(p, layout.getBounds2D())) {
                 return true;
@@ -534,7 +534,7 @@ public class TextNode extends AbstractGraphicsNode implements Selectable {
             case ANCHOR_END:
                 return END;
             default:
-                throw new Error("Unknown Anchor type");
+                throw new RuntimeException("Unknown Anchor type");
             }
         }
     }

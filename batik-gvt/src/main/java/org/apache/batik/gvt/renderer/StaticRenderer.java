@@ -34,7 +34,6 @@ import java.awt.image.WritableRaster;
 import java.awt.image.renderable.RenderContext;
 import java.lang.ref.SoftReference;
 import java.util.Collection;
-import java.util.Iterator;
 
 import org.apache.batik.ext.awt.geom.RectListManager;
 import org.apache.batik.ext.awt.image.GraphicsUtil;
@@ -52,7 +51,7 @@ import org.apache.batik.util.HaltingThread;
  * rendering in an offscreen buffer image.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: StaticRenderer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: StaticRenderer.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class StaticRenderer implements ImageRenderer {
 
@@ -427,9 +426,8 @@ public class StaticRenderer implements ImageRenderer {
      */
     public void flush(Collection areas) {
         AffineTransform at = getTransform();
-        Iterator i = areas.iterator();
-        while (i.hasNext()) {
-            Shape s = (Shape)i.next();
+        for (Object area : areas) {
+            Shape s = (Shape) area;
             Rectangle r = at.createTransformedShape(s).getBounds();
             flush(r);
         }

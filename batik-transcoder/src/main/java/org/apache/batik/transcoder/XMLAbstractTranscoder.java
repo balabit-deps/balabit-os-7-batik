@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder;
 
@@ -48,7 +48,7 @@ import org.w3c.dom.Document;
  * </ul>
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: XMLAbstractTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLAbstractTranscoder.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
@@ -107,7 +107,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
             // parse the XML document
             DocumentFactory f = createDocumentFactory(domImpl, parserClassname);
             Object xmlParserValidating = hints.get(KEY_XML_PARSER_VALIDATING);
-            boolean validating = xmlParserValidating != null && ((Boolean) xmlParserValidating).booleanValue();
+            boolean validating = xmlParserValidating != null && (Boolean) xmlParserValidating;
             f.setValidating(validating);
             try {
                 if (input.getInputStream() != null) {
@@ -181,7 +181,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
     /**
      * XML parser classname key.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_XML_PARSER_CLASSNAME</td>
@@ -209,7 +209,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
     /**
      * The validation mode of the XML parser.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_XML_PARSER_VALIDATING</td>
@@ -237,7 +237,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
     /**
      * Document element key.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_DOCUMENT_ELEMENT</td>
@@ -266,7 +266,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
     /**
      * Document element namespace URI key.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_DOCUMENT_ELEMENT_NAMESPACE_URI</td>
@@ -295,7 +295,7 @@ public abstract class XMLAbstractTranscoder extends AbstractTranscoder {
 
     /**
      * DOM Implementation key.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_DOM_IMPLEMENTATION</td>

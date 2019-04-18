@@ -29,7 +29,7 @@ import javax.swing.text.StyleContext;
  * A pool of styles and their associated resources
  *
  * @author <a href="mailto:tonny@kiyut.com">Tonny Kohar</a>
- * @version $Id: XMLContext.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLContext.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public class XMLContext extends StyleContext {
 
@@ -43,10 +43,10 @@ public class XMLContext extends StyleContext {
     public static final String ATTRIBUTE_VALUE_STYLE  = "attribute_value";
     public static final String CDATA_STYLE            = "cdata";
     
-    /** Map<String, Color> */
+    //Map<String, Color>
     protected Map syntaxForegroundMap = null;
     
-    /** Map<String, Font> */
+    //Map<String, Font>
     protected Map syntaxFontMap = null;
     
     

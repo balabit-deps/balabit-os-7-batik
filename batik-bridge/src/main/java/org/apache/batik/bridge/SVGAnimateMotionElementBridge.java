@@ -48,7 +48,7 @@ import org.w3c.dom.svg.SVGAngle;
  * Bridge class for the 'animateMotion' animation element.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVGAnimateMotionElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAnimateMotionElementBridge.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SVGAnimateMotionElementBridge extends SVGAnimateElementBridge {
 
@@ -221,7 +221,7 @@ outer:  while (i < len) {
             try {
                 float keyPointCoord =
                     Float.parseFloat(keyPointsString.substring(start, end));
-                keyPoints.add(new Float(keyPointCoord));
+                keyPoints.add(keyPointCoord);
             } catch (NumberFormatException nfEx ) {
                 throw new BridgeException
                     (ctx, element, nfEx, ErrorConstants.ERR_ATTRIBUTE_VALUE_MALFORMED,
@@ -231,7 +231,7 @@ outer:  while (i < len) {
         len = keyPoints.size();
         float[] ret = new float[len];
         for (int j = 0; j < len; j++) {
-            ret[j] = ((Float) keyPoints.get(j)).floatValue();
+            ret[j] = (Float) keyPoints.get(j);
         }
         return ret;
     }

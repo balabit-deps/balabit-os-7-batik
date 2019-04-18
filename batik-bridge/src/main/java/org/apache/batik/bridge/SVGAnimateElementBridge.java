@@ -32,7 +32,7 @@ import org.apache.batik.util.SMILConstants;
  * Bridge class for the 'animate' animation element.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVGAnimateElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAnimateElementBridge.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SVGAnimateElementBridge extends SVGAnimationElementBridge {
 
@@ -218,7 +218,7 @@ outer:  while (i < len) {
             try {
                 float keyTime =
                     Float.parseFloat(keyTimesString.substring(start, end));
-                keyTimes.add(new Float(keyTime));
+                keyTimes.add(keyTime);
             } catch (NumberFormatException nfEx ) {
                 throw new BridgeException
                     (ctx, element, nfEx, ErrorConstants.ERR_ATTRIBUTE_VALUE_MALFORMED,
@@ -228,7 +228,7 @@ outer:  while (i < len) {
         len = keyTimes.size();
         float[] ret = new float[len];
         for (int j = 0; j < len; j++) {
-            ret[j] = ((Float) keyTimes.get(j)).floatValue();
+            ret[j] = (Float) keyTimes.get(j);
         }
         return ret;
     }
@@ -294,7 +294,7 @@ outer:  while (i < len) {
             try {
                 float keySplineValue =
                     Float.parseFloat(keySplinesString.substring(start, end));
-                keySplines.add(new Float(keySplineValue));
+                keySplines.add(keySplineValue);
             } catch (NumberFormatException nfEx ) {
                 throw new BridgeException
                     (ctx, element, nfEx, ErrorConstants.ERR_ATTRIBUTE_VALUE_MALFORMED,
@@ -304,7 +304,7 @@ outer:  while (i < len) {
         len = keySplines.size();
         float[] ret = new float[len];
         for (int j = 0; j < len; j++) {
-            ret[j] = ((Float) keySplines.get(j)).floatValue();
+            ret[j] = (Float) keySplines.get(j);
         }
         return ret;
     }

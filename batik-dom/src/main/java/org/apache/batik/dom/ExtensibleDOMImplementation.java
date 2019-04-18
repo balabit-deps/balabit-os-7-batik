@@ -18,6 +18,7 @@
  */
 package org.apache.batik.dom;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -50,7 +51,7 @@ import org.w3c.dom.css.ViewCSS;
  * {@link org.apache.batik.util.Service}).
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: ExtensibleDOMImplementation.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ExtensibleDOMImplementation.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public abstract class ExtensibleDOMImplementation
     extends AbstractDOMImplementation
@@ -76,10 +77,9 @@ public abstract class ExtensibleDOMImplementation
      * Creates a new DOMImplementation.
      */
     public ExtensibleDOMImplementation() {
-        Iterator iter = getDomExtensions().iterator();
 
-        while(iter.hasNext()) {
-            DomExtension de = (DomExtension)iter.next();
+        for (Object o : getDomExtensions()) {
+            DomExtension de = (DomExtension) o;
             de.registerTags(this);
         }
     }
@@ -124,7 +124,7 @@ public abstract class ExtensibleDOMImplementation
         String pn = XMLResourceDescriptor.getCSSParserClassName();
         Parser p;
         try {
-            p = (Parser)Class.forName(pn).newInstance();
+            p = (Parser)Class.forName(pn).getDeclaredConstructor().newInstance();
         } catch (ClassNotFoundException e) {
             throw new DOMException(DOMException.INVALID_ACCESS_ERR,
                                    formatMessage("css.parser.class",
@@ -137,6 +137,14 @@ public abstract class ExtensibleDOMImplementation
             throw new DOMException(DOMException.INVALID_ACCESS_ERR,
                                    formatMessage("css.parser.access",
                                                  new Object[] { pn }));
+        } catch (NoSuchMethodException e) {
+            throw new DOMException(DOMException.INVALID_ACCESS_ERR,
+                    formatMessage("css.parser.access",
+                            new Object[] { pn }));
+        } catch (InvocationTargetException e) {
+            throw new DOMException(DOMException.INVALID_ACCESS_ERR,
+                    formatMessage("css.parser.access",
+                            new Object[] { pn }));
         }
         ExtendedParser ep = ExtendedParserWrapper.wrap(p);
 
@@ -208,8 +216,7 @@ public abstract class ExtensibleDOMImplementation
     }
 
     /**
-     * <b>DOM</b>: Implements {@link
-     * DOMImplementation#createDocumentType(String,String,String)}.
+     * <b>DOM</b>: Implements DOMImplementation#createDocumentType(String,String,String).
      */
     public DocumentType createDocumentType(String qualifiedName,
                                            String publicId,

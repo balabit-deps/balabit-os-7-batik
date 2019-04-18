@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine.value.css2;
 
@@ -36,8 +36,8 @@ import org.w3c.css.sac.LexicalUnit;
  * This class provides support for the CSS2 'font' shorthand property.
  *
  * The form of this property is:
- *     [ [ <font-style> || <font-variant> || <font-weight> ]?
- *         <font-size> [ / <line-height> ]? <font-family> ] |
+ *     [ [ &lt;font-style&gt; || &lt;font-variant&gt; || &lt;font-weight&gt; ]?
+ *         &lt;font-size&gt; [ / &lt;line-height&gt; ]? &lt;font-family&gt; ] |
  *       caption | icon | menu | message-box | small-caption |
  *       status-bar | inherit
  *
@@ -48,7 +48,7 @@ import org.w3c.css.sac.LexicalUnit;
  * number to be font-weight.
  *
  * @author <a href="mailto:deweese@apache.org">deweese</a>
- * @version $Id: FontShorthandManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: FontShorthandManager.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class FontShorthandManager
     extends AbstractValueFactory

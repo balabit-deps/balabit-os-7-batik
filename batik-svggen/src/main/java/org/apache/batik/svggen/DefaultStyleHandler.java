@@ -20,7 +20,6 @@ package org.apache.batik.svggen;
 
 import org.apache.batik.util.SVGConstants;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -33,7 +32,7 @@ import org.w3c.dom.Element;
  * way to style an SVG <code>Element</code>.
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
- * @version $Id: DefaultStyleHandler.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DefaultStyleHandler.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class DefaultStyleHandler implements StyleHandler, SVGConstants {
     
@@ -74,13 +73,12 @@ public class DefaultStyleHandler implements StyleHandler, SVGConstants {
     public void setStyle(Element element, Map styleMap,
                          SVGGeneratorContext generatorContext) {
         String tagName = element.getTagName();
-        Iterator iter = styleMap.keySet().iterator();
-        while (iter.hasNext()) {
-            String styleName = (String)iter.next();
-            if (element.getAttributeNS(null, styleName).length() == 0){
+        for (Object o : styleMap.keySet()) {
+            String styleName = (String) o;
+            if (element.getAttributeNS(null, styleName).length() == 0) {
                 if (appliesTo(styleName, tagName)) {
                     element.setAttributeNS(null, styleName,
-                                           (String)styleMap.get(styleName));
+                            (String) styleMap.get(styleName));
                 }
             }
         }

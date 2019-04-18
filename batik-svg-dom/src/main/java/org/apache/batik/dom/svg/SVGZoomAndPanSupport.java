@@ -28,7 +28,7 @@ import org.w3c.dom.svg.SVGZoomAndPan;
  * This class provides support for SVGZoomAndPan features.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVGZoomAndPanSupport.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGZoomAndPanSupport.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SVGZoomAndPanSupport implements SVGConstants {
 
@@ -56,7 +56,7 @@ public class SVGZoomAndPanSupport implements SVGConstants {
             throw ((AbstractNode)elt).createDOMException
                 (DOMException.INVALID_MODIFICATION_ERR,
                  "zoom.and.pan",
-                 new Object[] { new Integer(val) });
+                 new Object[] {(int) val});
         }
     }
 

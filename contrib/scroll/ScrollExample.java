@@ -24,7 +24,6 @@ import java.io.File;
 import java.net.URL;
 import java.net.MalformedURLException;
 import javax.swing.JFrame;
-import javax.swing.WindowConstants;
 
 import org.apache.batik.swing.*;
 
@@ -39,11 +38,11 @@ import org.apache.batik.swing.*;
 *    
 *    
 */
-public class ScrollExample
+public final class ScrollExample
 {
     
     /** Command-line start */
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         if(args.length != 1)
         {

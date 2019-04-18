@@ -31,7 +31,7 @@ import org.w3c.dom.NodeList;
  * attribute syntaxes.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: AbstractContentSelector.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractContentSelector.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public abstract class AbstractContentSelector {
 
@@ -122,7 +122,7 @@ public abstract class AbstractContentSelector {
     /**
      * An interface for content selector factories.
      */
-    protected static interface ContentSelectorFactory {
+    protected interface ContentSelectorFactory {
 
         /**
          * Creates a new selector object.

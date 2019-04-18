@@ -34,13 +34,13 @@ import java.util.List;
  * This class handles looking up service providers on the class path.
  * It implements the system described in:
  *
- * <a href='http://java.sun.com/j2se/1.3/docs/guide/jar/jar.html#Service Provider'>JAR
+ * <a href="http://java.sun.com/j2se/1.3/docs/guide/jar/jar.html#Service%20Provider">JAR
  * File Specification Under Service Provider</a>. Note that this
  * interface is very similar to the one they describe which seems to
  * be missing in the JDK.
  *
  * @author <a href="mailto:Thomas.DeWeeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: Service.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Service.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public class Service {
 
@@ -120,7 +120,7 @@ public class Service {
                         // System.out.println("Line: " + line);
 
                         // Try and load the class
-                        Object obj = cl.loadClass(line).newInstance();
+                        Object obj = cl.loadClass(line).getDeclaredConstructor().newInstance();
                         // stick it into our vector...
                         l.add(obj);
                     } catch (Exception ex) {

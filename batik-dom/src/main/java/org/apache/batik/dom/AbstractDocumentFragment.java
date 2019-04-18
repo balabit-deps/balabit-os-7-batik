@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
  * This class implements {@link org.w3c.dom.DocumentFragment} interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractDocumentFragment.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractDocumentFragment.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 
 public abstract class AbstractDocumentFragment
@@ -66,9 +66,9 @@ public abstract class AbstractDocumentFragment
             throw createDOMException
                 (DOMException.HIERARCHY_REQUEST_ERR,
                  "child.type",
-                 new Object[] { new Integer(getNodeType()),
+                 new Object[] {(int) getNodeType(),
                                 getNodeName(),
-                                new Integer(n.getNodeType()),
+                         (int) n.getNodeType(),
                                 n.getNodeName() });
         }
     }

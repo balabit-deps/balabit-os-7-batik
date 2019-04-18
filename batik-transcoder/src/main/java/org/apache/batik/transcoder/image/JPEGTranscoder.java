@@ -35,7 +35,7 @@ import org.apache.batik.transcoder.image.resources.Messages;
  * This class is an <code>ImageTranscoder</code> that produces a JPEG image.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: JPEGTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: JPEGTranscoder.java 1805899 2017-08-23 14:31:57Z ssteiner $
  */
 public class JPEGTranscoder extends ImageTranscoder {
 
@@ -72,7 +72,7 @@ public class JPEGTranscoder extends ImageTranscoder {
         try {
             float quality;
             if (hints.containsKey(KEY_QUALITY)) {
-                quality = ((Float)hints.get(KEY_QUALITY)).floatValue();
+                quality = (Float) hints.get(KEY_QUALITY);
             } else {
                 TranscoderException te;
                 te = new TranscoderException
@@ -101,7 +101,7 @@ public class JPEGTranscoder extends ImageTranscoder {
 
     /**
      * The encoder quality factor key.
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_QUALITY</td>
@@ -112,7 +112,7 @@ public class JPEGTranscoder extends ImageTranscoder {
      *   </tr>
      *   <tr>
      *     <th valign="top" align="right">Default:</th>
-     *     <td valign="top">1 (no lossy)</td>
+     *     <td valign="top">0.75 (lossy)</td>
      *   </tr>
      *   <tr>
      *     <th valign="top" align="right">Required:</th>
@@ -133,7 +133,7 @@ public class JPEGTranscoder extends ImageTranscoder {
     private static class QualityKey extends TranscodingHints.Key {
         public boolean isCompatibleValue(Object v) {
             if (v instanceof Float) {
-                float q = ((Float)v).floatValue();
+                float q = (Float) v;
                 return (q > 0 && q <= 1.0f);
             } else {
                 return false;

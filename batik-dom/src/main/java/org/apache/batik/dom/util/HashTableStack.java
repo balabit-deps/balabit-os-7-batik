@@ -18,11 +18,13 @@
  */
 package org.apache.batik.dom.util;
 
+import java.util.HashMap;
+
 /**
  * This class represents a stack of HashTable objects.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: HashTableStack.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: HashTableStack.java 1810674 2017-10-03 09:12:00Z ssteiner $
  */
 public class HashTableStack {
     /**
@@ -86,7 +88,7 @@ public class HashTableStack {
         /**
          * The table.
          */
-        public HashTable table;
+        public HashMap table;
         
         /**
          * The next link.
@@ -108,7 +110,7 @@ public class HashTableStack {
          * Creates a new link.
          */
         public Link(Link n) {
-            table = new HashTable();
+            table = new HashMap();
             next  = n;
             if (next != null) 
                 defaultStr = next.defaultStr;

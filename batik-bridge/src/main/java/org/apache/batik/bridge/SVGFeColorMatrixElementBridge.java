@@ -31,16 +31,16 @@ import org.apache.batik.gvt.GraphicsNode;
 import org.w3c.dom.Element;
 
 /**
- * Bridge class for the &lt;feColorMatrix> element.
+ * Bridge class for the &lt;feColorMatrix&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFeColorMatrixElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFeColorMatrixElementBridge.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGFeColorMatrixElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge {
 
     /**
-     * Constructs a new bridge for the &lt;feColorMatrix> element.
+     * Constructs a new bridge for the &lt;feColorMatrix&gt; element.
      */
     public SVGFeColorMatrixElementBridge() {}
 
@@ -119,7 +119,7 @@ public class SVGFeColorMatrixElementBridge
             colorMatrix = ColorMatrixRable8Bit.buildSaturate(s);
             break;
         default:
-            throw new Error("invalid convertType:" + type ); // can't be reached
+            throw new RuntimeException("invalid convertType:" + type ); // can't be reached
         }
         colorMatrix.setSource(in);
 

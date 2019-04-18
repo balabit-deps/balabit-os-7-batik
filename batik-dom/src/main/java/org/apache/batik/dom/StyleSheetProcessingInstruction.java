@@ -15,23 +15,25 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.dom;
 
 import org.apache.batik.dom.util.DOMUtilities;
-import org.apache.batik.dom.util.HashTable;
+
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.stylesheets.LinkStyle;
 import org.w3c.dom.stylesheets.StyleSheet;
+
+import java.util.HashMap;
 
 /**
  * This class provides an implementation of the 'xml-stylesheet' processing
  * instructions.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: StyleSheetProcessingInstruction.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: StyleSheetProcessingInstruction.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public class StyleSheetProcessingInstruction
     extends AbstractProcessingInstruction
@@ -55,7 +57,7 @@ public class StyleSheetProcessingInstruction
     /**
      * The pseudo attributes.
      */
-    protected transient HashTable pseudoAttributes;
+    protected transient HashMap<String, String> pseudoAttributes;
 
     /**
      * Creates a new ProcessingInstruction object.
@@ -116,9 +118,9 @@ public class StyleSheetProcessingInstruction
     /**
      * Returns the pseudo attributes in a table.
      */
-    public HashTable getPseudoAttributes() {
+    public HashMap<String, String> getPseudoAttributes() {
         if (pseudoAttributes == null) {
-            pseudoAttributes = new HashTable();
+            pseudoAttributes = new HashMap<String, String>();
             pseudoAttributes.put("alternate", "no");
             pseudoAttributes.put("media",     "all");
             DOMUtilities.parseStyleSheetPIData(data, pseudoAttributes);

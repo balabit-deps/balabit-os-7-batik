@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
  * {@link org.w3c.css.sac.DescendantSelector} interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: CSSDirectAdjacentSelector.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CSSDirectAdjacentSelector.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 
 public class CSSDirectAdjacentSelector extends AbstractSiblingSelector {
@@ -60,8 +60,9 @@ public class CSSDirectAdjacentSelector extends AbstractSiblingSelector {
         if (!((ExtendedSelector)getSiblingSelector()).match(e, pseudoE))
             return false;
         while ((n = n.getPreviousSibling()) != null &&
-               n.getNodeType() != Node.ELEMENT_NODE);
-
+               n.getNodeType() != Node.ELEMENT_NODE) {
+            //empty
+        }
         if (n == null) 
             return false;
 

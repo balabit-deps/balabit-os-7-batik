@@ -18,19 +18,16 @@
  */
 package org.apache.batik.bridge;
 
-import java.net.URL;
-
-import org.apache.batik.anim.dom.SVGOMDocument;
-import org.apache.batik.bridge.BridgeContext;
 import org.apache.batik.dom.AbstractDocument;
 
 /**
- * This class implements the org.w3c.dom.Location interface for Batik
+ * This class implements the org.apache.batik.w3c.dom.Location interface for Batik
  *
  * @author <a href="mailto:gwadej@anomaly.org">G. Wade Johnson</a>
  * @version $Id: Location.java$
  */
-public class Location implements org.w3c.dom.Location {
+public class Location implements org.apache.batik.w3c.dom.Location
+{
     private BridgeContext bridgeContext;
 
     /**

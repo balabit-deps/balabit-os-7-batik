@@ -19,6 +19,7 @@
 package org.apache.batik.dom;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.MissingResourceException;
 
@@ -26,7 +27,6 @@ import org.apache.batik.dom.events.DocumentEventSupport;
 import org.apache.batik.dom.events.EventSupport;
 import org.apache.batik.i18n.Localizable;
 import org.apache.batik.i18n.LocalizableSupport;
-import org.apache.batik.dom.util.HashTable;
 
 import org.w3c.dom.DOMImplementation;
 
@@ -35,7 +35,7 @@ import org.w3c.dom.DOMImplementation;
  * {@link org.w3c.dom.css.DOMImplementationCSS} interfaces.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractDOMImplementation.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractDOMImplementation.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 
 public abstract class AbstractDOMImplementation
@@ -58,7 +58,7 @@ public abstract class AbstractDOMImplementation
     /**
      * The supported features.
      */
-    protected final HashTable features = new HashTable();
+    protected final HashMap<String, Object> features = new HashMap<String, Object>();
     {
         // registerFeature("BasicEvents",        "3.0");
         registerFeature("Core",               new String[] { "2.0", "3.0" });
@@ -111,8 +111,8 @@ public abstract class AbstractDOMImplementation
             return version.equals(v);
         } else {
             String[] va = (String[])v;
-            for (int i = 0; i < va.length; i++) {
-                if (version.equals(va[i])) {
+            for (String aVa : va) {
+                if (version.equals(aVa)) {
                     return true;
                 }
             }

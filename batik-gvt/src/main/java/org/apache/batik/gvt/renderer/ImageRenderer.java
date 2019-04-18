@@ -28,7 +28,7 @@ import java.util.Collection;
  * Interface for GVT Renderers that render into raster images.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: ImageRenderer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ImageRenderer.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public interface ImageRenderer extends Renderer{
 
@@ -55,7 +55,7 @@ public interface ImageRenderer extends Renderer{
      * Returns the transform from the current user space (as defined
      * by the top node of the GVT tree) to the device space.
      */
-    public AffineTransform getTransform();
+    AffineTransform getTransform();
 
     /**
      * Sets the specified rendering hints to be used for future renderings.

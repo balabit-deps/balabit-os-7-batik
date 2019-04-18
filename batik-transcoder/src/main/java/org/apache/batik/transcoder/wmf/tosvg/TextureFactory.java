@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.wmf.tosvg;
 
@@ -34,9 +34,9 @@ import org.apache.batik.transcoder.wmf.WMFConstants;
  * This class generate Paints from WMF hatch definitions. All generated
  * Paints are cached for future use.
  *
- * @version $Id: TextureFactory.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: TextureFactory.java 1808977 2017-09-20 09:06:07Z ssteiner $
  */
-public class TextureFactory {
+public final class TextureFactory {
     private static TextureFactory fac = null;
     private Map textures = new HashMap(1);
     private static final int SIZE = 10;
@@ -71,7 +71,7 @@ public class TextureFactory {
      *  texture will be cached, so the Paint will only be created once.
      */
     public Paint getTexture(int textureId) {
-        Integer _itexture = new Integer(textureId);
+        Integer _itexture = textureId;
         if (textures.containsKey( _itexture)) {
             Paint paint = (Paint)(textures.get(_itexture));
             return paint;

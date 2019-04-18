@@ -36,7 +36,7 @@ import java.util.zip.ZipException;
  * Holds the data for more URLs.
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: ParsedURLData.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ParsedURLData.java 1820736 2018-01-10 11:18:23Z ssteiner $
  */
 public class ParsedURLData {
 
@@ -556,7 +556,11 @@ loop2:          while (i < len) {
             if (urlC instanceof HttpURLConnection) {
                 // bug 49889: if available, return the error stream
                 // (allow interpretation of content in the HTTP error response)
-                return (stream = ((HttpURLConnection) urlC).getErrorStream());
+                stream = ((HttpURLConnection) urlC).getErrorStream();
+                if (stream == null) {
+                    throw e;
+                }
+                return stream;
             } else {
                 throw e;
             }

@@ -24,10 +24,10 @@ import java.net.URL;
 /**
  * Protocol Handler for the 'jar' protocol.
  * This appears to have the format:
- * jar:<URL for jar file>!<path in jar file>
+ * jar:&lt;URL for jar file&gt;!&lt;path in jar file&gt;
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: ParsedURLJarProtocolHandler.java 1733416 2016-03-03 07:07:13Z gadams $ 
+ * @version $Id: ParsedURLJarProtocolHandler.java 1805408 2017-08-18 12:21:52Z ssteiner $ 
  */
 public class ParsedURLJarProtocolHandler 
     extends ParsedURLDefaultProtocolHandler {

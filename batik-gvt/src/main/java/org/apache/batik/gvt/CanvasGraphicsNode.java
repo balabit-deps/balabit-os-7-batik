@@ -27,7 +27,7 @@ import java.awt.geom.NoninvertibleTransformException;
  * The graphics node container with a background color.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: CanvasGraphicsNode.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CanvasGraphicsNode.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class CanvasGraphicsNode extends CompositeGraphicsNode {
 
@@ -94,7 +94,7 @@ public class CanvasGraphicsNode extends CompositeGraphicsNode {
                 inverseTransform = transform.createInverse();
             }catch(NoninvertibleTransformException e){
                 // Should never happen.
-                throw new Error( e.getMessage() );
+                throw new RuntimeException( e.getMessage() );
             }
         }
         else{
@@ -127,7 +127,7 @@ public class CanvasGraphicsNode extends CompositeGraphicsNode {
                 inverseTransform = transform.createInverse();
             }catch(NoninvertibleTransformException e){
                 // Should never happen.
-                throw new Error( e.getMessage() );
+                throw new RuntimeException( e.getMessage() );
             }
         }
         else{

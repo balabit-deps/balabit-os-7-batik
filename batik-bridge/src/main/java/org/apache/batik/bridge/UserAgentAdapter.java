@@ -41,7 +41,7 @@ import org.w3c.dom.svg.SVGDocument;
  * the creation of UserAgent instances.
  *
  * @author <a href="mailto:thomas.deweese@kodak.com">Thomas DeWeese</a>
- * @version $Id: UserAgentAdapter.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: UserAgentAdapter.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class UserAgentAdapter implements UserAgent {
     protected Set FEATURES   = new HashSet();
@@ -437,7 +437,7 @@ public class UserAgentAdapter implements UserAgent {
     /**
      * This Implementation simply throws a BridgeException.
      *
-     * @param e   The &lt;image> element that can't be loaded.
+     * @param e   The &lt;image&gt; element that can't be loaded.
      * @param url The resolved url that can't be loaded.
      * @param message As best as can be determined the reason it can't be
      *                loaded (not available, corrupt, unknown format,...).

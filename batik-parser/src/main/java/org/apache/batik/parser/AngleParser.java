@@ -25,7 +25,7 @@ import java.io.IOException;
  * values.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AngleParser.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AngleParser.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class AngleParser extends NumberParser {
 
@@ -132,7 +132,7 @@ public class AngleParser extends NumberParser {
             skipSpaces();
             if (current != -1) {
                 reportError("end.of.stream.expected",
-                            new Object[] { new Integer(current) });
+                            new Object[] {current});
             }
         } catch (NumberFormatException e) {
             reportUnexpectedCharacterError( current );

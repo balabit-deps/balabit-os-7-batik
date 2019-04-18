@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.wmf.tosvg;
 
@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * It seems, it might be rewritten to keep just the plain int-data.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: MetaRecord.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: MetaRecord.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class MetaRecord /*implements Serializable*/ {
 
@@ -52,13 +52,13 @@ public class MetaRecord /*implements Serializable*/ {
     }
 
     /**
-     * helper method to add int-values. This way we keep the call to new Integer()
+     * helper method to add int-values. This way we keep the call to Integer.valueOf()
      * in one place, here.
      *
      * @param iValue  the value to add to ptVector, wrapped in an Integer
      */
     public final void addElement( int iValue ){
-        ptVector.add( new Integer( iValue ) );
+        ptVector.add(iValue);
     }
 
     /**
@@ -77,7 +77,7 @@ public class MetaRecord /*implements Serializable*/ {
      * @return the intValue of the element at offset
      */
     public final int elementAt( int offset ){
-        return ((Integer)ptVector.get( offset )).intValue();
+        return (Integer) ptVector.get(offset);
     }
 
     /** A record that contain byte arrays elements.

@@ -25,7 +25,7 @@ import java.util.HashMap;
  * A class to handle syncbase SMIL timing specifiers.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SyncbaseTimingSpecifier.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SyncbaseTimingSpecifier.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SyncbaseTimingSpecifier extends OffsetTimingSpecifier {
 
@@ -58,7 +58,7 @@ public class SyncbaseTimingSpecifier extends OffsetTimingSpecifier {
                                    float offset, String syncbaseID,
                                    boolean syncBegin) {
         super(owner, isBegin, offset);
-        // Trace.enter(this, null, new Object[] { owner, new Boolean(isBegin), new Float(offset), syncbaseID, new Boolean(syncBegin) } ); try {
+        // Trace.enter(this, null, new Object[] { owner, new Boolean(isBegin), Float.valueOf(offset), syncbaseID, new Boolean(syncBegin) } ); try {
         this.syncbaseID = syncbaseID;
         this.syncBegin = syncBegin;
         this.syncbaseElement = owner.getTimedElementById(syncbaseID);
@@ -126,7 +126,7 @@ public class SyncbaseTimingSpecifier extends OffsetTimingSpecifier {
      * to indicate that its value has changed.
      */
     float handleTimebaseUpdate(InstanceTime instanceTime, float newTime) {
-        // Trace.enter(this, "handleTimebaseUpdate", new Object[] { instanceTime, new Float(newTime) } ); try {
+        // Trace.enter(this, "handleTimebaseUpdate", new Object[] { instanceTime, Float.valueOf(newTime) } ); try {
         if (owner.hasPropagated) {
             return Float.POSITIVE_INFINITY;
         }

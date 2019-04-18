@@ -27,7 +27,7 @@ import org.w3c.dom.ProcessingInstruction;
  * interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractProcessingInstruction.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractProcessingInstruction.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractProcessingInstruction
     extends    AbstractChildNode
@@ -86,7 +86,7 @@ public abstract class AbstractProcessingInstruction
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         String val = this.data;

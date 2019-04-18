@@ -30,7 +30,7 @@ import org.w3c.dom.Element;
  * A base Bridge class for the kerning elements.
  *
  * @author <a href="mailto:dean.jackson@cmis.csiro.au">Dean Jackson</a>
- * @version $Id: SVGKernElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGKernElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public abstract class SVGKernElementBridge extends AbstractSVGBridge {
 
@@ -38,8 +38,8 @@ public abstract class SVGKernElementBridge extends AbstractSVGBridge {
      * Creates a Kern object that repesents the specified kerning element.
      *
      * @param ctx The bridge context.
-     * @param kernElement The kerning element. Should be either a &lt;hkern>
-     * or &lt;vkern> element.
+     * @param kernElement The kerning element. Should be either a &lt;hkern&gt;
+     * or &lt;vkern&gt; element.
      * @param font The font the kerning is related to.
      *
      * @return kern The new Kern object
@@ -89,8 +89,7 @@ public abstract class SVGKernElementBridge extends AbstractSVGBridge {
                         System.arraycopy( firstGlyphSet, 0, tmp, 0, firstGlyphLen );
                         firstGlyphSet = tmp;
                     }
-                    for (int i = 0; i < glyphCodes.length; i++)
-                        firstGlyphSet[firstGlyphLen++] = glyphCodes[i];
+                    for (int glyphCode : glyphCodes) firstGlyphSet[firstGlyphLen++] = glyphCode;
                 }
             }
         }
@@ -116,8 +115,7 @@ public abstract class SVGKernElementBridge extends AbstractSVGBridge {
                         System.arraycopy( secondGlyphSet, 0, tmp, 0, secondGlyphLen );
                         secondGlyphSet = tmp;
                     }
-                    for (int i = 0; i < glyphCodes.length; i++)
-                        secondGlyphSet[secondGlyphLen++] = glyphCodes[i];
+                    for (int glyphCode : glyphCodes) secondGlyphSet[secondGlyphLen++] = glyphCode;
                 }
             }
         }
@@ -140,8 +138,7 @@ public abstract class SVGKernElementBridge extends AbstractSVGBridge {
                     System.arraycopy( firstGlyphSet, 0, tmp, 0, firstGlyphLen );
                     firstGlyphSet = tmp;
                 }
-                for (int i = 0; i < glyphCodes.length; i++)
-                    firstGlyphSet[firstGlyphLen++] = glyphCodes[i];
+                for (int glyphCode : glyphCodes) firstGlyphSet[firstGlyphLen++] = glyphCode;
             }
         }
 
@@ -163,8 +160,7 @@ public abstract class SVGKernElementBridge extends AbstractSVGBridge {
                     System.arraycopy( secondGlyphSet, 0, tmp, 0, secondGlyphLen );
                     secondGlyphSet = tmp;
                 }
-                for (int i = 0; i < glyphCodes.length; i++)
-                    secondGlyphSet[secondGlyphLen++] = glyphCodes[i];
+                for (int glyphCode : glyphCodes) secondGlyphSet[secondGlyphLen++] = glyphCode;
             }
         }
 

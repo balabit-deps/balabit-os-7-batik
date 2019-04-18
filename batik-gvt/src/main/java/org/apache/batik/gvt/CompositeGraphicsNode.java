@@ -40,7 +40,7 @@ import org.apache.batik.util.HaltingThread;
  * <br>Note: this class is a 'little bit aware of' other threads, but not really threadsafe.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: CompositeGraphicsNode.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CompositeGraphicsNode.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public class CompositeGraphicsNode extends AbstractGraphicsNode
     implements List {
@@ -792,7 +792,9 @@ public class CompositeGraphicsNode extends AbstractGraphicsNode
         }
         // Remove the node
         int index = 0;
-        for (; node != children[index]; index++);     // fires exception when node not found!
+        for (; node != children[index]; index++) {
+            // fires exception when node not found!
+        }
         remove(index);
         return true;
     }
@@ -804,7 +806,7 @@ public class CompositeGraphicsNode extends AbstractGraphicsNode
      *
      * @param index the position of the graphics node to remove
      * @return the graphics node that was removed
-     * @exception IndexOutOfBoundsException if index out of range <code>
+     * @exception IndexOutOfBoundsException if index out of range
      */
     public Object remove(int index) {
         // Check for correct argument
@@ -867,10 +869,9 @@ public class CompositeGraphicsNode extends AbstractGraphicsNode
      * @param c the collection to be checked for containment
      */
     public boolean containsAll(Collection c) {
-        Iterator i = c.iterator();
-        while (i.hasNext()) {
-            if (!contains(i.next())) {
-                    return false;
+        for (Object aC : c) {
+            if (!contains(aC)) {
+                return false;
             }
         }
         return true;

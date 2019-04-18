@@ -34,16 +34,16 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- * Bridge class for the &lt;feMerge> element.
+ * Bridge class for the &lt;feMerge&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFeMergeElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFeMergeElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFeMergeElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge {
 
     /**
-     * Constructs a new bridge for the &lt;feMerge> element.
+     * Constructs a new bridge for the &lt;feMerge&gt; element.
      */
     public SVGFeMergeElementBridge() {}
 
@@ -178,13 +178,13 @@ public class SVGFeMergeElementBridge
     }
 
     /**
-     * Bridge class for the &lt;feMergeNode> element.
+     * Bridge class for the &lt;feMergeNode&gt; element.
      */
     public static class SVGFeMergeNodeElementBridge
             extends AnimatableGenericSVGBridge {
 
         /**
-         * Constructs a new bridge for the &lt;feMergeNode> element.
+         * Constructs a new bridge for the &lt;feMergeNode&gt; element.
          */
         public SVGFeMergeNodeElementBridge() {}
 

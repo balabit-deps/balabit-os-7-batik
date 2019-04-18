@@ -33,16 +33,16 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
- * Bridge class for the &lt;feComponentTransfer> element.
+ * Bridge class for the &lt;feComponentTransfer&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFeComponentTransferElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFeComponentTransferElementBridge.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGFeComponentTransferElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge {
 
     /**
-     * Constructs a new bridge for the &lt;feComponentTransfer> element.
+     * Constructs a new bridge for the &lt;feComponentTransfer&gt; element.
      */
     public SVGFeComponentTransferElementBridge() {}
 
@@ -153,7 +153,7 @@ public class SVGFeComponentTransferElementBridge
     }
 
     /**
-     * Bridge class for the &lt;feFuncA> element.
+     * Bridge class for the &lt;feFuncA&gt; element.
      */
     public static class SVGFeFuncAElementBridge extends SVGFeFuncElementBridge {
 
@@ -171,7 +171,7 @@ public class SVGFeComponentTransferElementBridge
     }
 
     /**
-     * Bridge class for the &lt;feFuncR> element.
+     * Bridge class for the &lt;feFuncR&gt; element.
      */
     public static class SVGFeFuncRElementBridge extends SVGFeFuncElementBridge {
 
@@ -189,7 +189,7 @@ public class SVGFeComponentTransferElementBridge
     }
 
     /**
-     * Bridge class for the &lt;feFuncG> element.
+     * Bridge class for the &lt;feFuncG&gt; element.
      */
     public static class SVGFeFuncGElementBridge extends SVGFeFuncElementBridge {
 
@@ -207,7 +207,7 @@ public class SVGFeComponentTransferElementBridge
     }
 
     /**
-     * Bridge class for the &lt;feFuncB> element.
+     * Bridge class for the &lt;feFuncB&gt; element.
      */
     public static class SVGFeFuncBElementBridge extends SVGFeFuncElementBridge {
 
@@ -292,7 +292,7 @@ public class SVGFeComponentTransferElementBridge
                 }
             }
             default:
-                throw new Error("invalid convertType:" + type ); // can't be reached
+                throw new RuntimeException("invalid convertType:" + type ); // can't be reached
             }
 
         }

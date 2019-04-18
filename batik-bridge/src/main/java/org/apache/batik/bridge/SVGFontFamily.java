@@ -36,7 +36,7 @@ import org.w3c.dom.NodeList;
  * A font family class for SVG fonts.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: SVGFontFamily.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFontFamily.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class SVGFontFamily implements GVTFontFamily {
 
@@ -120,7 +120,7 @@ public class SVGFontFamily implements GVTFontFamily {
      * it does not need CSS treatment.
      */
     public boolean isComplex() {
-        if (complex != null) return complex.booleanValue();
+        if (complex != null) return complex;
         boolean ret = isComplex(fontElement, ctx);
         complex = ret ? Boolean.TRUE : Boolean.FALSE;
         return ret;

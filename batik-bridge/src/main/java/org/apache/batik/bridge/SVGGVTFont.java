@@ -48,7 +48,7 @@ import org.w3c.dom.Element;
  * Represents an SVG font.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: SVGGVTFont.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGGVTFont.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public final class SVGGVTFont implements GVTFont, SVGConstants {
 
@@ -224,12 +224,12 @@ public final class SVGGVTFont implements GVTFont, SVGConstants {
         List glyphCodes = new ArrayList();
         for (int i = 0; i < glyphNames.length; i++) {
             if (glyphNames[i] != null && glyphNames[i].equals(name)) {
-                glyphCodes.add(new Integer(i));
+                glyphCodes.add(i);
             }
         }
         int[] glyphCodeArray = new int[glyphCodes.size()];
         for (int i = 0; i < glyphCodes.size(); i++) {
-            glyphCodeArray[i] = ((Integer)glyphCodes.get(i)).intValue();
+            glyphCodeArray[i] = (Integer) glyphCodes.get(i);
         }
         return glyphCodeArray;
     }
@@ -246,12 +246,12 @@ public final class SVGGVTFont implements GVTFont, SVGConstants {
         List glyphCodes = new ArrayList();
         for (int i = 0; i < glyphUnicodes.length; i++) {
             if (glyphUnicodes[i] != null && glyphUnicodes[i].equals(unicode)) {
-                glyphCodes.add(new Integer(i));
+                glyphCodes.add(i);
             }
         }
         int[] glyphCodeArray = new int[glyphCodes.size()];
         for (int i = 0; i < glyphCodes.size(); i++) {
-            glyphCodeArray[i] = ((Integer)glyphCodes.get(i)).intValue();
+            glyphCodeArray[i] = (Integer) glyphCodes.get(i);
         }
         return glyphCodeArray;
     }
@@ -682,8 +682,8 @@ public final class SVGGVTFont implements GVTFont, SVGConstants {
         // construct a string from the glyphCodes
         int nGlyphs = glyphCodes.length;
         StringBuffer workBuff = new StringBuffer( nGlyphs );
-        for (int i = 0; i < nGlyphs; i++) {
-            workBuff.append( glyphUnicodes[glyphCodes[i]] );
+        for (int glyphCode : glyphCodes) {
+            workBuff.append(glyphUnicodes[glyphCode]);
         }
         StringCharacterIterator sci = new StringCharacterIterator( workBuff.toString() );
         return createGlyphVector(frc, sci);

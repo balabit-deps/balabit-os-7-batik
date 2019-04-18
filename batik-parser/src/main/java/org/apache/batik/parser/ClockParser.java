@@ -24,7 +24,7 @@ import java.io.IOException;
  * A parser for clock values.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: ClockParser.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ClockParser.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class ClockParser extends TimingParser {
 
@@ -68,7 +68,7 @@ public class ClockParser extends TimingParser {
         float clockValue = parseOffset ? parseOffset() : parseClockValue();
         if (current != -1) {
             reportError("end.of.stream.expected",
-                        new Object[] { new Integer(current) });
+                        new Object[] {current});
         }
         if (clockHandler != null) {
             clockHandler.clockValue(clockValue);

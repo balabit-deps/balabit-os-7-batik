@@ -20,14 +20,14 @@ package org.apache.batik.dom.events;
 
 import java.util.HashSet;
 
-import org.w3c.dom.events.KeyboardEvent;
+import org.apache.batik.w3c.dom.events.KeyboardEvent;
 import org.w3c.dom.views.AbstractView;
 
 /**
  * DOM 3 Keyboard event class.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: DOMKeyboardEvent.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DOMKeyboardEvent.java 1830681 2018-05-01 13:38:53Z ssteiner $
  */
 public class DOMKeyboardEvent extends DOMUIEvent implements KeyboardEvent {
 
@@ -324,13 +324,13 @@ public class DOMKeyboardEvent extends DOMUIEvent implements KeyboardEvent {
         keyLocation = keyLocationArg;
         modifierKeys.clear();
         String[] modifiers = split(modifiersList);
-        for (int i = 0; i < modifiers.length; i++) {
-            modifierKeys.add(modifiers[i]);
+        for (String modifier : modifiers) {
+            modifierKeys.add(modifier);
         }
     }
 
     /**
-     * <b>DOM</b: Initializes this KeyboardEvent object.
+     * <b>DOM</b>: Initializes this KeyboardEvent object.
      * @param namespaceURIArg Specifies the event namespace URI.
      * @param typeArg Specifies the event type.
      * @param canBubbleArg Specifies whether or not the event can bubble.
@@ -363,8 +363,8 @@ public class DOMKeyboardEvent extends DOMUIEvent implements KeyboardEvent {
         keyLocation = keyLocationArg;
         modifierKeys.clear();
         String[] modifiers = split(modifiersList);
-        for (int i = 0; i < modifiers.length; i++) {
-            modifierKeys.add(modifiers[i]);
+        for (String modifier : modifiers) {
+            modifierKeys.add(modifier);
         }
     }
 }

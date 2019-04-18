@@ -37,7 +37,7 @@ import org.w3c.dom.Element;
  * for handlers implementing a caching strategy.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: DefaultCachedImageHandler.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DefaultCachedImageHandler.java 1805419 2017-08-18 13:04:30Z ssteiner $
  * @see             org.apache.batik.svggen.SVGGraphics2D
  */
 public abstract class DefaultCachedImageHandler
@@ -269,7 +269,7 @@ public abstract class DefaultCachedImageHandler
 
     /**
      * Determines the transformation needed to get the cached image to
-     * scale & position properly. Sets x and y attributes on the element
+     * scale &amp; position properly. Sets x and y attributes on the element
      * accordingly.
      */
     protected AffineTransform handleTransform(Element imageElement,

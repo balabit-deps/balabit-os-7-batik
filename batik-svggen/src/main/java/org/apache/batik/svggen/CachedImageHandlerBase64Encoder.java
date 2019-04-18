@@ -35,7 +35,7 @@ import org.w3c.dom.Element;
  * encoder.
  *
  * @author <a href="mailto:paul_evenblij@compuware.com">Paul Evenblij</a>
- * @version $Id: CachedImageHandlerBase64Encoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CachedImageHandlerBase64Encoder.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public class CachedImageHandlerBase64Encoder extends DefaultCachedImageHandler {
     /**
@@ -68,7 +68,7 @@ public class CachedImageHandlerBase64Encoder extends DefaultCachedImageHandler {
 
     /**
      * Determines the transformation needed to get the cached image to
-     * scale & position properly. Sets x and y attributes on the element
+     * scale &amp;   position properly. Sets x and y attributes on the element
      * accordingly.
      */
     protected AffineTransform handleTransform(Element imageElement,

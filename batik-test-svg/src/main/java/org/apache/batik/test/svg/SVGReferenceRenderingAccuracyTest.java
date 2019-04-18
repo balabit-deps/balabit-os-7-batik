@@ -27,7 +27,7 @@ import java.net.URL;
  * to the SVG file.
  *
  * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: SVGReferenceRenderingAccuracyTest.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGReferenceRenderingAccuracyTest.java 1806580 2017-08-29 12:06:44Z ssteiner $
  */
 public class SVGReferenceRenderingAccuracyTest
     extends ParametrizedRenderingAccuracyTest {
@@ -35,9 +35,9 @@ public class SVGReferenceRenderingAccuracyTest
    
     /**
      * For this type of test, the id should be made as 
-     * follows:<br />
-     * <fileName>#reference-alias <br />
-     * For example: <br />
+     * follows:<br>
+     * &lt;fileName&gt;#reference-alias <br>
+     * For example: <br>
      * samples/anne.svg#svgView(viewBox(0,0,100,100))-viewBox1
      */
     public void setId(String id){
@@ -67,8 +67,8 @@ public class SVGReferenceRenderingAccuracyTest
                   buildRefImgURL(dirNfile[0], dirNfile[1]));
 
         String[] variationURLs = buildVariationURLs(dirNfile[0], dirNfile[1]);
-        for (int i = 0; i < variationURLs.length; i++) {
-            addVariationURL(variationURLs[i]);
+        for (String variationURL : variationURLs) {
+            addVariationURL(variationURL);
         }
         setSaveVariation(new File(buildSaveVariationFile(dirNfile[0], dirNfile[1])));
         setCandidateReference(new File(buildCandidateReferenceFile(dirNfile[0], dirNfile[1])));
@@ -100,10 +100,10 @@ public class SVGReferenceRenderingAccuracyTest
         if(f.getParentFile().exists()){
             try{
                 if (fragment == null) {
-                    return f.toURL(); // No fragment.
+                    return f.toURI().toURL(); // No fragment.
                 } else {
                     // Construct URL that includes fragment...
-                    return new URL(f.toURL(), fragment);
+                    return new URL(f.toURI().toURL(), fragment);
                 }
             }catch(MalformedURLException e){
                 throw new IllegalArgumentException();

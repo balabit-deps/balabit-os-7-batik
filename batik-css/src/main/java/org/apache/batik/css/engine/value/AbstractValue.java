@@ -25,7 +25,7 @@ import org.w3c.dom.css.CSSValue;
  * This class provides an abstract implementation of the Value interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractValue.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractValue.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractValue implements Value {
     
@@ -145,7 +145,7 @@ public abstract class AbstractValue implements Value {
      * Creates an INVALID_ACCESS_ERR exception.
      */
     protected DOMException createDOMException() {
-        Object[] p = new Object[] { new Integer(getCssValueType()) };
+        Object[] p = new Object[] {(int) getCssValueType()};
         String s = Messages.formatMessage("invalid.value.access", p);
         return new DOMException(DOMException.INVALID_ACCESS_ERR, s);
     }

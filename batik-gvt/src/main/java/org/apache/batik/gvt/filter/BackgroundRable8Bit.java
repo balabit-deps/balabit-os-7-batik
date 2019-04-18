@@ -44,7 +44,7 @@ import org.apache.batik.gvt.GraphicsNode;
  * createRendering methods.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: BackgroundRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: BackgroundRable8Bit.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class BackgroundRable8Bit
     extends    AbstractRable {
@@ -292,9 +292,8 @@ public class BackgroundRable8Bit
         if (child != null) {
             CompositeGraphicsNode cgn = (CompositeGraphicsNode)gn;
             List children = cgn.getChildren();
-            Iterator i = children.iterator();
-            while (i.hasNext()) {
-                GraphicsNode childGN = (GraphicsNode)i.next();
+            for (Object aChildren : children) {
+                GraphicsNode childGN = (GraphicsNode) aChildren;
                 // System.out.println("Parent: "      + cgn +
                 //                    "\n  Child: "   + child +
                 //                    "\n  ChildGN: " + childGN);
@@ -314,7 +313,7 @@ public class BackgroundRable8Bit
 
                 if (aoi.intersects(cbounds)) {
                     srcs.add(childGN.getEnableBackgroundGraphicsNodeRable
-                             (true));
+                            (true));
                 }
             }
         }

@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 package org.apache.batik.dom.svg;
 
 import java.util.List;
@@ -31,7 +31,7 @@ import org.w3c.dom.Element;
  * and enclosure checking.
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
- * @version $Id: SVGSVGContext.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGSVGContext.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface SVGSVGContext extends SVGContext {
 

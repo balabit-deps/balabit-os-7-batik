@@ -29,7 +29,7 @@ import org.apache.batik.transcoder.Transcoder;
  * <code>SVGConverter</code> operation.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: DefaultSVGConverterController.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DefaultSVGConverterController.java 1808021 2017-09-11 12:17:28Z ssteiner $
  */
 public class DefaultSVGConverterController implements SVGConverterController {
     /**

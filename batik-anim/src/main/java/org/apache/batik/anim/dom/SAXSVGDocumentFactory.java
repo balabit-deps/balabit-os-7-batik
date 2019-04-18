@@ -44,7 +44,7 @@ import org.w3c.dom.svg.SVGDocument;
  * from an URI using SAX2.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SAXSVGDocumentFactory.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SAXSVGDocumentFactory.java 1803524 2017-07-31 12:12:37Z ssteiner $
  */
 public class SAXSVGDocumentFactory
     extends    SAXDocumentFactory
@@ -76,7 +76,7 @@ public class SAXSVGDocumentFactory
      * The dtd public IDs resource bundle class name.
      */
     protected static final String DTDIDS =
-        "org.apache.batik.dom.svg.resources.dtdids";
+        "org.apache.batik.anim.dom.resources.dtdids";
 
     /**
      * Constant for HTTP content type header charset field.

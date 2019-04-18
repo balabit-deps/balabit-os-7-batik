@@ -79,25 +79,25 @@ import java.awt.image.ColorModel;
  *
  *
  * <p>
- * <img src = "radial.jpg">
+ * <img alt="" src = "radial.jpg">
  * <p>
  * This image demonstrates a radial gradient with NO_CYCLE and default focus.
  * <p>
  *
- * <img src = "radial2.jpg">
+ * <img alt="" src = "radial2.jpg">
  * <p>
  * This image demonstrates a radial gradient with NO_CYCLE and non-centered
  * focus.
  * <p>
  *
- * <img src = "radial3.jpg">
+ * <img alt="" src = "radial3.jpg">
  * <p>
  * This image demonstrates a radial gradient with REFLECT and non-centered
  * focus.
  *
  * @author  Nicholas Talian, Vincent Hardy, Jim Graham, Jerry Evans
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: RadialGradientPaint.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: RadialGradientPaint.java 1805419 2017-08-18 13:04:30Z ssteiner $
  *
  */
 public final class RadialGradientPaint extends MultipleGradientPaint {
@@ -138,7 +138,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      *
      */
@@ -174,7 +174,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      *
      */
@@ -218,7 +218,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      *
      */
@@ -260,7 +260,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      */
     public RadialGradientPaint(Point2D center, float radius,
@@ -305,7 +305,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      */
     public RadialGradientPaint(Point2D center, float radius,
@@ -356,7 +356,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      */
     public RadialGradientPaint(Point2D center,
@@ -407,7 +407,7 @@ public final class RadialGradientPaint extends MultipleGradientPaint {
      *
      * @throws IllegalArgumentException
      *         if fractions.length != colors.length, or if colors is less
-     *         than 2 in size, or if radius < 0
+     *         than 2 in size, or if radius &lt; 0
      *
      */
     public RadialGradientPaint(Rectangle2D gradientBounds,

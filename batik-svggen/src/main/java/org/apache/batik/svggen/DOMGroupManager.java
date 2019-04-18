@@ -19,7 +19,6 @@
 package org.apache.batik.svggen;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.batik.ext.awt.g2d.GraphicContext;
@@ -56,7 +55,7 @@ import org.w3c.dom.Element;
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: DOMGroupManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DOMGroupManager.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class DOMGroupManager implements SVGSyntax, ErrorConstants {
     public static final short DRAW = 0x01;
@@ -234,11 +233,10 @@ public class DOMGroupManager implements SVGSyntax, ErrorConstants {
             // descriptor. If there is, check if the attribute
             // applies to the input element. If there is none,
             // assume the attribute applies to the element.
-            Iterator iter = groupAttrMap.keySet().iterator();
-            while(iter.hasNext()){
-                String attrName = (String)iter.next();
+            for (Object o : groupAttrMap.keySet()) {
+                String attrName = (String) o;
                 SVGAttribute attr = SVGAttributeMap.get(attrName);
-                if(attr != null && !attr.appliesTo(tag))
+                if (attr != null && !attr.appliesTo(tag))
                     groupAttrMap.remove(attrName);
             }
         }
@@ -315,11 +313,10 @@ public class DOMGroupManager implements SVGSyntax, ErrorConstants {
     static Map processDeltaMap(Map map, Map referenceMap) {
         // no need to be synch => HashMap
         Map mapDelta = new HashMap();
-        Iterator iter = map.keySet().iterator();
-        while (iter.hasNext()){
-            String key = (String)iter.next();
-            String value = (String)map.get(key);
-            String refValue = (String)referenceMap.get(key);
+        for (Object o : map.keySet()) {
+            String key = (String) o;
+            String value = (String) map.get(key);
+            String refValue = (String) referenceMap.get(key);
             if (!value.equals(refValue)) {
                 /*if(key.equals(SVG_TRANSFORM_ATTRIBUTE)){
                   // Special handling for the transform attribute.

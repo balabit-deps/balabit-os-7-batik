@@ -20,7 +20,6 @@ package org.apache.batik.bridge.svg12;
 
 import java.awt.Point;
 import java.awt.event.KeyEvent;
-import java.awt.geom.Point2D;
 
 import org.apache.batik.bridge.BridgeContext;
 import org.apache.batik.bridge.BridgeEventSupport;
@@ -54,7 +53,7 @@ import org.w3c.dom.events.EventTarget;
  * that mouse events under sXBL have appropriate bubble limits.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVG12BridgeEventSupport.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVG12BridgeEventSupport.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class SVG12BridgeEventSupport extends BridgeEventSupport {
 

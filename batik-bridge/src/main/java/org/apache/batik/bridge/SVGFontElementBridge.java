@@ -24,15 +24,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * Bridge class for the &lt;font> element.
+ * Bridge class for the &lt;font&gt; element.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: SVGFontElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFontElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFontElementBridge extends AbstractSVGBridge {
 
     /**
-     * Constructs a new bridge for the &lt;font> element.
+     * Constructs a new bridge for the &lt;font&gt; element.
      */
     public SVGFontElementBridge() {
     }
@@ -45,7 +45,7 @@ public class SVGFontElementBridge extends AbstractSVGBridge {
     }
 
     /**
-     * Constructs a new SVGGVTFont that represents the specified &lt;font> element
+     * Constructs a new SVGGVTFont that represents the specified &lt;font&gt; element
      * at the requested size.
      *
      * @param ctx The current bridge context.

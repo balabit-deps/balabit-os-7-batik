@@ -41,7 +41,7 @@ import org.apache.batik.ext.awt.image.rendered.RenderedImageCachableRed;
  * ClipRable implementation
  *
  * @author <a href="mailto:Thomas.DeWeese@Kodak.com">Thomas DeWeese</a>
- * @version $Id: ClipRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ClipRable8Bit.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class ClipRable8Bit
     extends    AbstractRable
@@ -166,9 +166,7 @@ public class ClipRable8Bit
 
         if (false) {
             java.util.Set s = rh.keySet();
-            java.util.Iterator i = s.iterator();
-            while (i.hasNext()) {
-                Object o = i.next();
+            for (Object o : s) {
                 System.out.println("XXX: " + o + " -> " + rh.get(o));
             }
         }

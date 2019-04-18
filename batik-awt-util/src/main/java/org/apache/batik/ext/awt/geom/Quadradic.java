@@ -25,7 +25,7 @@ import java.awt.geom.Rectangle2D;
 /**
  * A class representing a quadratic path segment.
  *
- * @version $Id: Quadradic.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Quadradic.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class Quadradic extends AbstractSegment {
     public Point2D.Double p1, p2, p3;
@@ -148,8 +148,8 @@ public class Quadradic extends AbstractSegment {
     /**
      * Subdivides this Quadradic curve into two curves at t = 0.5.
      * can be done with getSegment but this is more efficent.
-     * @param q0 if non-null contains portion of curve from  0->.5
-     * @param q1 if non-null contains portion of curve from .5->1
+     * @param q0 if non-null contains portion of curve from  0-&gt;.5
+     * @param q1 if non-null contains portion of curve from .5-&gt;1
      */
     public void subdivide(Quadradic q0, Quadradic q1) {
         if ((q0 == null) && (q1 == null)) return;
@@ -181,8 +181,8 @@ public class Quadradic extends AbstractSegment {
 
     /**
      * Subdivides this Quadradic curve into two curves at given t.
-     * @param q0 if non-null contains portion of curve from 0->t.
-     * @param q1 if non-null contains portion of curve from t->1.
+     * @param q0 if non-null contains portion of curve from 0-&gt;t.
+     * @param q1 if non-null contains portion of curve from t-&gt;1.
      */
     public void subdivide(double t, Quadradic q0, Quadradic q1) {
         Point2D.Double np  = eval(t);
@@ -210,8 +210,8 @@ public class Quadradic extends AbstractSegment {
     /**
      * Subdivides this Quadradic curve into two curves at t = 0.5.
      * can be done with getSegment but this is more efficent.
-     * @param s0 if non-null contains portion of curve from  0->.5
-     * @param s1 if non-null contains portion of curve from .5->1
+     * @param s0 if non-null contains portion of curve from  0-&gt;.5
+     * @param s1 if non-null contains portion of curve from .5-&gt;1
      */
     public void subdivide(Segment s0, Segment s1) {
         Quadradic q0=null, q1=null;
@@ -223,8 +223,8 @@ public class Quadradic extends AbstractSegment {
     /**
      * Subdivides this Quadradic curve into two curves at t.
      * can be done with getSegment but this is more efficent.
-     * @param s0 if non-null contains portion of curve from  0->.5
-     * @param s1 if non-null contains portion of curve from .5->1
+     * @param s0 if non-null contains portion of curve from  0-&gt;.5
+     * @param s1 if non-null contains portion of curve from .5-&gt;1
      */
     public void subdivide(double t, Segment s0, Segment s1) {
         Quadradic q0=null, q1=null;

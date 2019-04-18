@@ -21,6 +21,7 @@ package org.apache.batik.transcoder.image;
 import java.awt.image.BufferedImage;
 import java.awt.image.SinglePixelPackedSampleModel;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
 
 import org.apache.batik.bridge.UserAgent;
 import org.apache.batik.transcoder.TranscoderException;
@@ -34,7 +35,7 @@ import org.apache.batik.transcoder.keys.IntegerKey;
  * This class is an <code>ImageTranscoder</code> that produces a PNG image.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: PNGTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PNGTranscoder.java 1810083 2017-09-29 10:39:45Z ssteiner $
  */
 public class PNGTranscoder extends ImageTranscoder {
 
@@ -63,13 +64,17 @@ public class PNGTranscoder extends ImageTranscoder {
         WriteAdapter adapter;
         try {
             Class clazz = Class.forName(className);
-            adapter = (WriteAdapter)clazz.newInstance();
+            adapter = (WriteAdapter)clazz.getDeclaredConstructor().newInstance();
             return adapter;
         } catch (ClassNotFoundException e) {
             return null;
         } catch (InstantiationException e) {
             return null;
         } catch (IllegalAccessException e) {
+            return null;
+        } catch (NoSuchMethodException e) {
+            return null;
+        } catch (InvocationTargetException e) {
             return null;
         }
     }
@@ -97,8 +102,8 @@ public class PNGTranscoder extends ImageTranscoder {
 
         if (hints.containsKey(PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE)) {
             forceTransparentWhite =
-                ((Boolean)hints.get
-                 (PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE)).booleanValue();
+                    (Boolean) hints.get
+                            (PNGTranscoder.KEY_FORCE_TRANSPARENT_WHITE);
         }
 
         if (forceTransparentWhite) {
@@ -128,7 +133,7 @@ public class PNGTranscoder extends ImageTranscoder {
      * This interface is used by <code>PNGTranscoder</code> to write PNG images 
      * through different codecs.
      *
-     * @version $Id: PNGTranscoder.java 1733416 2016-03-03 07:07:13Z gadams $
+     * @version $Id: PNGTranscoder.java 1810083 2017-09-29 10:39:45Z ssteiner $
      */
     public interface WriteAdapter {
         
@@ -152,7 +157,7 @@ public class PNGTranscoder extends ImageTranscoder {
     /**
      * The gamma correction key.
      *
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_GAMMA</td>
@@ -193,7 +198,7 @@ public class PNGTranscoder extends ImageTranscoder {
      * The color indexed image key to specify number of colors used in
      * palette.
      *
-     * <table border="0" cellspacing="0" cellpadding="1">
+     * <table summary="" border="0" cellspacing="0" cellpadding="1">
      *   <tr>
      *     <th valign="top" align="right">Key:</th>
      *     <td valign="top">KEY_INDEXED</td>

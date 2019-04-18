@@ -32,7 +32,7 @@ import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
 import java.awt.image.SampleModel;
 import java.awt.image.WritableRaster;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.batik.css.engine.SVGCSSEngine;
@@ -63,7 +63,7 @@ import org.w3c.dom.svg.SVGPreserveAspectRatio;
  * corresponding to the SVG built in cursors.
  *
  * @author <a href="mailto:vincent.hardy@sun.com">Vincent Hardy</a>
- * @version $Id: CursorManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CursorManager.java 1810674 2017-10-03 09:12:00Z ssteiner $
  */
 public class CursorManager implements SVGConstants, ErrorConstants {
     /**
@@ -100,7 +100,7 @@ public class CursorManager implements SVGConstants, ErrorConstants {
      */
     static {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        cursorMap = new Hashtable();
+        cursorMap = new HashMap();
         cursorMap.put(SVG_CROSSHAIR_VALUE,
                       Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
         cursorMap.put(SVG_DEFAULT_VALUE,

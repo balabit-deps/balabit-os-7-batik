@@ -27,17 +27,17 @@ import org.apache.batik.gvt.GraphicsNode;
 import org.w3c.dom.Element;
 
 /**
- * Bridge class for the &lt;feTile> element.
+ * Bridge class for the &lt;feTile&gt; element.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: SVGFeTileElementBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGFeTileElementBridge.java 1805408 2017-08-18 12:21:52Z ssteiner $
  */
 public class SVGFeTileElementBridge
     extends AbstractSVGFilterPrimitiveElementBridge {
 
 
     /**
-     * Constructs a new bridge for the &lt;feTile> element.
+     * Constructs a new bridge for the &lt;feTile&gt; element.
      */
     public SVGFeTileElementBridge() {}
 

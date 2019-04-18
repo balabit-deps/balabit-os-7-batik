@@ -35,7 +35,7 @@ import org.w3c.dom.svg.SVGFEConvolveMatrixElement;
  * This class implements {@link SVGFEConvolveMatrixElement}.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVGOMFEConvolveMatrixElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGOMFEConvolveMatrixElement.java 1805420 2017-08-18 13:04:41Z ssteiner $
  */
 public class SVGOMFEConvolveMatrixElement
     extends    SVGOMFilterPrimitiveStandardAttributes
@@ -148,7 +148,7 @@ public class SVGOMFEConvolveMatrixElement
     }
 
     /**
-     * <b>DOM</b>: Implements {@link SVGFEConvolveMatrixElement#getIn1()}.
+     * <b>DOM</b>: Implements SVGFEConvolveMatrixElement#getIn1().
      */
     public SVGAnimatedString getIn1() {
         return in;

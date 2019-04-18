@@ -40,7 +40,7 @@ import org.w3c.dom.NodeList;
  * into a <code>TestSuite</code> object.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: XMLTestSuiteLoader.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: XMLTestSuiteLoader.java 1806580 2017-08-29 12:06:44Z ssteiner $
  */
 public class XMLTestSuiteLoader implements XTSConstants {
 
@@ -57,7 +57,7 @@ public class XMLTestSuiteLoader implements XTSConstants {
     /**
      * An error happened while processing a <code>Test</code>
      * description.
-     * {0} : the <test> "className" attribute value
+     * {0} : the &lt;test&gt; "className" attribute value
      * {1} : exception's class name
      * {2} : exception's message
      * {3} : exception's stack trace

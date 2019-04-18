@@ -23,7 +23,7 @@ package org.apache.batik.anim.timing;
  * specification.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: InstanceTime.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: InstanceTime.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class InstanceTime implements Comparable {
 
@@ -53,7 +53,7 @@ public class InstanceTime implements Comparable {
     public InstanceTime(TimingSpecifier creator,
                         float time,
                         boolean clearOnReset) {
-        // Trace.enter(this, null, new Object[] { creator, new Float(time), timebase, new Boolean(clearOnReset) } ); try {
+        // Trace.enter(this, null, new Object[] { creator, Float.valueOf(time), timebase, new Boolean(clearOnReset) } ); try {
         this.creator = creator;
         // XXX Convert time from the creator's syncbase's
         //     time system into this time system.  Not
@@ -84,7 +84,7 @@ public class InstanceTime implements Comparable {
      * @param newTime the new time, in parent simple time
      */
     float dependentUpdate(float newTime) {
-        // Trace.enter(this, "dependentUpdate", new Object[] { new Float(newTime) } ); try {
+        // Trace.enter(this, "dependentUpdate", new Object[] { Float.valueOf(newTime) } ); try {
         // XXX Convert time from the creator's syncbase's
         //     time system into this time system.  Not
         //     strictly necessary in SVG.

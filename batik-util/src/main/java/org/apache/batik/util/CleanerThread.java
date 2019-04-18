@@ -30,7 +30,7 @@ import java.lang.ref.PhantomReference;
  * Complete Class Desc
  *
  * @author <a href="mailto:deweese@apache.org">l449433</a>
- * @version $Id: CleanerThread.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CleanerThread.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public class CleanerThread extends Thread {
 
@@ -53,7 +53,7 @@ public class CleanerThread extends Thread {
      * this class implement this interface then the 'cleared' method
      * will be called when the reference is queued.
      */
-    public static interface ReferenceCleared {
+    public interface ReferenceCleared {
         /* Called when the reference is cleared */
         void cleared();
     }

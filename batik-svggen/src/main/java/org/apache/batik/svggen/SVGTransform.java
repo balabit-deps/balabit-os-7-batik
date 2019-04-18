@@ -30,7 +30,7 @@ import org.apache.batik.ext.awt.g2d.TransformType;
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
  * @author <a href="mailto:paul_evenblij@compuware.com">Paul Evenblij</a>
- * @version $Id: SVGTransform.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGTransform.java 1808888 2017-09-19 14:22:11Z ssteiner $
  */
 public class SVGTransform extends AbstractSVGConverter{
     /**
@@ -256,7 +256,7 @@ public class SVGTransform extends AbstractSVGConverter{
         default:
             // This should never happen. If it does, there is a
             // serious error.
-            throw new Error();
+            throw new RuntimeException();
         }
 
         return transformString.toString();

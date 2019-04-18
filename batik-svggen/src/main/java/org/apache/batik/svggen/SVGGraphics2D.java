@@ -47,7 +47,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.text.AttributedCharacterIterator;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -80,7 +79,7 @@ import org.w3c.dom.Node;
  *
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGGraphics2D.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGGraphics2D.java 1808021 2017-09-11 12:17:28Z ssteiner $
  * @see                org.apache.batik.ext.awt.g2d.GraphicContext
  * @see                org.apache.batik.svggen.DOMTreeManager
  * @see                org.apache.batik.svggen.DOMGroupManager
@@ -1243,7 +1242,7 @@ public class SVGGraphics2D extends AbstractGraphics2D
      * For characters in script systems such as Hebrew and Arabic,
      * the glyphs can be rendered from right to left, in which case the
      * coordinate supplied is the location of the leftmost character
-     * on the baseline.<br />
+     * on the baseline.<br>
      *
      *
      * @param ati the iterator whose text is to be rendered
@@ -1464,10 +1463,9 @@ public class SVGGraphics2D extends AbstractGraphics2D
      */
     private boolean isUnderline(AttributedCharacterIterator ati) {
         Object attr = ati.getAttribute(TextAttribute.UNDERLINE);
-        if (TextAttribute.UNDERLINE_ON.equals(attr)) return true;
+        return TextAttribute.UNDERLINE_ON.equals(attr);
         // What to do about UNDERLINE_LOW_*?  Right now we don't
         // draw them since we can't really model them...
-        else return false;
     }
 
     /** Return true if the AttributedCharacterIterator is striked
@@ -1527,9 +1525,8 @@ public class SVGGraphics2D extends AbstractGraphics2D
         if (unsupportedAttributes == null) return false;
 
         Set      allAttrs = aci.getAllAttributeKeys();
-        Iterator iter     = allAttrs.iterator();
-        while (iter.hasNext()) {
-            if (unsupportedAttributes.contains(iter.next())) {
+        for (Object allAttr : allAttrs) {
+            if (unsupportedAttributes.contains(allAttr)) {
                 return true;
             }
         }

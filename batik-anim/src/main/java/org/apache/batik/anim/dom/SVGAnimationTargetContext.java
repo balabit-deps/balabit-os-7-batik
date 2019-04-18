@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 package org.apache.batik.anim.dom;
 
 import org.apache.batik.dom.svg.SVGContext;
@@ -26,7 +26,7 @@ import org.apache.batik.dom.svg.SVGContext;
  * to the element.
  *
  * @author <a href="mailto:cam%40mcc%2eid%2eau">Cameron McCormack</a>
- * @version $Id: SVGAnimationTargetContext.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGAnimationTargetContext.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public interface SVGAnimationTargetContext extends SVGContext {
 

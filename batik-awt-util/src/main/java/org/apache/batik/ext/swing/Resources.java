@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.ext.swing;
 
@@ -29,7 +29,7 @@ import org.apache.batik.util.resources.ResourceManager;
  * This class manages the message for the Swing extensions.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: Resources.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Resources.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class Resources {
 

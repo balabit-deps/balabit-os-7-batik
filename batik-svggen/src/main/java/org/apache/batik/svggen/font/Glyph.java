@@ -23,7 +23,7 @@ import org.apache.batik.svggen.font.table.GlyphDescription;
 
 /**
  * An individual glyph within a font.
- * @version $Id: Glyph.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Glyph.java 1804130 2017-08-04 14:41:11Z ssteiner $
  * @author <a href="mailto:david@steadystate.co.uk">David Schweinsberg</a>
  */
 public class Glyph {
@@ -64,11 +64,11 @@ public class Glyph {
      * @param factor a 16.16 fixed value
      */
     public void scale(int factor) {
-        for (int i = 0; i < points.length; i++) {
+        for (Point point : points) {
             //points[i].x = ( points[i].x * factor ) >> 6;
             //points[i].y = ( points[i].y * factor ) >> 6;
-            points[i].x = ((points[i].x<<10) * factor) >> 26;
-            points[i].y = ((points[i].y<<10) * factor) >> 26;
+            point.x = ((point.x << 10) * factor) >> 26;
+            point.y = ((point.y << 10) * factor) >> 26;
         }
         leftSideBearing = (short)(( leftSideBearing * factor) >> 6);
         advanceWidth = (advanceWidth * factor) >> 6;

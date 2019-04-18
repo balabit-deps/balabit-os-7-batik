@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.apps.svgpp;
 
@@ -35,7 +35,7 @@ import org.apache.batik.transcoder.svg2svg.SVGTranscoder;
  * svgpp is a pretty-printer for SVG source files.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: Main.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: Main.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class Main {
 
@@ -296,7 +296,7 @@ public class Main {
                 throw new IllegalArgumentException();
             }
             transcoder.addTranscodingHint(SVGTranscoder.KEY_TABULATION_WIDTH,
-                                          new Integer(arguments[index++]));
+                                          Integer.valueOf(arguments[index++]));
         }
 
         public String getDescription() {
@@ -314,7 +314,7 @@ public class Main {
                 throw new IllegalArgumentException();
             }
             transcoder.addTranscodingHint(SVGTranscoder.KEY_DOCUMENT_WIDTH,
-                                          new Integer(arguments[index++]));
+                                          Integer.valueOf(arguments[index++]));
         }
 
         public String getDescription() {

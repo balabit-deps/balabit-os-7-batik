@@ -42,7 +42,7 @@ import java.util.HashMap;
  * purpose, but in the interest of modularity the
  * use of <code>PlanarImage</code> has been avoided.
  *
- * @version $Id: SimpleRenderedImage.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SimpleRenderedImage.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class SimpleRenderedImage implements RenderedImage {
 
@@ -276,9 +276,9 @@ public abstract class SimpleRenderedImage implements RenderedImage {
         prefix = prefix.toLowerCase();
 
         List names = new ArrayList();
-        for (int i = 0; i < propertyNames.length; i++) {
-            if (propertyNames[i].startsWith(prefix)) {
-                names.add(propertyNames[i]);
+        for (String propertyName : propertyNames) {
+            if (propertyName.startsWith(prefix)) {
+                names.add(propertyName);
             }
         }
 

@@ -38,7 +38,7 @@ import org.apache.batik.util.HaltingThread;
  * Simple implementation of the Renderer that supports dynamic updates.
  *
  * @author <a href="mailto:Thierry.Kormann@sophia.inria.fr">Thierry Kormann</a>
- * @version $Id: MacRenderer.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: MacRenderer.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class MacRenderer implements ImageRenderer {
 
@@ -347,9 +347,8 @@ public class MacRenderer implements ImageRenderer {
             }
 
 
-            Iterator iter = devRLM.iterator();
-            while (iter.hasNext()) {
-                Rectangle r = (Rectangle)iter.next();
+            for (Object aDevRLM : devRLM) {
+                Rectangle r = (Rectangle) aDevRLM;
                 if (!dr.intersects(r)) continue;
                 r = dr.intersection(r);
                 g2d.setTransform(IDENTITY);

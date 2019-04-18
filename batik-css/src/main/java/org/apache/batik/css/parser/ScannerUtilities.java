@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.parser;
 
@@ -23,7 +23,7 @@ package org.apache.batik.css.parser;
  * A collection of utility functions for a CSS scanner.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: ScannerUtilities.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: ScannerUtilities.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class ScannerUtilities {
 

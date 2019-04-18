@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.dom;
 
@@ -31,7 +31,7 @@ import org.w3c.dom.views.DocumentView;
  * of the elements of a document.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: CSSOMViewCSS.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: CSSOMViewCSS.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class CSSOMViewCSS implements ViewCSS {
     

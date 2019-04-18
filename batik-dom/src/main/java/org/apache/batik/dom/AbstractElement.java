@@ -27,7 +27,7 @@ import org.apache.batik.util.XMLConstants;
 import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Element;
-import org.w3c.dom.ElementTraversal;
+import org.apache.batik.w3c.dom.ElementTraversal;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.TypeInfo;
@@ -37,7 +37,7 @@ import org.w3c.dom.events.MutationEvent;
  * This class implements the {@link org.w3c.dom.Element} interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractElement.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractElement.java 1830543 2018-04-30 10:17:31Z ssteiner $
  */
 public abstract class AbstractElement
     extends    AbstractParentChildNode
@@ -607,9 +607,9 @@ public abstract class AbstractElement
             throw createDOMException
                       (DOMException.HIERARCHY_REQUEST_ERR,
                        "child.type",
-                       new Object[] { new Integer(getNodeType()),
+                       new Object[] {(int) getNodeType(),
                                       getNodeName(),
-                                      new Integer(n.getNodeType()),
+                               (int) n.getNodeType(),
                                       n.getNodeName() });
         }
     }
@@ -813,17 +813,17 @@ public abstract class AbstractElement
                 return null;
             }
             int j = 0;
-            for ( int i = 0; i < table.length; i++ ) {
-                Entry e = table[ i ];
-                if ( e == null ) {
+            for (Entry aTable : table) {
+                Entry e = aTable;
+                if (e == null) {
                     continue;
                 }
                 do {
-                    if ( j++ == index ) {
+                    if (j++ == index) {
                         return e.value;
                     }
                     e = e.next;
-                } while ( e != null );
+                } while (e != null);
             }
             return null;
         }
@@ -934,7 +934,7 @@ public abstract class AbstractElement
             if ( getOwnerDocument() != arg.getOwnerDocument() ) {
                 throw createDOMException( DOMException.WRONG_DOCUMENT_ERR,
                         "node.from.wrong.document",
-                        new Object[]{new Integer( arg.getNodeType() ),
+                        new Object[]{(int) arg.getNodeType(),
                                 arg.getNodeName()} );
             }
             if ( arg.getNodeType() == ATTRIBUTE_NODE &&

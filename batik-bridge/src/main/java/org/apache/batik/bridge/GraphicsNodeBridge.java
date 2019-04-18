@@ -26,7 +26,7 @@ import org.w3c.dom.Element;
  * according to an <code>Element</code>.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: GraphicsNodeBridge.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: GraphicsNodeBridge.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public interface GraphicsNodeBridge extends Bridge {
 
@@ -72,7 +72,7 @@ public interface GraphicsNodeBridge extends Bridge {
      * static SVG content) will always return the same instance.
      * A dynamic Bridge will return a new instance on each call.
      *
-     * <!> FIX ME: Move to Bridge 
+     * FIX ME: Move to Bridge
      */
     Bridge getInstance();
 

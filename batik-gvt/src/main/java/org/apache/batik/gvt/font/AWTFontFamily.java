@@ -30,7 +30,7 @@ import org.apache.batik.gvt.text.GVTAttributedCharacterIterator;
  * A font family class for AWT fonts.
  *
  * @author <a href="mailto:bella.robinson@cmis.csiro.au">Bella Robinson</a>
- * @version $Id: AWTFontFamily.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AWTFontFamily.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class AWTFontFamily implements GVTFontFamily {
 
@@ -110,7 +110,7 @@ public class AWTFontFamily implements GVTFontFamily {
             return new AWTGVTFont(font, size);
 
         Map fontAttributes = new HashMap(attrs);
-        fontAttributes.put(TextAttribute.SIZE, new Float(size));
+        fontAttributes.put(TextAttribute.SIZE, size);
         fontAttributes.put(TextAttribute.FAMILY, fontFace.getFamilyName());
         fontAttributes.remove(TEXT_COMPOUND_DELIMITER);
         return new AWTGVTFont(fontAttributes);

@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
  * This class implements the {@link org.w3c.dom.CharacterData} interface.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: AbstractCharacterData.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractCharacterData.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public abstract class AbstractCharacterData
     extends    AbstractChildNode
@@ -52,7 +52,7 @@ public abstract class AbstractCharacterData
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         // Node modification
@@ -110,7 +110,7 @@ public abstract class AbstractCharacterData
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         setNodeValue(getNodeValue() + ((arg == null) ? "" : arg));
@@ -124,13 +124,13 @@ public abstract class AbstractCharacterData
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         if (offset < 0 || offset > getLength()) {
             throw createDOMException(DOMException.INDEX_SIZE_ERR,
                                      "offset",
-                                     new Object[] { new Integer(offset) });
+                                     new Object[] {offset});
         }
         String v = getNodeValue();
         setNodeValue(v.substring(0, offset) + 
@@ -145,7 +145,7 @@ public abstract class AbstractCharacterData
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         checkOffsetCount(offset, count);
@@ -165,7 +165,7 @@ public abstract class AbstractCharacterData
         if (isReadonly()) {
             throw createDOMException(DOMException.NO_MODIFICATION_ALLOWED_ERR,
                                      "readonly.node",
-                                     new Object[] { new Integer(getNodeType()),
+                                     new Object[] {(int) getNodeType(),
                                                     getNodeName() });
         }
         checkOffsetCount(offset, count);
@@ -185,12 +185,12 @@ public abstract class AbstractCharacterData
         if (offset < 0 || offset >= getLength()) {
             throw createDOMException(DOMException.INDEX_SIZE_ERR,
                                      "offset",
-                                     new Object[] { new Integer(offset) });
+                                     new Object[] {offset});
         }
         if (count < 0) {
             throw createDOMException(DOMException.INDEX_SIZE_ERR,
                                      "negative.count",
-                                     new Object[] { new Integer(count) });
+                                     new Object[] {count});
         }
     }
 

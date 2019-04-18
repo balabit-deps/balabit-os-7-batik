@@ -16,7 +16,6 @@
    limitations under the License.
 
  */
-import java.io.IOException;
 import java.net.URL;
 
 import javax.swing.JApplet; 
@@ -31,7 +30,7 @@ import org.w3c.dom.Node;
 /**
  * A applet demonstrating the JSVGCanvas.
  *
- * @version $Id: AppletDemo.java 1733420 2016-03-03 07:41:59Z gadams $
+ * @version $Id: AppletDemo.java 1808975 2017-09-20 08:59:36Z ssteiner $
  */
 public class AppletDemo extends JApplet {
 

@@ -28,7 +28,7 @@ import org.w3c.dom.svg.SVGDocument;
  * Thrown when the bridge has detected an error.
  *
  * @author <a href="mailto:tkormann@apache.org">Thierry Kormann</a>
- * @version $Id: BridgeException.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: BridgeException.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class BridgeException extends RuntimeException {
 
@@ -185,7 +185,7 @@ public class BridgeException extends RuntimeException {
         else              uri = doc.getURL();
         Object [] fullparams = new Object[params.length+3];
         fullparams[0] = uri;
-        fullparams[1] = new Integer(line);
+        fullparams[1] = line;
         fullparams[2] = lname;
         System.arraycopy( params, 0, fullparams, 3, params.length );
         return Messages.formatMessage(code, fullparams);

@@ -20,13 +20,14 @@ package org.apache.batik.script.jacl;
 
 import java.net.URL;
 
+import org.apache.batik.script.ImportInfo;
 import org.apache.batik.script.Interpreter;
 import org.apache.batik.script.InterpreterFactory;
 
 /**
  * Allows to create instances of <code>JaclInterpreter</code> class.
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
- * @version $Id: JaclInterpreterFactory.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: JaclInterpreterFactory.java 1808872 2017-09-19 12:23:20Z ssteiner $
  */
 public class JaclInterpreterFactory implements InterpreterFactory {
 

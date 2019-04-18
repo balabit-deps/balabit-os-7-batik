@@ -23,7 +23,6 @@ import java.util.Iterator;
 
 import org.apache.batik.anim.values.AnimatablePointListValue;
 import org.apache.batik.anim.values.AnimatableValue;
-import org.apache.batik.dom.svg.AbstractSVGList;
 import org.apache.batik.dom.svg.AbstractSVGPointList;
 import org.apache.batik.dom.svg.ListBuilder;
 import org.apache.batik.dom.svg.LiveAttributeException;
@@ -43,7 +42,7 @@ import org.w3c.dom.svg.SVGPointList;
  * This class is the implementation of the SVGAnimatedPoints interface.
  *
  * @author <a href="mailto:nicolas.socheleau@bitflash.com">Nicolas Socheleau</a>
- * @version $Id: SVGOMAnimatedPoints.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGOMAnimatedPoints.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class SVGOMAnimatedPoints
         extends AbstractSVGAnimatedValue

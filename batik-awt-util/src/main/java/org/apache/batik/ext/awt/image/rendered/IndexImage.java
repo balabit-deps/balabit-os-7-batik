@@ -47,7 +47,7 @@ import org.apache.batik.ext.awt.image.GraphicsUtil;
  *
  * @author <a href="mailto:deweese@apache.org">Thomas DeWeese</a>
  * @author <a href="mailto:jun@oop-reserch.com">Jun Inamori</a>
- * @version $Id: IndexImage.java 1733416 2016-03-03 07:07:13Z gadams $ 
+ * @version $Id: IndexImage.java 1804130 2017-08-04 14:41:11Z ssteiner $ 
  */
 
 public class IndexImage{
@@ -452,13 +452,12 @@ public class IndexImage{
                     for (int k=minIdx[c1]; k<=maxIdx[c1]; k++) {
                         int idx = idx2 | (k<<c1Sh4);
                         Counter[] v = colors[idx];
-                        for( int iColor = 0; iColor < v.length; iColor++ ){
-                            Counter c = v[ iColor ];
-                            vals = c.getRgb( vals );
-                            if ( contains( vals )){
+                        for (Counter c : v) {
+                            vals = c.getRgb(vals);
+                            if (contains(vals)) {
                                 // The vals[] lies completly within
                                 // this cube so count it.
-                                counts[ vals[splitChannel] ] += c.count;
+                                counts[vals[splitChannel]] += c.count;
                                 tcount += c.count;
                             }
                         }
@@ -530,14 +529,13 @@ public class IndexImage{
                     for (int k=minIdx[2]; k<=maxIdx[2]; k++) {
                         int idx = idx2 | k;
                         Counter[] v = colors[idx];
-                        for( int iColor = 0; iColor < v.length; iColor++ ){
-                            Counter c = v[ iColor ];
-                            vals = c.getRgb( vals );
-                            if ( contains( vals ) ) {
-                                float weight = (c.count/(float)count);
-                                red += (vals[0]*weight);
-                                grn += (vals[1]*weight);
-                                blu += (vals[2]*weight);
+                        for (Counter c : v) {
+                            vals = c.getRgb(vals);
+                            if (contains(vals)) {
+                                float weight = (c.count / (float) count);
+                                red += (vals[0] * weight);
+                                grn += (vals[1] * weight);
+                                blu += (vals[2] * weight);
                             }
                         }
                     }

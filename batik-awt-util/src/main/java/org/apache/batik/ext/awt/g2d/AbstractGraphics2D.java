@@ -61,7 +61,7 @@ import java.util.Map;
  * are implemented by <code>AbstractGraphics2D</code>
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: AbstractGraphics2D.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractGraphics2D.java 1808888 2017-09-19 14:22:11Z ssteiner $
  * @see org.apache.batik.ext.awt.g2d.GraphicContext
  */
 public abstract class AbstractGraphics2D extends Graphics2D implements Cloneable {
@@ -880,7 +880,7 @@ public abstract class AbstractGraphics2D extends Graphics2D implements Cloneable
             }   catch(NoninvertibleTransformException e){
                                 // Should never happen since we checked the
                                 // matrix determinant
-                throw new Error( e.getMessage() );
+                throw new RuntimeException( e.getMessage() );
             }
 
             gc.transform(xform);

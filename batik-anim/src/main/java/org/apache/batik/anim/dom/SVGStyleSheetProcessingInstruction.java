@@ -24,17 +24,19 @@ import org.apache.batik.css.engine.StyleSheet;
 import org.apache.batik.dom.AbstractDocument;
 import org.apache.batik.dom.StyleSheetFactory;
 import org.apache.batik.dom.StyleSheetProcessingInstruction;
-import org.apache.batik.dom.util.HashTable;
+
 import org.apache.batik.util.ParsedURL;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
+
+import java.util.HashMap;
 
 /**
  * This class provides an implementation of the 'xml-stylesheet' processing
  * instructions.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: SVGStyleSheetProcessingInstruction.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGStyleSheetProcessingInstruction.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public class SVGStyleSheetProcessingInstruction
     extends StyleSheetProcessingInstruction
@@ -78,14 +80,14 @@ public class SVGStyleSheetProcessingInstruction
      */
     public StyleSheet getCSSStyleSheet() {
         if (styleSheet == null) {
-            HashTable attrs = getPseudoAttributes();
-            String type = (String)attrs.get("type");
+            HashMap<String, String> attrs = getPseudoAttributes();
+            String type = attrs.get("type");
 
             if ("text/css".equals(type)) {
-                String title     = (String)attrs.get("title");
-                String media     = (String)attrs.get("media");
-                String href      = (String)attrs.get("href");
-                String alternate = (String)attrs.get("alternate");
+                String title     = attrs.get("title");
+                String media     = attrs.get("media");
+                String href      = attrs.get("href");
+                String alternate = attrs.get("alternate");
                 SVGOMDocument doc = (SVGOMDocument)getOwnerDocument();
                 ParsedURL durl = doc.getParsedURL();
                 ParsedURL burl = new ParsedURL(durl, href);

@@ -36,7 +36,7 @@ import java.util.ArrayList;
  * <p><b> This class is not a committed part of the JAI API.  It may
  * be removed or changed in future releases of JAI.</b>
  *
- * @version $Id: PNGEncodeParam.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PNGEncodeParam.java 1805419 2017-08-18 13:04:30Z ssteiner $
  */
 public abstract class PNGEncodeParam implements ImageEncodeParam {
 
@@ -1342,9 +1342,9 @@ public abstract class PNGEncodeParam implements ImageEncodeParam {
      * could be implemented (non-optimally) as follows:
      *
      * <pre>
-     * for (int i = bytesPerPixel; i < bytesPerRow + bytesPerPixel; i++) {
-     *     int curr = currRow[i] & 0xff;
-     *     int left = currRow[i - bytesPerPixel] & 0xff;
+     * for (int i = bytesPerPixel; i &lt; bytesPerRow + bytesPerPixel; i++) {
+     *     int curr = currRow[i] &amp; 0xff;
+     *     int left = currRow[i - bytesPerPixel] &amp; 0xff;
      *     scratchRow[PNG_FILTER_SUB][i] = (byte)(curr - left);
      * }
      * return PNG_FILTER_SUB;

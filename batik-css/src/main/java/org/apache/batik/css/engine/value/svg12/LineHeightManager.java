@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.css.engine.value.svg12;
 
@@ -38,7 +38,7 @@ import org.w3c.dom.DOMException;
  * This class provides a factory for the 'margin-*' properties values.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: LineHeightManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: LineHeightManager.java 1808001 2017-09-11 09:51:29Z ssteiner $
  */
 public class LineHeightManager extends LengthManager {
 

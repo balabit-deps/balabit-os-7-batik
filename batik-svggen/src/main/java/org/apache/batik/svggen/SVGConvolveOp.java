@@ -31,7 +31,7 @@ import org.w3c.dom.Element;
  * an SVG filter descriptor.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: SVGConvolveOp.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: SVGConvolveOp.java 1804130 2017-08-04 14:41:11Z ssteiner $
  * @see                org.apache.batik.svggen.SVGBufferedImageOp
  */
 public class SVGConvolveOp extends AbstractSVGFilterConverter {
@@ -94,8 +94,8 @@ public class SVGConvolveOp extends AbstractSVGFilterConverter {
             // Convert the kernel values
             float[] data = kernel.getKernelData(null);
             StringBuffer kernelMatrixBuf = new StringBuffer( data.length * 8 );
-            for(int i=0; i<data.length; i++){
-                kernelMatrixBuf.append(doubleString(data[i]));
+            for (float aData : data) {
+                kernelMatrixBuf.append(doubleString(aData));
                 kernelMatrixBuf.append(SPACE);
             }
 

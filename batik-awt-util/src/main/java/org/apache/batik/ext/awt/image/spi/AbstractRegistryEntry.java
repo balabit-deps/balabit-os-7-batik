@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  *
- * @version $Id: AbstractRegistryEntry.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractRegistryEntry.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractRegistryEntry
     implements RegistryEntry, ErrorConstants {
@@ -42,13 +42,11 @@ public abstract class AbstractRegistryEntry
         this.priority = priority;
 
         this.exts     = new ArrayList(exts.length);
-        for (int i=0; i<exts.length; i++)
-            this.exts.add(exts[i]);
+        for (String ext : exts) this.exts.add(ext);
         this.exts = Collections.unmodifiableList(this.exts);
 
         this.mimeTypes     = new ArrayList(mimeTypes.length);
-        for (int i=0; i<mimeTypes.length; i++)
-            this.mimeTypes.add(mimeTypes[i]);
+        for (String mimeType : mimeTypes) this.mimeTypes.add(mimeType);
         this.mimeTypes = Collections.unmodifiableList(this.mimeTypes);
     }
 

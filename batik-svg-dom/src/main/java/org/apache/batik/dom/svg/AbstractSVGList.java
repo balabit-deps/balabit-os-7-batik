@@ -46,7 +46,7 @@ import org.w3c.dom.svg.SVGException;
  * </p>
  *
  * @author <a href="mailto:nicolas.socheleau@bitflash.com">Nicolas Socheleau</a>
- * @version $Id: AbstractSVGList.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: AbstractSVGList.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public abstract class AbstractSVGList {
 
@@ -189,7 +189,7 @@ public abstract class AbstractSVGList {
         if (index < 0 || itemList == null || index >= itemList.size()) {
             throw createDOMException
                 (DOMException.INDEX_SIZE_ERR, "index.out.of.bounds",
-                 new Object[] { new Integer(index) } );
+                 new Object[] {index} );
         }
 
         return (SVGItem)itemList.get(index);
@@ -228,7 +228,7 @@ public abstract class AbstractSVGList {
         if (index < 0) {
             throw createDOMException
                 (DOMException.INDEX_SIZE_ERR, "index.out.of.bounds",
-                 new Object[] { new Integer(index) } );
+                 new Object[] {index} );
         }
 
         if (index > itemList.size()) {
@@ -279,7 +279,7 @@ public abstract class AbstractSVGList {
         if (index < 0 || index >= itemList.size()) {
             throw createDOMException
                 (DOMException.INDEX_SIZE_ERR, "index.out.of.bounds",
-                 new Object[] { new Integer(index) } );
+                 new Object[] {index} );
         }
 
         SVGItem item = removeIfNeeded(newItem);
@@ -314,7 +314,7 @@ public abstract class AbstractSVGList {
         if (index < 0 || index >= itemList.size()) {
             throw createDOMException
                 (DOMException.INDEX_SIZE_ERR, "index.out.of.bounds",
-                 new Object[] { new Integer(index) } );
+                 new Object[] {index} );
         }
 
         SVGItem item = (SVGItem)itemList.remove(index);
@@ -491,9 +491,8 @@ public abstract class AbstractSVGList {
         if (list == null) {
             return;
         }
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            SVGItem item = (SVGItem)it.next();
+        for (Object aList : list) {
+            SVGItem item = (SVGItem) aList;
             item.setParent(null);
         }
         list.clear();

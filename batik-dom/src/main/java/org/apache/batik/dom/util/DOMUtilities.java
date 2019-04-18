@@ -23,10 +23,8 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.batik.dom.AbstractDocument;
 import org.apache.batik.util.XMLConstants;
@@ -46,7 +44,7 @@ import org.w3c.dom.NodeList;
  * A collection of utility functions for the DOM.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: DOMUtilities.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DOMUtilities.java 1813521 2017-10-27 12:34:11Z ssteiner $
  */
 public class DOMUtilities extends XMLUtilities implements XMLConstants {
 
@@ -59,7 +57,7 @@ public class DOMUtilities extends XMLUtilities implements XMLConstants {
     /**
      * A node in a linked list of prefix to namespace name mappings.
      */
-    private static class NSMap {
+    private static final class NSMap {
 
         /**
          * The prefix to map.
@@ -526,8 +524,8 @@ public class DOMUtilities extends XMLUtilities implements XMLConstants {
      */
     public static boolean isAnyNodeAncestorOf(ArrayList ancestorNodes, Node node) {
         int n = ancestorNodes.size();
-        for (int i = 0; i < n; i++) {
-            Node ancestor = (Node) ancestorNodes.get(i);
+        for (Object ancestorNode : ancestorNodes) {
+            Node ancestor = (Node) ancestorNode;
             if (isAncestorOf(ancestor, node)) {
                 return true;
             }
@@ -606,8 +604,8 @@ public class DOMUtilities extends XMLUtilities implements XMLConstants {
             return false;
         }
         int n = children.size();
-        for (int i = 0; i < n; i++) {
-            Node child = (Node) children.get(i);
+        for (Object aChildren : children) {
+            Node child = (Node) aChildren;
             if (canAppend(child, parentNode)) {
                 return true;
             }
@@ -672,9 +670,8 @@ public class DOMUtilities extends XMLUtilities implements XMLConstants {
             // Copy the prefixes from the prefixes map to the wrapper element
             if (prefixes != null) {
                 wrapperElementPrefix += " ";
-                Iterator iter = prefixes.entrySet().iterator();
-                while (iter.hasNext()) {
-                    Map.Entry e = (Map.Entry) iter.next();
+                for (Object o : prefixes.entrySet()) {
+                    Map.Entry e = (Map.Entry) o;
                     String currentKey = (String) e.getKey();
                     String currentValue = (String) e.getValue();
                     wrapperElementPrefix += currentKey + "=\"" + currentValue
@@ -855,7 +852,7 @@ public class DOMUtilities extends XMLUtilities implements XMLConstants {
      * Parses a 'xml-stylesheet' processing instruction data section and
      * puts the pseudo attributes in the given table.
      */
-    public static void parseStyleSheetPIData(String data, HashTable table) {
+    public static void parseStyleSheetPIData(String data, HashMap<String, String> table) {
         // !!! Internationalization
         char c;
         int i = 0;

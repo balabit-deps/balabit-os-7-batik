@@ -36,7 +36,7 @@ import org.w3c.dom.svg.SVGDocument;
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: UserAgent.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: UserAgent.java 1808023 2017-09-11 12:43:22Z ssteiner $
  */
 public interface UserAgent {
 
@@ -293,7 +293,7 @@ public interface UserAgent {
      * can't be loaded.  If it returns 'null' then a BridgeException will
      * be thrown.
      *
-     * @param e   The &lt;image> element that can't be loaded.
+     * @param e   The &lt;image&gt; element that can't be loaded.
      * @param url The resolved url that can't be loaded.
      * @param message As best as can be determined the reason it can't be
      *                loaded (not available, corrupt, unknown format, ...).
@@ -308,5 +308,5 @@ public interface UserAgent {
     void loadDocument(String url);
 
     /** Returns the Font Family Resolver */
-    public FontFamilyResolver getFontFamilyResolver();
+    FontFamilyResolver getFontFamilyResolver();
 }

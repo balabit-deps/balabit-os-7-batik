@@ -30,7 +30,7 @@ import org.w3c.dom.views.AbstractView;
  * associated with Mouse events.
  *
  * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
- * @version $Id: DOMMouseEvent.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: DOMMouseEvent.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class DOMMouseEvent extends DOMUIEvent implements MouseEvent {
 
@@ -267,8 +267,8 @@ public class DOMMouseEvent extends DOMUIEvent implements MouseEvent {
         relatedTarget = relatedTargetArg;
         modifierKeys.clear();
         String[] modifiers = split(modifiersList);
-        for (int i = 0; i < modifiers.length; i++) {
-            modifierKeys.add(modifiers[i]);
+        for (String modifier : modifiers) {
+            modifierKeys.add(modifier);
         }
     }
 }

@@ -40,7 +40,7 @@ import org.w3c.dom.Document;
  * files).</p>
  *
  * @author <a href="mailto:cjolif@ilog.fr">Christophe Jolif</a>
- * @version $Id: InterpreterPool.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: InterpreterPool.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class InterpreterPool {
 
@@ -65,8 +65,8 @@ public class InterpreterPool {
             InterpreterFactory factory = null;
             factory = (InterpreterFactory)iter.next();
             String[] mimeTypes = factory.getMimeTypes();
-            for (int i = 0; i < mimeTypes.length; i++) {
-                defaultFactories.put(mimeTypes[i], factory);
+            for (String mimeType : mimeTypes) {
+                defaultFactories.put(mimeType, factory);
             }
         }
     }

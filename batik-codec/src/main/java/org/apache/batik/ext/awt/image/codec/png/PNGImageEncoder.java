@@ -261,7 +261,7 @@ class IDATOutputStream extends FilterOutputStream {
  * An ImageEncoder for the PNG file format.
  *
  * @since EA4
- * @version $Id: PNGImageEncoder.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PNGImageEncoder.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class PNGImageEncoder extends ImageEncoderImpl {
 
@@ -571,8 +571,8 @@ public class PNGImageEncoder extends ImageEncoderImpl {
             ChunkStream cs = new ChunkStream("sBIT");
             int[] significantBits = param.getSignificantBits();
             int len = significantBits.length;
-            for (int i = 0; i < len; i++) {
-                cs.writeByte(significantBits[i]);
+            for (int significantBit : significantBits) {
+                cs.writeByte(significantBit);
             }
             cs.writeToStream(dataOutput);
             cs.close();
@@ -642,8 +642,8 @@ public class PNGImageEncoder extends ImageEncoderImpl {
             ChunkStream cs = new ChunkStream("hIST");
 
             int[] hist = param.getPaletteHistogram();
-            for (int i = 0; i < hist.length; i++) {
-                cs.writeShort(hist[i]);
+            for (int aHist : hist) {
+                cs.writeShort(aHist);
             }
 
             cs.writeToStream(dataOutput);
@@ -660,8 +660,8 @@ public class PNGImageEncoder extends ImageEncoderImpl {
             if (param instanceof PNGEncodeParam.Palette) {
                 byte[] t =
                     ((PNGEncodeParam.Palette)param).getPaletteTransparency();
-                for (int i = 0; i < t.length; i++) {
-                    cs.writeByte(t[i]);
+                for (byte aT : t) {
+                    cs.writeByte(aT);
                 }
             } else if (param instanceof PNGEncodeParam.Gray) {
                 int t = ((PNGEncodeParam.Gray)param).getTransparentGray();

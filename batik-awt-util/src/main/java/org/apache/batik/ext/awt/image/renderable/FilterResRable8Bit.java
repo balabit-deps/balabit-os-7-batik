@@ -31,7 +31,6 @@ import java.awt.image.renderable.RenderContext;
 import java.awt.image.renderable.RenderableImage;
 import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
-import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.List;
 
@@ -45,7 +44,7 @@ import org.apache.batik.ext.awt.image.rendered.TileCacheRed;
  * Interface for implementing filter resolution.
  *
  * @author <a href="mailto:vincent.hardy@eng.sun.com">Vincent Hardy</a>
- * @version $Id: FilterResRable8Bit.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: FilterResRable8Bit.java 1804130 2017-08-04 14:41:11Z ssteiner $
  */
 public class FilterResRable8Bit extends AbstractRable
     implements FilterResRable, PaintRable {
@@ -146,9 +145,8 @@ public class FilterResRable8Bit extends AbstractRable
         // No sources and we are PaintRable so the chain is PaintRable.
         if (v == null) return true;
 
-        Iterator i = v.iterator();
-        while (i.hasNext()) {
-            RenderableImage nri = (RenderableImage)i.next();
+        for (Object aV : v) {
+            RenderableImage nri = (RenderableImage) aV;
             // A source is not paintRable so we are not 100% paintRable.
             if (!allPaintRable(nri)) return false;
         }

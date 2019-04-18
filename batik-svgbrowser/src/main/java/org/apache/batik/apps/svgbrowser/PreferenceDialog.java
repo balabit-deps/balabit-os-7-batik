@@ -81,7 +81,7 @@ import org.apache.batik.util.gui.LanguageDialog;
  * Dialog that displays user preferences.
  *
  * @author <a href="mailto:vhardy@apache.org">Vincent Hardy</a>
- * @version $Id: PreferenceDialog.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: PreferenceDialog.java 1802297 2017-07-18 13:58:12Z ssteiner $
  */
 public class PreferenceDialog extends JDialog
     implements GridBagConstants {
@@ -1196,7 +1196,7 @@ public class PreferenceDialog extends JDialog
                 // button.setIconTextGap(0);
                 AbstractButton.class.getMethod
                     ("setIconTextGap", new Class[] { Integer.TYPE })
-                    .invoke(button, new Object[] { new Integer(0) });
+                    .invoke(button, new Object[] {0});
             } catch (Exception ex) {
             }
             button.setPressedIcon(icon2);

@@ -15,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-*/
+ */
 
 package org.apache.batik.transcoder.wmf.tosvg;
 
@@ -41,11 +41,11 @@ import org.apache.batik.transcoder.wmf.WMFConstants;
  * This class holds simple properties about a WMF Metafile. It can be used
  * whenever general information must be retrieved about this file.
  *
- * @version $Id: WMFHeaderProperties.java 1733416 2016-03-03 07:07:13Z gadams $
+ * @version $Id: WMFHeaderProperties.java 1808021 2017-09-11 12:17:28Z ssteiner $
  */
 public class WMFHeaderProperties extends AbstractWMFReader {
 
-    private static final Integer INTEGER_0 = new Integer( 0 );
+    private static final Integer INTEGER_0 = 0;
 
     protected DataInputStream stream;
     private int _bleft, _bright, _btop, _bbottom, _bwidth, _bheight;
@@ -557,7 +557,7 @@ public class WMFHeaderProperties extends AbstractWMFReader {
                 resizeImageBounds((int)(dx + widthDst), (int)(dy + heightDst));                
 
                 int len = 2*recSize - 22;
-                byte bitmap[] = new byte[len];                    
+                byte[] bitmap = new byte[len];
                 for (int i = 0; i < len; i++) bitmap[i] = is.readByte();
             }
             break;                                                
